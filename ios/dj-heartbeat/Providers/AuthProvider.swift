@@ -44,13 +44,14 @@ protocol AuthProvider {
     }
     
     func isLoggedIn() async throws -> Bool {
-        switch state {
-        case .error, .loading:
-            return false
-            
-        case .fetched(let authProviderState):
-            return authProviderState.isLoggedIn
-        }
+//        switch state {
+//        case .error, .loading:
+//            return false
+//
+//        case .fetched(let authProviderState):
+//            return authProviderState.isLoggedIn
+//        }
+        return user != nil // TODO: if this works this can just be var (no async throws) .. and maybe we can remove state? 
     }
     
     func config() async {
