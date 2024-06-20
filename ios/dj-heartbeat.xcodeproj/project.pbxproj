@@ -1,0 +1,1150 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F0255E52B51D28A0007A861 /* HeartRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0255E42B51D28A0007A861 /* HeartRateAPI.swift */; };
+		4F0255E92B562D7E0007A861 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4F0255E82B562D7E0007A861 /* FirebaseAuth */; };
+		4F02EA1E2B8D2D2B00D1E189 /* TrackDiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F02EA1D2B8D2D2B00D1E189 /* TrackDiscoverView.swift */; };
+		4F2F81AC2BB73D2B002E6EF9 /* AllYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F81AB2BB73D2B002E6EF9 /* AllYouView.swift */; };
+		4F2F81AE2BB7CA20002E6EF9 /* UserOnboardingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F81AD2BB7CA20002E6EF9 /* UserOnboardingProvider.swift */; };
+		4F3D2EEF2B866FE10045C506 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D2EEE2B866FE10045C506 /* JSONDecoder.swift */; };
+		4F3D2EF12B86740C0045C506 /* TrackDiscoverAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D2EF02B86740C0045C506 /* TrackDiscoverAPI.swift */; };
+		4F3D2EF52B86747B0045C506 /* SpotifyTokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D2EF42B86747B0045C506 /* SpotifyTokenAPI.swift */; };
+		4F414A822BD2EA0500F10947 /* SignupCodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F414A812BD2EA0500F10947 /* SignupCodeAPI.swift */; };
+		4F414A852BD341AE00F10947 /* SignupCodeEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F414A842BD341AE00F10947 /* SignupCodeEntryView.swift */; };
+		4F414A872BD454F800F10947 /* IntroScreenExplainerSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F414A862BD454F800F10947 /* IntroScreenExplainerSheetView.swift */; };
+		4F414A892BD455C200F10947 /* IntroScreenUseAppWithoutAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F414A882BD455C200F10947 /* IntroScreenUseAppWithoutAccountView.swift */; };
+		4F463AA62B5B7A67002D03E5 /* SpotifyAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F463AA52B5B7A67002D03E5 /* SpotifyAuth.swift */; };
+		4F463AA82B5C5812002D03E5 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F463AA72B5C5812002D03E5 /* Sequence+Extensions.swift */; };
+		4F5B32A42BE01C0700490A95 /* SelectedSocialFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B32A32BE01C0700490A95 /* SelectedSocialFeedItem.swift */; };
+		4F5B32A62BE02BCB00490A95 /* SocialFeedItemHeartbeatCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B32A52BE02BCB00490A95 /* SocialFeedItemHeartbeatCountView.swift */; };
+		4F5B32A82BE02C6B00490A95 /* SocialFeedItemUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B32A72BE02C6B00490A95 /* SocialFeedItemUsernameView.swift */; };
+		4F5B32AA2BE1717900490A95 /* PlaylistProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B32A92BE1717900490A95 /* PlaylistProvider.swift */; };
+		4F5B32AC2BE173B800490A95 /* SocialFeedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B32AB2BE173B800490A95 /* SocialFeedProvider.swift */; };
+		4F5B32AF2BE2A63F00490A95 /* TrackDiscoverProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B32AE2BE2A63F00490A95 /* TrackDiscoverProvider.swift */; };
+		4F5F2B352B748022008A00A3 /* ShakeGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F2B342B748022008A00A3 /* ShakeGesture.swift */; };
+		4F5F2B372B748120008A00A3 /* DevMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F2B362B748120008A00A3 /* DevMenu.swift */; };
+		4F5F6B4C2B5CA60600946BD5 /* PrototypePostworkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4B2B5CA60600946BD5 /* PrototypePostworkoutView.swift */; };
+		4F5F6B4E2B5CE12200946BD5 /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */; };
+		4F5F6B502B60720B00946BD5 /* ThisWeeksChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */; };
+		4F5F6B532B60861800946BD5 /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4F5F6B522B60861800946BD5 /* Pow */; };
+		4F819DE22BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */; };
+		4F9377BD2BA33D6F001225AC /* SocialFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */; };
+		4F9377BF2BA340D6001225AC /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BE2BA340D6001225AC /* Playlist.swift */; };
+		4F9377C32BAE4F88001225AC /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377C22BAE4F88001225AC /* Int+Extensions.swift */; };
+		4FA068192BBB232A0091C7DD /* HandleWorkoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */; };
+		4FA0681C2BBCE37C0091C7DD /* PrototypeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0681B2BBCE37C0091C7DD /* PrototypeLoadingView.swift */; };
+		4FA0681E2BBF27E60091C7DD /* SendFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0681D2BBF27E60091C7DD /* SendFeedbackView.swift */; };
+		4FA068202BBF2D360091C7DD /* SendFeedbackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0681F2BBF2D360091C7DD /* SendFeedbackAPI.swift */; };
+		4FA068222BBF2F160091C7DD /* SendFeedbackProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA068212BBF2F160091C7DD /* SendFeedbackProvider.swift */; };
+		4FA6B4172BB550660016FEDB /* SocialAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B4162BB550660016FEDB /* SocialAPI.swift */; };
+		4FA6B41A2BB554960016FEDB /* WorkoutIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B4192BB554960016FEDB /* WorkoutIconView.swift */; };
+		4FA6B41C2BB635410016FEDB /* SocialFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B41B2BB635410016FEDB /* SocialFeedItem.swift */; };
+		4FA6B41E2BB63A9A0016FEDB /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B41D2BB63A9A0016FEDB /* Environment.swift */; };
+		4FA6B4202BB63ACA0016FEDB /* NavContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B41F2BB63ACA0016FEDB /* NavContainer.swift */; };
+		4FA6B4232BB63B460016FEDB /* AppExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B4222BB63B460016FEDB /* AppExplainerView.swift */; };
+		4FA6B42E2BB6A0840016FEDB /* ThisWeeksChartsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B42D2BB6A0840016FEDB /* ThisWeeksChartsTitleView.swift */; };
+		4FA6B4302BB6E1880016FEDB /* WeeklyChartProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B42F2BB6E1880016FEDB /* WeeklyChartProvider.swift */; };
+		4FA6B4332BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B4322BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift */; };
+		4FA793112B6893AD00A7A572 /* LoginWithSpotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA793102B6893AD00A7A572 /* LoginWithSpotifyView.swift */; };
+		4FA793132B68A66800A7A572 /* FirebaseCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA793122B68A66800A7A572 /* FirebaseCurrentUser.swift */; };
+		4FA9DB8E2BA14F5500CC3FB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FA9DB8D2BA14F5500CC3FB2 /* GoogleService-Info.plist */; };
+		4FAD33242B4C7B9100DB28F6 /* djHeartbeatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33232B4C7B9100DB28F6 /* djHeartbeatApp.swift */; };
+		4FAD33262B4C7B9100DB28F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33252B4C7B9100DB28F6 /* HomeView.swift */; };
+		4FAD33282B4C7B9300DB28F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD33272B4C7B9300DB28F6 /* Assets.xcassets */; };
+		4FAD332B2B4C7B9300DB28F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD332A2B4C7B9300DB28F6 /* Preview Assets.xcassets */; };
+		4FAD33352B4C7B9300DB28F6 /* workout_playlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33342B4C7B9300DB28F6 /* workout_playlistTests.swift */; };
+		4FAD333F2B4C7B9300DB28F6 /* workout_playlistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD333E2B4C7B9300DB28F6 /* workout_playlistUITests.swift */; };
+		4FAD33412B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33402B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift */; };
+		4FAD334F2B4C7C0B00DB28F6 /* SpotifyiOS in Frameworks */ = {isa = PBXBuildFile; productRef = 4FAD334E2B4C7C0B00DB28F6 /* SpotifyiOS */; };
+		4FAD33592B50A5EB00DB28F6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD33582B50A5EB00DB28F6 /* Launch Screen.storyboard */; };
+		4FB304AE2B69F3D100B6473D /* ScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB304AD2B69F3D100B6473D /* ScrollView+Extensions.swift */; };
+		4FB304B12B6B572100B6473D /* ChartItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB304B02B6B572100B6473D /* ChartItemView.swift */; };
+		4FB304B32B6B610F00B6473D /* PostWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB304B22B6B610F00B6473D /* PostWorkoutView.swift */; };
+		4FB304B52B6B7C9600B6473D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB304B42B6B7C9600B6473D /* ProfileView.swift */; };
+		4FBEAFA62B979E1300932E44 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBEAFA52B979E1300932E44 /* AppTabView.swift */; };
+		4FC16E312B8F9E9A0014A5B9 /* TrackItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E302B8F9E9A0014A5B9 /* TrackItemView.swift */; };
+		4FC16E332B8F9F820014A5B9 /* PlaylistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E322B8F9F820014A5B9 /* PlaylistAPI.swift */; };
+		4FC16E382B9113740014A5B9 /* UserListen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E372B9113740014A5B9 /* UserListen.swift */; };
+		4FC16E3A2B9113A20014A5B9 /* WeeklyTopTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E392B9113A20014A5B9 /* WeeklyTopTrack.swift */; };
+		4FC16E3C2B9113F00014A5B9 /* TopTracksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E3B2B9113F00014A5B9 /* TopTracksAPI.swift */; };
+		4FC16E3E2B9114CA0014A5B9 /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E3D2B9114CA0014A5B9 /* MyUser.swift */; };
+		4FC16E402B9115220014A5B9 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E3F2B9115220014A5B9 /* Track.swift */; };
+		4FC16E442B925B750014A5B9 /* AddToPlaylistButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E432B925B750014A5B9 /* AddToPlaylistButton.swift */; };
+		4FCB85292BE978BC00FFF0AD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB85282BE978BC00FFF0AD /* Config.swift */; };
+		4FCB852B2BE9877100FFF0AD /* ci_pre_xcodebuild.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4FCB852A2BE9877100FFF0AD /* ci_pre_xcodebuild.sh */; };
+		4FCB852D2BEAD0B500FFF0AD /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCB852C2BEAD0B500FFF0AD /* config.json */; };
+		4FCB852F2BED882000FFF0AD /* PlaylistContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB852E2BED882000FFF0AD /* PlaylistContentView.swift */; };
+		4FCB85352BF305B900FFF0AD /* LaunchLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB85342BF305B900FFF0AD /* LaunchLoadingView.swift */; };
+		4FCB85382C1249C300FFF0AD /* UserEventsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB85372C1249C300FFF0AD /* UserEventsAPI.swift */; };
+		4FCB853A2C124AA300FFF0AD /* UserEventsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB85392C124AA300FFF0AD /* UserEventsProvider.swift */; };
+		4FCB853E2C17A4D000FFF0AD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB853D2C17A4D000FFF0AD /* ImageCache.swift */; };
+		4FCB85402C17A4F000FFF0AD /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB853F2C17A4F000FFF0AD /* AsyncImageView.swift */; };
+		4FD658272B5083370030DA46 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD658252B5083370030DA46 /* Workout.swift */; };
+		4FD658282B5083370030DA46 /* OnDeviceWorkoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD658262B5083370030DA46 /* OnDeviceWorkoutDataManager.swift */; };
+		4FD6582C2B5086BF0030DA46 /* IntroScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6582B2B5086BF0030DA46 /* IntroScreen.swift */; };
+		4FD6582E2B5087180030DA46 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6582D2B5087180030DA46 /* AppColor.swift */; };
+		4FDE81A82B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE81A72B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift */; };
+		4FEDBEAE2BB895D3001BA2EF /* FetchableDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEDBEAD2BB895D3001BA2EF /* FetchableDataState.swift */; };
+		4FEDBEB02BB8A110001BA2EF /* RecentWorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEDBEAF2BB8A110001BA2EF /* RecentWorkoutsProvider.swift */; };
+		4FEFA98F2B6C389C00616C57 /* RecentWorkoutsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFA98E2B6C389C00616C57 /* RecentWorkoutsListView.swift */; };
+		4FEFA9912B6C3E0500616C57 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFA9902B6C3E0500616C57 /* Date+Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FAD33312B4C7B9300DB28F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FAD33182B4C7B9100DB28F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FAD331F2B4C7B9100DB28F6;
+			remoteInfo = "workout-playlist";
+		};
+		4FAD333B2B4C7B9300DB28F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FAD33182B4C7B9100DB28F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FAD331F2B4C7B9100DB28F6;
+			remoteInfo = "workout-playlist";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F0255E42B51D28A0007A861 /* HeartRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateAPI.swift; sourceTree = "<group>"; };
+		4F02EA1D2B8D2D2B00D1E189 /* TrackDiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDiscoverView.swift; sourceTree = "<group>"; };
+		4F2F81AB2BB73D2B002E6EF9 /* AllYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllYouView.swift; sourceTree = "<group>"; };
+		4F2F81AD2BB7CA20002E6EF9 /* UserOnboardingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOnboardingProvider.swift; sourceTree = "<group>"; };
+		4F3D2EEE2B866FE10045C506 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		4F3D2EF02B86740C0045C506 /* TrackDiscoverAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDiscoverAPI.swift; sourceTree = "<group>"; };
+		4F3D2EF42B86747B0045C506 /* SpotifyTokenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyTokenAPI.swift; sourceTree = "<group>"; };
+		4F414A812BD2EA0500F10947 /* SignupCodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCodeAPI.swift; sourceTree = "<group>"; };
+		4F414A842BD341AE00F10947 /* SignupCodeEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCodeEntryView.swift; sourceTree = "<group>"; };
+		4F414A862BD454F800F10947 /* IntroScreenExplainerSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreenExplainerSheetView.swift; sourceTree = "<group>"; };
+		4F414A882BD455C200F10947 /* IntroScreenUseAppWithoutAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreenUseAppWithoutAccountView.swift; sourceTree = "<group>"; };
+		4F463AA52B5B7A67002D03E5 /* SpotifyAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuth.swift; sourceTree = "<group>"; };
+		4F463AA72B5C5812002D03E5 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		4F5B32A32BE01C0700490A95 /* SelectedSocialFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedSocialFeedItem.swift; sourceTree = "<group>"; };
+		4F5B32A52BE02BCB00490A95 /* SocialFeedItemHeartbeatCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedItemHeartbeatCountView.swift; sourceTree = "<group>"; };
+		4F5B32A72BE02C6B00490A95 /* SocialFeedItemUsernameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialFeedItemUsernameView.swift; sourceTree = "<group>"; };
+		4F5B32A92BE1717900490A95 /* PlaylistProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistProvider.swift; sourceTree = "<group>"; };
+		4F5B32AB2BE173B800490A95 /* SocialFeedProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedProvider.swift; sourceTree = "<group>"; };
+		4F5B32AE2BE2A63F00490A95 /* TrackDiscoverProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDiscoverProvider.swift; sourceTree = "<group>"; };
+		4F5F2B342B748022008A00A3 /* ShakeGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeGesture.swift; sourceTree = "<group>"; };
+		4F5F2B362B748120008A00A3 /* DevMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevMenu.swift; sourceTree = "<group>"; };
+		4F5F6B4B2B5CA60600946BD5 /* PrototypePostworkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypePostworkoutView.swift; sourceTree = "<group>"; };
+		4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetObservingScrollView.swift; sourceTree = "<group>"; };
+		4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeeksChartsView.swift; sourceTree = "<group>"; };
+		4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewUnlinkedSpotifyExplainerView.swift; sourceTree = "<group>"; };
+		4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedView.swift; sourceTree = "<group>"; };
+		4F9377BE2BA340D6001225AC /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		4F9377C22BAE4F88001225AC /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleWorkoutProvider.swift; sourceTree = "<group>"; };
+		4FA0681B2BBCE37C0091C7DD /* PrototypeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeLoadingView.swift; sourceTree = "<group>"; };
+		4FA0681D2BBF27E60091C7DD /* SendFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackView.swift; sourceTree = "<group>"; };
+		4FA0681F2BBF2D360091C7DD /* SendFeedbackAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackAPI.swift; sourceTree = "<group>"; };
+		4FA068212BBF2F160091C7DD /* SendFeedbackProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackProvider.swift; sourceTree = "<group>"; };
+		4FA6B4162BB550660016FEDB /* SocialAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAPI.swift; sourceTree = "<group>"; };
+		4FA6B4192BB554960016FEDB /* WorkoutIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutIconView.swift; sourceTree = "<group>"; };
+		4FA6B41B2BB635410016FEDB /* SocialFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SocialFeedItem.swift; path = "dj-heartbeat/API/SocialFeedItem.swift"; sourceTree = SOURCE_ROOT; };
+		4FA6B41D2BB63A9A0016FEDB /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		4FA6B41F2BB63ACA0016FEDB /* NavContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavContainer.swift; sourceTree = "<group>"; };
+		4FA6B4222BB63B460016FEDB /* AppExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExplainerView.swift; sourceTree = "<group>"; };
+		4FA6B42D2BB6A0840016FEDB /* ThisWeeksChartsTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeeksChartsTitleView.swift; sourceTree = "<group>"; };
+		4FA6B42F2BB6E1880016FEDB /* WeeklyChartProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChartProvider.swift; sourceTree = "<group>"; };
+		4FA6B4322BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityHeartbeatsTickerView.swift; sourceTree = "<group>"; };
+		4FA793102B6893AD00A7A572 /* LoginWithSpotifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithSpotifyView.swift; sourceTree = "<group>"; };
+		4FA793122B68A66800A7A572 /* FirebaseCurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCurrentUser.swift; sourceTree = "<group>"; };
+		4FA9DB8D2BA14F5500CC3FB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4FA9DB8F2BA1579700CC3FB2 /* dj-heartbeat.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "dj-heartbeat.entitlements"; sourceTree = "<group>"; };
+		4FAD33202B4C7B9100DB28F6 /* dj-heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dj-heartbeat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FAD33232B4C7B9100DB28F6 /* djHeartbeatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = djHeartbeatApp.swift; sourceTree = "<group>"; };
+		4FAD33252B4C7B9100DB28F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4FAD33272B4C7B9300DB28F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4FAD332A2B4C7B9300DB28F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4FAD33302B4C7B9300DB28F6 /* dj-heartbeatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dj-heartbeatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FAD33342B4C7B9300DB28F6 /* workout_playlistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workout_playlistTests.swift; sourceTree = "<group>"; };
+		4FAD333A2B4C7B9300DB28F6 /* dj-heartbeatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dj-heartbeatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FAD333E2B4C7B9300DB28F6 /* workout_playlistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workout_playlistUITests.swift; sourceTree = "<group>"; };
+		4FAD33402B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workout_playlistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4FAD33522B4C82DC00DB28F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4FAD33582B50A5EB00DB28F6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		4FB304AD2B69F3D100B6473D /* ScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Extensions.swift"; sourceTree = "<group>"; };
+		4FB304B02B6B572100B6473D /* ChartItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartItemView.swift; sourceTree = "<group>"; };
+		4FB304B22B6B610F00B6473D /* PostWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkoutView.swift; sourceTree = "<group>"; };
+		4FB304B42B6B7C9600B6473D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4FBEAFA52B979E1300932E44 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		4FC16E302B8F9E9A0014A5B9 /* TrackItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemView.swift; sourceTree = "<group>"; };
+		4FC16E322B8F9F820014A5B9 /* PlaylistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistAPI.swift; sourceTree = "<group>"; };
+		4FC16E372B9113740014A5B9 /* UserListen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListen.swift; sourceTree = "<group>"; };
+		4FC16E392B9113A20014A5B9 /* WeeklyTopTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTopTrack.swift; sourceTree = "<group>"; };
+		4FC16E3B2B9113F00014A5B9 /* TopTracksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksAPI.swift; sourceTree = "<group>"; };
+		4FC16E3D2B9114CA0014A5B9 /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		4FC16E3F2B9115220014A5B9 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		4FC16E432B925B750014A5B9 /* AddToPlaylistButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistButton.swift; sourceTree = "<group>"; };
+		4FCB85282BE978BC00FFF0AD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		4FCB852A2BE9877100FFF0AD /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = ci_pre_xcodebuild.sh; path = ci_scripts/ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
+		4FCB852C2BEAD0B500FFF0AD /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		4FCB852E2BED882000FFF0AD /* PlaylistContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistContentView.swift; sourceTree = "<group>"; };
+		4FCB85342BF305B900FFF0AD /* LaunchLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLoadingView.swift; sourceTree = "<group>"; };
+		4FCB85372C1249C300FFF0AD /* UserEventsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEventsAPI.swift; sourceTree = "<group>"; };
+		4FCB85392C124AA300FFF0AD /* UserEventsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEventsProvider.swift; sourceTree = "<group>"; };
+		4FCB853D2C17A4D000FFF0AD /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		4FCB853F2C17A4F000FFF0AD /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		4FD658252B5083370030DA46 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		4FD658262B5083370030DA46 /* OnDeviceWorkoutDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnDeviceWorkoutDataManager.swift; sourceTree = "<group>"; };
+		4FD6582B2B5086BF0030DA46 /* IntroScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreen.swift; sourceTree = "<group>"; };
+		4FD6582D2B5087180030DA46 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		4FDE81A72B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutDetailView.swift; sourceTree = "<group>"; };
+		4FEDBEAD2BB895D3001BA2EF /* FetchableDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableDataState.swift; sourceTree = "<group>"; };
+		4FEDBEAF2BB8A110001BA2EF /* RecentWorkoutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutsProvider.swift; sourceTree = "<group>"; };
+		4FEFA98E2B6C389C00616C57 /* RecentWorkoutsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutsListView.swift; sourceTree = "<group>"; };
+		4FEFA9902B6C3E0500616C57 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FAD331D2B4C7B9100DB28F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5F6B532B60861800946BD5 /* Pow in Frameworks */,
+				4FAD334F2B4C7C0B00DB28F6 /* SpotifyiOS in Frameworks */,
+				4F0255E92B562D7E0007A861 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FAD332D2B4C7B9300DB28F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FAD33372B4C7B9300DB28F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F0255E62B51D7850007A861 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F463AA72B5C5812002D03E5 /* Sequence+Extensions.swift */,
+				4FB304AD2B69F3D100B6473D /* ScrollView+Extensions.swift */,
+				4FEFA9902B6C3E0500616C57 /* Date+Extensions.swift */,
+				4F3D2EEE2B866FE10045C506 /* JSONDecoder.swift */,
+				4F9377C22BAE4F88001225AC /* Int+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F02EA1C2B8D2D0000D1E189 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				4FC16E432B925B750014A5B9 /* AddToPlaylistButton.swift */,
+				4F5B32A92BE1717900490A95 /* PlaylistProvider.swift */,
+			);
+			path = Playlist;
+			sourceTree = "<group>";
+		};
+		4F2F81AA2BB73C82002E6EF9 /* AllYou */ = {
+			isa = PBXGroup;
+			children = (
+				4F2F81AB2BB73D2B002E6EF9 /* AllYouView.swift */,
+				4FCB852E2BED882000FFF0AD /* PlaylistContentView.swift */,
+			);
+			path = AllYou;
+			sourceTree = "<group>";
+		};
+		4F463AA42B5B7A58002D03E5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4FA793122B68A66800A7A572 /* FirebaseCurrentUser.swift */,
+				4FA793102B6893AD00A7A572 /* LoginWithSpotifyView.swift */,
+				4FC16E3D2B9114CA0014A5B9 /* MyUser.swift */,
+				4FB304B42B6B7C9600B6473D /* ProfileView.swift */,
+				4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */,
+				4FA0681D2BBF27E60091C7DD /* SendFeedbackView.swift */,
+				4F463AA52B5B7A67002D03E5 /* SpotifyAuth.swift */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
+		4F5B32AD2BE2A60400490A95 /* TrackDiscover */ = {
+			isa = PBXGroup;
+			children = (
+				4F02EA1D2B8D2D2B00D1E189 /* TrackDiscoverView.swift */,
+			);
+			path = TrackDiscover;
+			sourceTree = "<group>";
+		};
+		4F5F2B332B74800E008A00A3 /* DevMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4F5F2B342B748022008A00A3 /* ShakeGesture.swift */,
+				4F5F2B362B748120008A00A3 /* DevMenu.swift */,
+			);
+			path = DevMenu;
+			sourceTree = "<group>";
+		};
+		4F63C4092B75F3D300B0E5AF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4FEDBEAD2BB895D3001BA2EF /* FetchableDataState.swift */,
+				4F0255E42B51D28A0007A861 /* HeartRateAPI.swift */,
+				4FC16E322B8F9F820014A5B9 /* PlaylistAPI.swift */,
+				4FA0681F2BBF2D360091C7DD /* SendFeedbackAPI.swift */,
+				4F414A812BD2EA0500F10947 /* SignupCodeAPI.swift */,
+				4FA6B4162BB550660016FEDB /* SocialAPI.swift */,
+				4F3D2EF42B86747B0045C506 /* SpotifyTokenAPI.swift */,
+				4FC16E3B2B9113F00014A5B9 /* TopTracksAPI.swift */,
+				4F3D2EF02B86740C0045C506 /* TrackDiscoverAPI.swift */,
+				4FCB85372C1249C300FFF0AD /* UserEventsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4F9377BB2BA33D3E001225AC /* SocialTab */ = {
+			isa = PBXGroup;
+			children = (
+				4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */,
+				4F5B32A32BE01C0700490A95 /* SelectedSocialFeedItem.swift */,
+				4F5B32A52BE02BCB00490A95 /* SocialFeedItemHeartbeatCountView.swift */,
+				4F5B32A72BE02C6B00490A95 /* SocialFeedItemUsernameView.swift */,
+			);
+			path = SocialTab;
+			sourceTree = "<group>";
+		};
+		4FA0681A2BBCE3690091C7DD /* Prototypes */ = {
+			isa = PBXGroup;
+			children = (
+				4F5F6B4B2B5CA60600946BD5 /* PrototypePostworkoutView.swift */,
+				4FA0681B2BBCE37C0091C7DD /* PrototypeLoadingView.swift */,
+			);
+			path = Prototypes;
+			sourceTree = "<group>";
+		};
+		4FA6B4182BB554780016FEDB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4FAD33252B4C7B9100DB28F6 /* HomeView.swift */,
+				4FA6B4192BB554960016FEDB /* WorkoutIconView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4FA6B4212BB63B370016FEDB /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				4FA6B41F2BB63ACA0016FEDB /* NavContainer.swift */,
+				4FA6B4222BB63B460016FEDB /* AppExplainerView.swift */,
+			);
+			path = Nav;
+			sourceTree = "<group>";
+		};
+		4FA6B4312BB6E31D0016FEDB /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				4FD6582B2B5086BF0030DA46 /* IntroScreen.swift */,
+				4F414A862BD454F800F10947 /* IntroScreenExplainerSheetView.swift */,
+				4F414A882BD455C200F10947 /* IntroScreenUseAppWithoutAccountView.swift */,
+				4F414A842BD341AE00F10947 /* SignupCodeEntryView.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		4FAD33172B4C7B9100DB28F6 = {
+			isa = PBXGroup;
+			children = (
+				4FCB852A2BE9877100FFF0AD /* ci_pre_xcodebuild.sh */,
+				4FAD33222B4C7B9100DB28F6 /* dj-heartbeat */,
+				4FAD33332B4C7B9300DB28F6 /* heart-chartTests */,
+				4FAD333D2B4C7B9300DB28F6 /* heartChartUITests */,
+				4FAD33212B4C7B9100DB28F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4FAD33212B4C7B9100DB28F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FAD33202B4C7B9100DB28F6 /* dj-heartbeat.app */,
+				4FAD33302B4C7B9300DB28F6 /* dj-heartbeatTests.xctest */,
+				4FAD333A2B4C7B9300DB28F6 /* dj-heartbeatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FAD33222B4C7B9100DB28F6 /* dj-heartbeat */ = {
+			isa = PBXGroup;
+			children = (
+				4FA9DB8F2BA1579700CC3FB2 /* dj-heartbeat.entitlements */,
+				4FCB852C2BEAD0B500FFF0AD /* config.json */,
+				4FA9DB8D2BA14F5500CC3FB2 /* GoogleService-Info.plist */,
+				4FAD33522B4C82DC00DB28F6 /* Info.plist */,
+				4FD6582D2B5087180030DA46 /* AppColor.swift */,
+				4FCB85282BE978BC00FFF0AD /* Config.swift */,
+				4FAD33232B4C7B9100DB28F6 /* djHeartbeatApp.swift */,
+				4FA6B41D2BB63A9A0016FEDB /* Environment.swift */,
+				4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */,
+				4FAD33272B4C7B9300DB28F6 /* Assets.xcassets */,
+				4F63C4092B75F3D300B0E5AF /* API */,
+				4FCB853C2C17A4B700FFF0AD /* Common UI */,
+				4F0255E62B51D7850007A861 /* Extensions */,
+				4FD658232B5082F00030DA46 /* Features */,
+				4FC16E362B91132E0014A5B9 /* Models */,
+				4FAD33292B4C7B9300DB28F6 /* Preview Content */,
+				4FCB853B2C17A36600FFF0AD /* Providers */,
+			);
+			path = "dj-heartbeat";
+			sourceTree = "<group>";
+		};
+		4FAD33292B4C7B9300DB28F6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4FAD332A2B4C7B9300DB28F6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4FAD33332B4C7B9300DB28F6 /* heart-chartTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FAD33342B4C7B9300DB28F6 /* workout_playlistTests.swift */,
+			);
+			path = "heart-chartTests";
+			sourceTree = "<group>";
+		};
+		4FAD333D2B4C7B9300DB28F6 /* heartChartUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4FAD333E2B4C7B9300DB28F6 /* workout_playlistUITests.swift */,
+				4FAD33402B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift */,
+			);
+			path = heartChartUITests;
+			sourceTree = "<group>";
+		};
+		4FB304AF2B6B570F00B6473D /* MusicCharts */ = {
+			isa = PBXGroup;
+			children = (
+				4FB304B02B6B572100B6473D /* ChartItemView.swift */,
+				4FA6B4322BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift */,
+				4FA6B42D2BB6A0840016FEDB /* ThisWeeksChartsTitleView.swift */,
+				4FC16E302B8F9E9A0014A5B9 /* TrackItemView.swift */,
+			);
+			path = MusicCharts;
+			sourceTree = "<group>";
+		};
+		4FBEAFA42B979DE800932E44 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				4FBEAFA52B979E1300932E44 /* AppTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		4FC16E362B91132E0014A5B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F9377BE2BA340D6001225AC /* Playlist.swift */,
+				4FA6B41B2BB635410016FEDB /* SocialFeedItem.swift */,
+				4FC16E3F2B9115220014A5B9 /* Track.swift */,
+				4FC16E372B9113740014A5B9 /* UserListen.swift */,
+				4FC16E392B9113A20014A5B9 /* WeeklyTopTrack.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4FCB85332BF3058D00FFF0AD /* AppLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				4FAD33582B50A5EB00DB28F6 /* Launch Screen.storyboard */,
+				4FCB85342BF305B900FFF0AD /* LaunchLoadingView.swift */,
+			);
+			path = AppLaunch;
+			sourceTree = "<group>";
+		};
+		4FCB853B2C17A36600FFF0AD /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */,
+				4FEDBEAF2BB8A110001BA2EF /* RecentWorkoutsProvider.swift */,
+				4FA068212BBF2F160091C7DD /* SendFeedbackProvider.swift */,
+				4F5B32AB2BE173B800490A95 /* SocialFeedProvider.swift */,
+				4F5B32AE2BE2A63F00490A95 /* TrackDiscoverProvider.swift */,
+				4FCB85392C124AA300FFF0AD /* UserEventsProvider.swift */,
+				4F2F81AD2BB7CA20002E6EF9 /* UserOnboardingProvider.swift */,
+				4FA6B42F2BB6E1880016FEDB /* WeeklyChartProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		4FCB853C2C17A4B700FFF0AD /* Common UI */ = {
+			isa = PBXGroup;
+			children = (
+				4FCB853D2C17A4D000FFF0AD /* ImageCache.swift */,
+				4FCB853F2C17A4F000FFF0AD /* AsyncImageView.swift */,
+			);
+			path = "Common UI";
+			sourceTree = "<group>";
+		};
+		4FD658232B5082F00030DA46 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				4FCB85332BF3058D00FFF0AD /* AppLaunch */,
+				4F2F81AA2BB73C82002E6EF9 /* AllYou */,
+				4F463AA42B5B7A58002D03E5 /* Auth */,
+				4F5F2B332B74800E008A00A3 /* DevMenu */,
+				4FA6B4182BB554780016FEDB /* Home */,
+				4FA6B4312BB6E31D0016FEDB /* Intro */,
+				4FB304AF2B6B570F00B6473D /* MusicCharts */,
+				4FA6B4212BB63B370016FEDB /* Nav */,
+				4F02EA1C2B8D2D0000D1E189 /* Playlist */,
+				4FA0681A2BBCE3690091C7DD /* Prototypes */,
+				4F9377BB2BA33D3E001225AC /* SocialTab */,
+				4FBEAFA42B979DE800932E44 /* TabView */,
+				4F5B32AD2BE2A60400490A95 /* TrackDiscover */,
+				4FD658242B5082FC0030DA46 /* Workout */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		4FD658242B5082FC0030DA46 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				4FD658262B5083370030DA46 /* OnDeviceWorkoutDataManager.swift */,
+				4FB304B22B6B610F00B6473D /* PostWorkoutView.swift */,
+				4FDE81A72B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift */,
+				4FEFA98E2B6C389C00616C57 /* RecentWorkoutsListView.swift */,
+				4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */,
+				4FD658252B5083370030DA46 /* Workout.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FAD331F2B4C7B9100DB28F6 /* dj-heartbeat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FAD33442B4C7B9300DB28F6 /* Build configuration list for PBXNativeTarget "dj-heartbeat" */;
+			buildPhases = (
+				4FAD331C2B4C7B9100DB28F6 /* Sources */,
+				4FAD331D2B4C7B9100DB28F6 /* Frameworks */,
+				4FAD331E2B4C7B9100DB28F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dj-heartbeat";
+			packageProductDependencies = (
+				4FAD334E2B4C7C0B00DB28F6 /* SpotifyiOS */,
+				4F0255E82B562D7E0007A861 /* FirebaseAuth */,
+				4F5F6B522B60861800946BD5 /* Pow */,
+			);
+			productName = "workout-playlist";
+			productReference = 4FAD33202B4C7B9100DB28F6 /* dj-heartbeat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4FAD332F2B4C7B9300DB28F6 /* dj-heartbeatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FAD33472B4C7B9300DB28F6 /* Build configuration list for PBXNativeTarget "dj-heartbeatTests" */;
+			buildPhases = (
+				4FAD332C2B4C7B9300DB28F6 /* Sources */,
+				4FAD332D2B4C7B9300DB28F6 /* Frameworks */,
+				4FAD332E2B4C7B9300DB28F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FAD33322B4C7B9300DB28F6 /* PBXTargetDependency */,
+			);
+			name = "dj-heartbeatTests";
+			productName = "workout-playlistTests";
+			productReference = 4FAD33302B4C7B9300DB28F6 /* dj-heartbeatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4FAD33392B4C7B9300DB28F6 /* dj-heartbeatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FAD334A2B4C7B9300DB28F6 /* Build configuration list for PBXNativeTarget "dj-heartbeatUITests" */;
+			buildPhases = (
+				4FAD33362B4C7B9300DB28F6 /* Sources */,
+				4FAD33372B4C7B9300DB28F6 /* Frameworks */,
+				4FAD33382B4C7B9300DB28F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FAD333C2B4C7B9300DB28F6 /* PBXTargetDependency */,
+			);
+			name = "dj-heartbeatUITests";
+			productName = "workout-playlistUITests";
+			productReference = 4FAD333A2B4C7B9300DB28F6 /* dj-heartbeatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FAD33182B4C7B9100DB28F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4FAD331F2B4C7B9100DB28F6 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					4FAD332F2B4C7B9300DB28F6 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 4FAD331F2B4C7B9100DB28F6;
+					};
+					4FAD33392B4C7B9300DB28F6 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 4FAD331F2B4C7B9100DB28F6;
+					};
+				};
+			};
+			buildConfigurationList = 4FAD331B2B4C7B9100DB28F6 /* Build configuration list for PBXProject "dj-heartbeat" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4FAD33172B4C7B9100DB28F6;
+			packageReferences = (
+				4FAD334D2B4C7C0A00DB28F6 /* XCRemoteSwiftPackageReference "ios-sdk" */,
+				4F0255E72B562D4D0007A861 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */,
+			);
+			productRefGroup = 4FAD33212B4C7B9100DB28F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FAD331F2B4C7B9100DB28F6 /* dj-heartbeat */,
+				4FAD332F2B4C7B9300DB28F6 /* dj-heartbeatTests */,
+				4FAD33392B4C7B9300DB28F6 /* dj-heartbeatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FAD331E2B4C7B9100DB28F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAD33592B50A5EB00DB28F6 /* Launch Screen.storyboard in Resources */,
+				4FCB852B2BE9877100FFF0AD /* ci_pre_xcodebuild.sh in Resources */,
+				4FA9DB8E2BA14F5500CC3FB2 /* GoogleService-Info.plist in Resources */,
+				4FAD332B2B4C7B9300DB28F6 /* Preview Assets.xcassets in Resources */,
+				4FAD33282B4C7B9300DB28F6 /* Assets.xcassets in Resources */,
+				4FCB852D2BEAD0B500FFF0AD /* config.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FAD332E2B4C7B9300DB28F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FAD33382B4C7B9300DB28F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FAD331C2B4C7B9100DB28F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FD6582C2B5086BF0030DA46 /* IntroScreen.swift in Sources */,
+				4F5B32AA2BE1717900490A95 /* PlaylistProvider.swift in Sources */,
+				4FEFA98F2B6C389C00616C57 /* RecentWorkoutsListView.swift in Sources */,
+				4FC16E3E2B9114CA0014A5B9 /* MyUser.swift in Sources */,
+				4FCB852F2BED882000FFF0AD /* PlaylistContentView.swift in Sources */,
+				4FA068202BBF2D360091C7DD /* SendFeedbackAPI.swift in Sources */,
+				4FCB85382C1249C300FFF0AD /* UserEventsAPI.swift in Sources */,
+				4FAD33262B4C7B9100DB28F6 /* HomeView.swift in Sources */,
+				4F5B32AC2BE173B800490A95 /* SocialFeedProvider.swift in Sources */,
+				4FEDBEAE2BB895D3001BA2EF /* FetchableDataState.swift in Sources */,
+				4FCB853E2C17A4D000FFF0AD /* ImageCache.swift in Sources */,
+				4FA6B42E2BB6A0840016FEDB /* ThisWeeksChartsTitleView.swift in Sources */,
+				4FAD33242B4C7B9100DB28F6 /* djHeartbeatApp.swift in Sources */,
+				4F9377BD2BA33D6F001225AC /* SocialFeedView.swift in Sources */,
+				4FC16E402B9115220014A5B9 /* Track.swift in Sources */,
+				4FA6B4332BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift in Sources */,
+				4FC16E312B8F9E9A0014A5B9 /* TrackItemView.swift in Sources */,
+				4FCB853A2C124AA300FFF0AD /* UserEventsProvider.swift in Sources */,
+				4FA793112B6893AD00A7A572 /* LoginWithSpotifyView.swift in Sources */,
+				4F02EA1E2B8D2D2B00D1E189 /* TrackDiscoverView.swift in Sources */,
+				4FA793132B68A66800A7A572 /* FirebaseCurrentUser.swift in Sources */,
+				4FC16E3A2B9113A20014A5B9 /* WeeklyTopTrack.swift in Sources */,
+				4F3D2EF12B86740C0045C506 /* TrackDiscoverAPI.swift in Sources */,
+				4F414A852BD341AE00F10947 /* SignupCodeEntryView.swift in Sources */,
+				4F414A872BD454F800F10947 /* IntroScreenExplainerSheetView.swift in Sources */,
+				4FA6B41A2BB554960016FEDB /* WorkoutIconView.swift in Sources */,
+				4F414A822BD2EA0500F10947 /* SignupCodeAPI.swift in Sources */,
+				4FB304B12B6B572100B6473D /* ChartItemView.swift in Sources */,
+				4FCB85352BF305B900FFF0AD /* LaunchLoadingView.swift in Sources */,
+				4F5B32A42BE01C0700490A95 /* SelectedSocialFeedItem.swift in Sources */,
+				4FA068192BBB232A0091C7DD /* HandleWorkoutProvider.swift in Sources */,
+				4FD658272B5083370030DA46 /* Workout.swift in Sources */,
+				4F414A892BD455C200F10947 /* IntroScreenUseAppWithoutAccountView.swift in Sources */,
+				4FBEAFA62B979E1300932E44 /* AppTabView.swift in Sources */,
+				4FC16E3C2B9113F00014A5B9 /* TopTracksAPI.swift in Sources */,
+				4F3D2EEF2B866FE10045C506 /* JSONDecoder.swift in Sources */,
+				4F5F2B372B748120008A00A3 /* DevMenu.swift in Sources */,
+				4F9377BF2BA340D6001225AC /* Playlist.swift in Sources */,
+				4FDE81A82B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift in Sources */,
+				4FEFA9912B6C3E0500616C57 /* Date+Extensions.swift in Sources */,
+				4F5F6B502B60720B00946BD5 /* ThisWeeksChartsView.swift in Sources */,
+				4FA6B4172BB550660016FEDB /* SocialAPI.swift in Sources */,
+				4FC16E382B9113740014A5B9 /* UserListen.swift in Sources */,
+				4FA6B41C2BB635410016FEDB /* SocialFeedItem.swift in Sources */,
+				4F5B32A62BE02BCB00490A95 /* SocialFeedItemHeartbeatCountView.swift in Sources */,
+				4FA6B41E2BB63A9A0016FEDB /* Environment.swift in Sources */,
+				4F819DE22BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift in Sources */,
+				4F2F81AE2BB7CA20002E6EF9 /* UserOnboardingProvider.swift in Sources */,
+				4F2F81AC2BB73D2B002E6EF9 /* AllYouView.swift in Sources */,
+				4FD658282B5083370030DA46 /* OnDeviceWorkoutDataManager.swift in Sources */,
+				4FA0681E2BBF27E60091C7DD /* SendFeedbackView.swift in Sources */,
+				4FA6B4232BB63B460016FEDB /* AppExplainerView.swift in Sources */,
+				4FA0681C2BBCE37C0091C7DD /* PrototypeLoadingView.swift in Sources */,
+				4F463AA62B5B7A67002D03E5 /* SpotifyAuth.swift in Sources */,
+				4F5B32AF2BE2A63F00490A95 /* TrackDiscoverProvider.swift in Sources */,
+				4FB304B32B6B610F00B6473D /* PostWorkoutView.swift in Sources */,
+				4FC16E442B925B750014A5B9 /* AddToPlaylistButton.swift in Sources */,
+				4FC16E332B8F9F820014A5B9 /* PlaylistAPI.swift in Sources */,
+				4FB304AE2B69F3D100B6473D /* ScrollView+Extensions.swift in Sources */,
+				4FEDBEB02BB8A110001BA2EF /* RecentWorkoutsProvider.swift in Sources */,
+				4F463AA82B5C5812002D03E5 /* Sequence+Extensions.swift in Sources */,
+				4F5F6B4E2B5CE12200946BD5 /* OffsetObservingScrollView.swift in Sources */,
+				4F5B32A82BE02C6B00490A95 /* SocialFeedItemUsernameView.swift in Sources */,
+				4F3D2EF52B86747B0045C506 /* SpotifyTokenAPI.swift in Sources */,
+				4FCB85292BE978BC00FFF0AD /* Config.swift in Sources */,
+				4F5F2B352B748022008A00A3 /* ShakeGesture.swift in Sources */,
+				4F9377C32BAE4F88001225AC /* Int+Extensions.swift in Sources */,
+				4F5F6B4C2B5CA60600946BD5 /* PrototypePostworkoutView.swift in Sources */,
+				4FCB85402C17A4F000FFF0AD /* AsyncImageView.swift in Sources */,
+				4FD6582E2B5087180030DA46 /* AppColor.swift in Sources */,
+				4FA068222BBF2F160091C7DD /* SendFeedbackProvider.swift in Sources */,
+				4FA6B4302BB6E1880016FEDB /* WeeklyChartProvider.swift in Sources */,
+				4FB304B52B6B7C9600B6473D /* ProfileView.swift in Sources */,
+				4FA6B4202BB63ACA0016FEDB /* NavContainer.swift in Sources */,
+				4F0255E52B51D28A0007A861 /* HeartRateAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FAD332C2B4C7B9300DB28F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAD33352B4C7B9300DB28F6 /* workout_playlistTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FAD33362B4C7B9300DB28F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAD33412B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift in Sources */,
+				4FAD333F2B4C7B9300DB28F6 /* workout_playlistUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FAD33322B4C7B9300DB28F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FAD331F2B4C7B9100DB28F6 /* dj-heartbeat */;
+			targetProxy = 4FAD33312B4C7B9300DB28F6 /* PBXContainerItemProxy */;
+		};
+		4FAD333C2B4C7B9300DB28F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FAD331F2B4C7B9100DB28F6 /* dj-heartbeat */;
+			targetProxy = 4FAD333B2B4C7B9300DB28F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4FAD33422B4C7B9300DB28F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4FAD33432B4C7B9300DB28F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FAD33452B4C7B9300DB28F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "dj-heartbeat/dj-heartbeat.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_ASSET_PATHS = "\"dj-heartbeat/Preview Content\"";
+				DEVELOPMENT_TEAM = 7TE3L47CX8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "dj-heartbeat/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "dj heartbeat";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Allow this app to access your workout data to cast votes for your workouts tracks";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Allow this app to access your workout data to cast votes for your workouts tracks.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.4.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "party.liam.heart-charts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4FAD33462B4C7B9300DB28F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "dj-heartbeat/dj-heartbeat.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_ASSET_PATHS = "\"dj-heartbeat/Preview Content\"";
+				DEVELOPMENT_TEAM = 7TE3L47CX8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "dj-heartbeat/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "dj heartbeat";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Allow this app to access your workout data to cast votes for your workouts tracks";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Allow this app to access your workout data to cast votes for your workouts tracks.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.4.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "party.liam.heart-charts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4FAD33482B4C7B9300DB28F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TE3L47CX8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "party.liam.workout-playlistTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dj-heartbeat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/dj-heartbeat";
+			};
+			name = Debug;
+		};
+		4FAD33492B4C7B9300DB28F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TE3L47CX8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "party.liam.workout-playlistTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dj-heartbeat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/dj-heartbeat";
+			};
+			name = Release;
+		};
+		4FAD334B2B4C7B9300DB28F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TE3L47CX8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "party.liam.workout-playlistUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "workout-playlist";
+			};
+			name = Debug;
+		};
+		4FAD334C2B4C7B9300DB28F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TE3L47CX8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "party.liam.workout-playlistUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "workout-playlist";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FAD331B2B4C7B9100DB28F6 /* Build configuration list for PBXProject "dj-heartbeat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAD33422B4C7B9300DB28F6 /* Debug */,
+				4FAD33432B4C7B9300DB28F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FAD33442B4C7B9300DB28F6 /* Build configuration list for PBXNativeTarget "dj-heartbeat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAD33452B4C7B9300DB28F6 /* Debug */,
+				4FAD33462B4C7B9300DB28F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FAD33472B4C7B9300DB28F6 /* Build configuration list for PBXNativeTarget "dj-heartbeatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAD33482B4C7B9300DB28F6 /* Debug */,
+				4FAD33492B4C7B9300DB28F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FAD334A2B4C7B9300DB28F6 /* Build configuration list for PBXNativeTarget "dj-heartbeatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAD334B2B4C7B9300DB28F6 /* Debug */,
+				4FAD334C2B4C7B9300DB28F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F0255E72B562D4D0007A861 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.1;
+			};
+		};
+		4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EmergeTools/Pow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+		4FAD334D2B4C7C0A00DB28F6 /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spotify/ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F0255E82B562D7E0007A861 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F0255E72B562D4D0007A861 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4F5F6B522B60861800946BD5 /* Pow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */;
+			productName = Pow;
+		};
+		4FAD334E2B4C7C0B00DB28F6 /* SpotifyiOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FAD334D2B4C7C0A00DB28F6 /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			productName = SpotifyiOS;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4FAD33182B4C7B9100DB28F6 /* Project object */;
+}
