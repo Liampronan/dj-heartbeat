@@ -1,16 +1,9 @@
 import FirebaseAuth
 import SwiftUI
 
-protocol ProfileInfoable {
-    var uid: String { get }
-    var presentableUserName: String { get }
-    var isLoggedIn: Bool { get }
-    func signOut() throws -> Void
-}
-
 struct ProfileView: View {
     @Environment(\.dismiss) private var dismiss
-    let profile: ProfileInfoable
+    @Environment(\.authProvider) private var authProvider
     @Environment(\.userOnboardingProvider) private var userOnboardingProvider
     @State private var isShowingSendFeedbackForm = false
     @State private var isShowingUnlinkedSpotifyExplainerView = false
@@ -32,7 +25,7 @@ struct ProfileView: View {
                 sendFeedbackRow
                 Spacer()
                 Button {
-                    try? profile.signOut()
+                    try? authProvider.signOut()
                     Task { await userOnboardingProvider.fetchStateForUser() }
                     dismiss()
                 } label: {
@@ -57,7 +50,7 @@ struct ProfileView: View {
                 
         } else {
             Button {
-                try? profile.signOut()
+                try? authProvider.signOut()
                 Task { await userOnboardingProvider.fetchStateForUser() }
                 dismiss()
             } label: {
@@ -164,27 +157,13 @@ struct ProfileView: View {
     }
 }
 
-struct ProfileMock: ProfileInfoable {
-    let uid: String
-    var isLoggedIn: Bool
-    var presentableUserName: String { uid.replacingOccurrences(of: "spotify:", with: "") }
-    
-    func signOut() throws {
-        print("mock signout")
-    }
-    
-    static func generate() -> ProfileMock {
-        return .init(uid: "spotify:mileyfanboi", isLoggedIn: true)
-    }
-}
-
 #Preview("Spotify account linked") {
     VStack {
         AppColor.background
     }.sheet(isPresented: .constant(true)) {
         ProfileView(
-            profile: ProfileMock.generate()
         ).presentationDetents([.fraction(0.45)])
+            .environment(\.authProvider, .isLoggedIn)
             .environment(\.userOnboardingProvider, .fetchedHasGrantedSpotifyAccess)
     }
 }
@@ -193,9 +172,8 @@ struct ProfileMock: ProfileInfoable {
     VStack {
         AppColor.background
     }.sheet(isPresented: .constant(true)) {
-        ProfileView(
-            profile: ProfileMock.generate()
-        ).presentationDetents([.fraction(0.45)])
+        ProfileView().presentationDetents([.fraction(0.45)])
+            .environment(\.authProvider, .isLoggedIn)
             .environment(\.userOnboardingProvider, .fetchedNotEnabledForSpotifyAccess)
     }
 }

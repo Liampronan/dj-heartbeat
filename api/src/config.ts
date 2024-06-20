@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 
 // Initialize dotenv
-dotenv.config({ path: "../.env" });
+dotenv.config();
 export const config = {
   spotifyClientId: process.env.SPOTIFY_CLIENT_ID || "",
   spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET || "",

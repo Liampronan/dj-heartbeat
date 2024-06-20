@@ -14,8 +14,12 @@ struct TrackDiscoverResponse: Codable {
     let unheardOf: TrackDiscoverCategoryResponse
 }
 
+struct FetchTrackDiscoverRequest: Codable {
+    var userAuthToken: String?
+}
+
 struct TrackDiscoverAPI {
-    static func getTracksDiscover() async throws -> TrackDiscoverResponse {
+    static func fetchTracksDiscover(req: FetchTrackDiscoverRequest) async throws -> TrackDiscoverResponse {
         let endpoint = URL(
             string: "\(Config.apiBaseURL)/tracks/discover"
         )!
@@ -26,7 +30,7 @@ struct TrackDiscoverAPI {
         }
         #endif
         
-        guard let firebaseIdToken = try await MyUser.shared.getToken() else { throw MyUserError.noCurrentUserToken }
+        guard let firebaseIdToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: endpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")

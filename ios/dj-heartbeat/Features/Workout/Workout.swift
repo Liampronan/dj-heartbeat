@@ -58,7 +58,7 @@ struct HeartRateSample: Codable {
     let endDate: Date
     let value: Double
     
-    static func generateMocks() -> [HeartRateSample] { return [] } // TODO: implement some test data
+    static func generateMocks() -> [HeartRateSample] { return [] }
 }
 
 extension HKWorkout: Workout {
@@ -111,8 +111,8 @@ struct MockWorkoutGenerator  {
                 endDate: mockEndDate,
                 totalDistanceKM: mockResultKM,
                 totalDistanceM: translateKMtoM(mockResultKM),
-                totalTimeSeconds: 60000, // TODO: make me more dynamic so that diff mock workouts have diff time.
-                workoutType: .running // TODO: make me more dynamic
+                totalTimeSeconds: 60000,
+                workoutType: .running
             )
             
             return WorkoutWithHeartRate(

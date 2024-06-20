@@ -16,6 +16,7 @@ struct HandleWorkoutResponse: Codable, Identifiable, Equatable {
 }
 
 struct HandleWorkoutRequest: Codable {
+    let userAuthToken: String?
     let heartRateInfo: [HeartRateSample]
     let workoutType: WorkoutType
 }
@@ -26,14 +27,14 @@ struct HeartRateAPI {
     )!
     
     @discardableResult static func postData(req: HandleWorkoutRequest) async throws -> HandleWorkoutResponse {
-        guard let firebaseIdToken = try await MyUser.shared.getToken() else { throw MyUserError.noCurrentUserToken }
+        guard let userAuthToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: endpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             
-            request.setValue("Bearer \(firebaseIdToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer \(userAuthToken)", forHTTPHeaderField: "Authorization")
             request.httpMethod = "POST"
             
             

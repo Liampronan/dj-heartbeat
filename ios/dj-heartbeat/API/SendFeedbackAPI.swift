@@ -1,6 +1,7 @@
 import Foundation
 
 struct SendFeedbackRequest: Codable {
+    let userAuthToken: String?
     let feedback: String
     let contact: String?
 }
@@ -11,13 +12,13 @@ struct SendFeedbackAPI {
     )!
     
     static func postData(req: SendFeedbackRequest) async throws {
-        guard let firebaseIdToken = try await MyUser.shared.getToken() else { throw MyUserError.noCurrentUserToken }
+        guard let userAuthToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: endpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             
-            request.setValue("Bearer \(firebaseIdToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer \(userAuthToken)", forHTTPHeaderField: "Authorization")
             request.httpMethod = "POST"
             
             

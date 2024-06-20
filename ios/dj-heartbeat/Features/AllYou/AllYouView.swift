@@ -1,7 +1,6 @@
 import SwiftUI
 // START:
 // 1. add initial test
-// 4. issue for "ProfileInfoable" vs. userOnboardingProvider. think we can jsut move it to userOnboardingProvider
 
 struct AllYouView: View {
     @Environment(\.playlistProvider) private var playlistProvider

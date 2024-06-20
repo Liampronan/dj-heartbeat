@@ -1,5 +1,5 @@
+import FirebaseAuth
 import SwiftUI
-
 
 enum IntroPermissionGrantState {
     case needsHealthKit
@@ -8,6 +8,7 @@ enum IntroPermissionGrantState {
 
 struct IntroScreenExplainerSheetView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.authProvider) private var authProvider
     @Environment(\.spotifyAuthProvider) private var spotifyAuthProvider
     @Environment(\.recentWorkoutsProvider) private var recentWorkoutsProvider
     @Environment(\.userOnboardingProvider) private var userOnboardingProvder
@@ -63,7 +64,7 @@ struct IntroScreenExplainerSheetView: View {
             }
             .shadow(radius: 4)
         }
-        .onChange(of: FirebaseCurrentUser.shared.user) { oldValue, newValue in
+        .onChange(of: authProvider.user) { oldValue, newValue in
             if newValue != nil && oldValue == nil {
                 introPermissionGrantState = .needsHealthKit
             }

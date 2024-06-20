@@ -10,6 +10,7 @@
 		4F0255E52B51D28A0007A861 /* HeartRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0255E42B51D28A0007A861 /* HeartRateAPI.swift */; };
 		4F0255E92B562D7E0007A861 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4F0255E82B562D7E0007A861 /* FirebaseAuth */; };
 		4F02EA1E2B8D2D2B00D1E189 /* TrackDiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F02EA1D2B8D2D2B00D1E189 /* TrackDiscoverView.swift */; };
+		4F07E85F2C24DBA000505BCB /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07E85E2C24DBA000505BCB /* FirebaseUser+Extensions.swift */; };
 		4F2F81AC2BB73D2B002E6EF9 /* AllYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F81AB2BB73D2B002E6EF9 /* AllYouView.swift */; };
 		4F2F81AE2BB7CA20002E6EF9 /* UserOnboardingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F81AD2BB7CA20002E6EF9 /* UserOnboardingProvider.swift */; };
 		4F3D2EEF2B866FE10045C506 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D2EEE2B866FE10045C506 /* JSONDecoder.swift */; };
@@ -52,7 +53,6 @@
 		4FA6B4302BB6E1880016FEDB /* WeeklyChartProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B42F2BB6E1880016FEDB /* WeeklyChartProvider.swift */; };
 		4FA6B4332BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B4322BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift */; };
 		4FA793112B6893AD00A7A572 /* LoginWithSpotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA793102B6893AD00A7A572 /* LoginWithSpotifyView.swift */; };
-		4FA793132B68A66800A7A572 /* FirebaseCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA793122B68A66800A7A572 /* FirebaseCurrentUser.swift */; };
 		4FA9DB8E2BA14F5500CC3FB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FA9DB8D2BA14F5500CC3FB2 /* GoogleService-Info.plist */; };
 		4FAD33242B4C7B9100DB28F6 /* djHeartbeatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33232B4C7B9100DB28F6 /* djHeartbeatApp.swift */; };
 		4FAD33262B4C7B9100DB28F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33252B4C7B9100DB28F6 /* HomeView.swift */; };
@@ -73,7 +73,7 @@
 		4FC16E382B9113740014A5B9 /* UserListen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E372B9113740014A5B9 /* UserListen.swift */; };
 		4FC16E3A2B9113A20014A5B9 /* WeeklyTopTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E392B9113A20014A5B9 /* WeeklyTopTrack.swift */; };
 		4FC16E3C2B9113F00014A5B9 /* TopTracksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E3B2B9113F00014A5B9 /* TopTracksAPI.swift */; };
-		4FC16E3E2B9114CA0014A5B9 /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E3D2B9114CA0014A5B9 /* MyUser.swift */; };
+		4FC16E3E2B9114CA0014A5B9 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E3D2B9114CA0014A5B9 /* AuthProvider.swift */; };
 		4FC16E402B9115220014A5B9 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E3F2B9115220014A5B9 /* Track.swift */; };
 		4FC16E442B925B750014A5B9 /* AddToPlaylistButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC16E432B925B750014A5B9 /* AddToPlaylistButton.swift */; };
 		4FCB85292BE978BC00FFF0AD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB85282BE978BC00FFF0AD /* Config.swift */; };
@@ -116,6 +116,7 @@
 /* Begin PBXFileReference section */
 		4F0255E42B51D28A0007A861 /* HeartRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateAPI.swift; sourceTree = "<group>"; };
 		4F02EA1D2B8D2D2B00D1E189 /* TrackDiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDiscoverView.swift; sourceTree = "<group>"; };
+		4F07E85E2C24DBA000505BCB /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
 		4F2F81AB2BB73D2B002E6EF9 /* AllYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllYouView.swift; sourceTree = "<group>"; };
 		4F2F81AD2BB7CA20002E6EF9 /* UserOnboardingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOnboardingProvider.swift; sourceTree = "<group>"; };
 		4F3D2EEE2B866FE10045C506 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
@@ -157,7 +158,6 @@
 		4FA6B42F2BB6E1880016FEDB /* WeeklyChartProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChartProvider.swift; sourceTree = "<group>"; };
 		4FA6B4322BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityHeartbeatsTickerView.swift; sourceTree = "<group>"; };
 		4FA793102B6893AD00A7A572 /* LoginWithSpotifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithSpotifyView.swift; sourceTree = "<group>"; };
-		4FA793122B68A66800A7A572 /* FirebaseCurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCurrentUser.swift; sourceTree = "<group>"; };
 		4FA9DB8D2BA14F5500CC3FB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FA9DB8F2BA1579700CC3FB2 /* dj-heartbeat.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "dj-heartbeat.entitlements"; sourceTree = "<group>"; };
 		4FAD33202B4C7B9100DB28F6 /* dj-heartbeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dj-heartbeat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +182,7 @@
 		4FC16E372B9113740014A5B9 /* UserListen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListen.swift; sourceTree = "<group>"; };
 		4FC16E392B9113A20014A5B9 /* WeeklyTopTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTopTrack.swift; sourceTree = "<group>"; };
 		4FC16E3B2B9113F00014A5B9 /* TopTracksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksAPI.swift; sourceTree = "<group>"; };
-		4FC16E3D2B9114CA0014A5B9 /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		4FC16E3D2B9114CA0014A5B9 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		4FC16E3F2B9115220014A5B9 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		4FC16E432B925B750014A5B9 /* AddToPlaylistButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToPlaylistButton.swift; sourceTree = "<group>"; };
 		4FCB85282BE978BC00FFF0AD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -241,6 +241,7 @@
 				4FEFA9902B6C3E0500616C57 /* Date+Extensions.swift */,
 				4F3D2EEE2B866FE10045C506 /* JSONDecoder.swift */,
 				4F9377C22BAE4F88001225AC /* Int+Extensions.swift */,
+				4F07E85E2C24DBA000505BCB /* FirebaseUser+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,9 +267,7 @@
 		4F463AA42B5B7A58002D03E5 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				4FA793122B68A66800A7A572 /* FirebaseCurrentUser.swift */,
 				4FA793102B6893AD00A7A572 /* LoginWithSpotifyView.swift */,
-				4FC16E3D2B9114CA0014A5B9 /* MyUser.swift */,
 				4FB304B42B6B7C9600B6473D /* ProfileView.swift */,
 				4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */,
 				4FA0681D2BBF27E60091C7DD /* SendFeedbackView.swift */,
@@ -473,6 +472,7 @@
 		4FCB853B2C17A36600FFF0AD /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				4FC16E3D2B9114CA0014A5B9 /* AuthProvider.swift */,
 				4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */,
 				4FEDBEAF2BB8A110001BA2EF /* RecentWorkoutsProvider.swift */,
 				4FA068212BBF2F160091C7DD /* SendFeedbackProvider.swift */,
@@ -675,7 +675,7 @@
 				4FD6582C2B5086BF0030DA46 /* IntroScreen.swift in Sources */,
 				4F5B32AA2BE1717900490A95 /* PlaylistProvider.swift in Sources */,
 				4FEFA98F2B6C389C00616C57 /* RecentWorkoutsListView.swift in Sources */,
-				4FC16E3E2B9114CA0014A5B9 /* MyUser.swift in Sources */,
+				4FC16E3E2B9114CA0014A5B9 /* AuthProvider.swift in Sources */,
 				4FCB852F2BED882000FFF0AD /* PlaylistContentView.swift in Sources */,
 				4FA068202BBF2D360091C7DD /* SendFeedbackAPI.swift in Sources */,
 				4FCB85382C1249C300FFF0AD /* UserEventsAPI.swift in Sources */,
@@ -692,7 +692,6 @@
 				4FCB853A2C124AA300FFF0AD /* UserEventsProvider.swift in Sources */,
 				4FA793112B6893AD00A7A572 /* LoginWithSpotifyView.swift in Sources */,
 				4F02EA1E2B8D2D2B00D1E189 /* TrackDiscoverView.swift in Sources */,
-				4FA793132B68A66800A7A572 /* FirebaseCurrentUser.swift in Sources */,
 				4FC16E3A2B9113A20014A5B9 /* WeeklyTopTrack.swift in Sources */,
 				4F3D2EF12B86740C0045C506 /* TrackDiscoverAPI.swift in Sources */,
 				4F414A852BD341AE00F10947 /* SignupCodeEntryView.swift in Sources */,
@@ -739,6 +738,7 @@
 				4FCB85292BE978BC00FFF0AD /* Config.swift in Sources */,
 				4F5F2B352B748022008A00A3 /* ShakeGesture.swift in Sources */,
 				4F9377C32BAE4F88001225AC /* Int+Extensions.swift in Sources */,
+				4F07E85F2C24DBA000505BCB /* FirebaseUser+Extensions.swift in Sources */,
 				4F5F6B4C2B5CA60600946BD5 /* PrototypePostworkoutView.swift in Sources */,
 				4FCB85402C17A4F000FFF0AD /* AsyncImageView.swift in Sources */,
 				4FD6582E2B5087180030DA46 /* AppColor.swift in Sources */,
@@ -930,7 +930,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "party.liam.heart-charts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -971,7 +971,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "party.liam.heart-charts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

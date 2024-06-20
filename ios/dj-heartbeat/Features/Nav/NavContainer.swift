@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct NavContainer<Content: View>: View {
-    // TODO: fixme. bless `isShowingProfile` with provider.
     @State private var isShowingProfile = false
     @State private var isShowingAppExplainerView = false
     
@@ -44,7 +43,7 @@ struct NavContainer<Content: View>: View {
         }
         .padding(.horizontal, MVP_DESIGN_SYSTEM_GUTTER / 2)
         .sheet(isPresented: $isShowingProfile, content: {
-            ProfileView(profile: FirebaseCurrentUser.shared)
+            ProfileView()
                 .presentationDetents([.fraction(0.4)])
         })
         .sheet(isPresented: $isShowingAppExplainerView) {

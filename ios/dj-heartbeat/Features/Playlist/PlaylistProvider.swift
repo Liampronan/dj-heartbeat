@@ -1,6 +1,6 @@
 import Foundation
 
-typealias PlaylistDataState = FetchableDataState<FetchPlaylistResponse>
+typealias PlaylistDataState = FetchableDataState<FetchDefaultPlaylistResponse>
 /// keeps state for updating individual tracks to playlist, like adding to playlist.
 /// helps differentiate when a single track is being adding vs. entire playlist is fetching
 typealias TrackPlaylistUpdatesInProgress = [Track: PlaylistTrackState]
@@ -26,6 +26,7 @@ extension PlaylistDataState {
 
 protocol PlaylistProvider {
     var state: PlaylistDataState { get }
+    var authProvider: AuthProvider { get }
     func fetchDefaultPlaylist() async
     
     func playlistTrackState(for track: Track) -> PlaylistTrackState
@@ -41,7 +42,12 @@ enum PlaylistTrackState {
 
 @Observable class PlaylistDataModel: PlaylistProvider {
     var state = PlaylistDataState.loading
+    var authProvider: AuthProvider
     var trackUpdatingStates = [Track: PlaylistTrackState]()
+    
+    init(authProvider: AuthProvider) {
+        self.authProvider = authProvider
+    }
     
     func playlistTrackState(for track: Track) -> PlaylistTrackState {
         state.playlistTrackState(for: track, with: trackUpdatingStates)
@@ -49,7 +55,10 @@ enum PlaylistTrackState {
     
     func fetchDefaultPlaylist() async {
         do {
-            let response = try await PlaylistAPI.fetchDefaultPlaylist()
+            let req = FetchDefaultPlaylistRequest(
+                userAuthToken: authProvider.userAuthToken
+            )
+            let response = try await PlaylistAPI.fetchDefaultPlaylist(req: req)
             state = .fetched(response)
         } catch {
             print("error", error)
@@ -59,7 +68,13 @@ enum PlaylistTrackState {
     func addToDefaultPlaylist(track: Track) async throws {
         trackUpdatingStates[track] = .loading
         
-        let updatedPlayist = try await PlaylistAPI.addToPlaylist(req: .init(trackId: track.id))
+        let req = AddToPlaylistRequest(
+            userAuthToken: authProvider.userAuthToken,
+            trackId: track.id
+        )
+        let updatedPlayist = try await PlaylistAPI.addToPlaylist(
+            req: req
+        )
         state = .fetched(updatedPlayist)
         
         trackUpdatingStates[track] = nil
@@ -68,10 +83,12 @@ enum PlaylistTrackState {
 
 @Observable class PreviewPlaylistProvider: PlaylistProvider {
     var state: PlaylistDataState
+    var authProvider: AuthProvider
     var trackUpdatingStates = [Track: PlaylistTrackState]()
     
-    init(state: PlaylistDataState) {
+    init(state: PlaylistDataState, authProvider: AuthProvider = PreviewAuthProvider.isLoggedIn) {
         self.state = state
+        self.authProvider = authProvider
     }
     
     func fetchDefaultPlaylist() async {}
@@ -82,7 +99,7 @@ enum PlaylistTrackState {
     
     func addToDefaultPlaylist(track: Track) async throws {
         trackUpdatingStates[track] = .loading
-        let updatedPlayist = FetchPlaylistResponse.mockAddToPlaylist(newTrack: track)
+        let updatedPlayist = FetchDefaultPlaylistResponse.mockAddToPlaylist(newTrack: track)
         state = .fetched(updatedPlayist)
         trackUpdatingStates[track] = nil
     }
@@ -99,13 +116,13 @@ extension PlaylistProvider where Self == PreviewPlaylistProvider {
     
     static var fetchedManyResults: Self {
         PreviewPlaylistProvider(
-            state: .fetched(FetchPlaylistResponse.mockManyResults())
+            state: .fetched(FetchDefaultPlaylistResponse.mockManyResults())
         )
     }
     
     static var fetchedNoResults: Self {
         PreviewPlaylistProvider(
-            state: .fetched(FetchPlaylistResponse.mockNoResults())
+            state: .fetched(FetchDefaultPlaylistResponse.mockNoResults())
         )
     }
 }

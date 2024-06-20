@@ -3,8 +3,8 @@ import Foundation
 enum UserOnboardingState: Equatable {
     case hasGrantedSpotifyAccess
     case hasNotGrantedSpotifyAccess
-    // this state signifies users who have not connected a spotify account but can view the app.
-    // while we wait for spotify to enable us to onboard GA users, this is a way to let ppl use the app with limited features. 
+    /// this state signifies users who have not connected a spotify account but can view the app.
+    /// while we wait for spotify to enable us to onboard GA users, this is a way to let ppl use the app with limited features. 
     case notEnabledForSpotifyAccess
     
     var hasGrantedSpotifyAccess: Bool {
@@ -13,6 +13,8 @@ enum UserOnboardingState: Equatable {
 }
 
 protocol UserOnboardingProvider {
+    var authProvider: AuthProvider { get }
+    
     var state: FetchableDataState<UserOnboardingState> { get }
     
     func fetchStateForUser() async
@@ -33,11 +35,17 @@ extension UserOnboardingProvider {
 }
 
 @Observable class UserOnboardingDataModel: UserOnboardingProvider {
+    var authProvider: AuthProvider
     private(set) var state: FetchableDataState<UserOnboardingState> = .loading
     
+    init(authProvider: AuthProvider) {
+        self.authProvider = authProvider
+    }
+    
     func fetchStateForUser() async {
+        await authProvider.fetchState()
         do {
-            guard try await MyUser.shared.isLoggedIn() else {
+            guard try await authProvider.isLoggedIn() else {
                 state = .fetched(.hasNotGrantedSpotifyAccess)
                 return
             }
@@ -46,6 +54,7 @@ extension UserOnboardingProvider {
         } catch {
             state = .error
         }
+       
     }
     
     func setStateToNotEnabledForSpotifyAccess() {
@@ -54,10 +63,12 @@ extension UserOnboardingProvider {
 }
 
 @Observable class PreviewUserOnboardDataModel: UserOnboardingProvider {
+    var authProvider: AuthProvider
     private(set) var state: FetchableDataState<UserOnboardingState>
     
-    init(state: FetchableDataState<UserOnboardingState>) {
+    init(state: FetchableDataState<UserOnboardingState>, authProvider: AuthProvider = PreviewAuthProvider.isLoggedIn) {
         self.state = state
+        self.authProvider = authProvider
     }
     
     func fetchStateForUser() async {
