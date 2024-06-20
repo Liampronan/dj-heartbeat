@@ -1,5 +1,3 @@
-import { config } from "../config";
-config.ensureInitialConfig();
 import { connectToDB, disconnectFromDB } from "../mongo";
 import { createVirtualWorkout } from "../services/virtualWorkoutCreationService";
 

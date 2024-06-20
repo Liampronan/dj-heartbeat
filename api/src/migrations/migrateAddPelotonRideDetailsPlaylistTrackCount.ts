@@ -1,7 +1,5 @@
-import { config } from "../config";
 import { PelotonRideDetails } from "../models/PelotonRideDetails";
 import { ITrackDocument, Track } from "../models/Track";
-config.ensureInitialConfig();
 import { connectToDB, disconnectFromDB } from "../mongo";
 
 async function runOne() {

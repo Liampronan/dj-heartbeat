@@ -1,7 +1,5 @@
 const DJ_HEARTBEAT_SPOTIFY_ID = "spotify:3137zfzo7puj4dar5sef2w52k4s4";
 
-import { config } from "../config";
-config.ensureInitialConfig();
 import "../models/Track"; // there is a dependency on Track in this current file. this helps avoid errors (mainly in migrations)
 import { ITrack } from "../models/Track";
 import { fetchUserSpotifyAuth } from "../services/spotifyAuthService";

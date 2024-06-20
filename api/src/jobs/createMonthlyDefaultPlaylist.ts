@@ -1,5 +1,3 @@
-import { config } from "../config";
-config.ensureInitialConfig();
 import { archivePreviousAndCreateNewDefaultPlaylist } from "../services/userPlaylistService";
 import { fetchUserSpotifyAuth } from "../services/spotifyAuthService";
 import { UserWorkout } from "../models/UserWorkout";

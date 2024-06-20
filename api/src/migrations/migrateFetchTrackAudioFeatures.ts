@@ -1,6 +1,3 @@
-import { config } from "../config";
-config.ensureInitialConfig();
-
 import { Track } from "../models/Track";
 import { enqueueEnrichAudioFeaturesJob } from "../jobs/enrichTrackAudioFeatures";
 import { connectToDB, disconnectFromDB } from "../mongo";

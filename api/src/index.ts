@@ -1,6 +1,3 @@
-import { config } from "./config";
-config.ensureInitialConfig();
-
 import { onRequest } from "firebase-functions/v2/https";
 import express, { Request, Response } from "express";
 import {
