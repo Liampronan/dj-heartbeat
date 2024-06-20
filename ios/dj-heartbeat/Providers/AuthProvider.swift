@@ -25,6 +25,7 @@ protocol AuthProvider {
     var state: FetchableDataState<AuthProviderState> { get }
     var user: AnyUserInfo? { get }
     func isLoggedIn() async throws -> Bool
+    func config() async
     func fetchState() async
     func signOut() throws
     var userAuthToken: String? { get }
@@ -111,6 +112,10 @@ protocol AuthProvider {
         case .fetched(let authProviderState):
             return authProviderState.isLoggedIn
         }
+    }
+    
+    func config() {
+        
     }
     
     func fetchState() async {

@@ -42,6 +42,7 @@ struct dj_heartbeatApp: App {
                 }
             }
             .task {
+                await authProvider.config()
                 await authProvider.fetchState()
                 await userOnboardingProvider.fetchStateForUser()
                 await fetchLoggedInUserData()
