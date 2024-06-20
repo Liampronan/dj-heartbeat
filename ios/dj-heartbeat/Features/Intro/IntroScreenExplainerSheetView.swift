@@ -1,5 +1,22 @@
+import FirebaseAuth
 import SwiftUI
 
+@Observable class FirebaseCurrentUser {
+
+    static var shared = FirebaseCurrentUser()
+    private (set) var user: User? = nil
+
+    init() {
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user {
+                self.user = user
+            } else {
+                self.user = nil
+            }
+        }
+    }
+
+}
 
 enum IntroPermissionGrantState {
     case needsHealthKit
@@ -64,7 +81,7 @@ struct IntroScreenExplainerSheetView: View {
             }
             .shadow(radius: 4)
         }
-        .onChange(of: authProvider.user) { oldValue, newValue in
+        .onChange(of: FirebaseCurrentUser.shared.user) { oldValue, newValue in
             if newValue != nil && oldValue == nil {
                 introPermissionGrantState = .needsHealthKit
             }
