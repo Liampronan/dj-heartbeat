@@ -3,11 +3,21 @@ import Foundation
 
 typealias AuthProviderFetchableState = FetchableDataState<AuthProviderState>
 enum AuthProviderState {
-    case isLoggedIn
+    case isLoggedIn(token: String)
     case isLoggedOut
     
     var isLoggedIn: Bool {
-        self == .isLoggedIn
+        return switch self {
+        case .isLoggedIn(_): true
+        case .isLoggedOut: false
+        }
+    }
+    
+    var userAuthToken: String? {
+        return switch self {
+        case .isLoggedIn(let token): token
+        case .isLoggedOut: nil
+        }
     }
 }
 
@@ -15,16 +25,27 @@ protocol AuthProvider {
     var state: FetchableDataState<AuthProviderState> { get }
     
     func isLoggedIn() async throws -> Bool
+    func fetchState() async
+    
+    var userAuthToken: String? { get }
 }
 
-@Observable class AuthDataModel: AuthProvider {
-    
+@Observable class FirebaseAuthDataModel: AuthProvider {
     var state: FetchableDataState<AuthProviderState> = .loading
-    
-    // TOOD: 
+    // TODO:
+    // -> 0. fetch initial state
     // 1. remove isLoggedIn() from protocol -- should just be done on state
     // 1a. remove isLoggedIn() from
-    // 2. migrate away from PreviewAuthProvider
+    // 2. migrate away from PreviewAuthProvider [or use this?]
+    
+    var userAuthToken: String? {
+        return switch state {
+        case .fetched(let loggedInState):
+            loggedInState.userAuthToken
+        case .error, .loading: nil
+        }
+    }
+    
     func isLoggedIn() async throws -> Bool {
         switch state {
         case .error, .loading:
@@ -33,6 +54,25 @@ protocol AuthProvider {
         case .fetched(let authProviderState):
             return authProviderState.isLoggedIn
         }
+    }
+    
+    func fetchState() async {
+        state = .loading
+        do {
+            guard let token = try await getToken() else {
+                state = .fetched(.isLoggedOut)
+                return
+            }
+            state = .fetched(.isLoggedIn(token: token))
+        } catch {
+            state = .error // TODO: can we pass in error here (AuthError.noCurrentUserToken). may need generic error on FetchableDataState protocol
+        }
+    }
+    
+    @discardableResult func getToken() async throws -> String?  {
+        let currentUser = Auth.auth().currentUser
+        guard let currentUser else { return nil }
+        return try await currentUser.getIDToken()
     }
 }
 
@@ -43,8 +83,26 @@ protocol AuthProvider {
         self.state = state
     }
     
+    var userAuthToken: String? {
+        return switch state {
+        case .fetched(let loggedInState):
+            loggedInState.userAuthToken
+        case .error, .loading: nil
+        }
+    }
+    
     func isLoggedIn() async throws -> Bool {
-        return false
+        switch state {
+        case .error, .loading:
+            return false
+            
+        case .fetched(let authProviderState):
+            return authProviderState.isLoggedIn
+        }
+    }
+    
+    func fetchState() async {
+        
     }
 }
 
@@ -54,10 +112,10 @@ extension AuthProvider where Self == PreviewAuthProvider {
     }
     
     static var isLoggedIn: Self {
-        return PreviewAuthProvider(state: .fetched(.isLoggedIn))
+        return PreviewAuthProvider(state: .fetched(.isLoggedIn(token: "testToken123")))
     }
     
-    static var isLoggedOit: Self {
+    static var isLoggedOut: Self {
         return PreviewAuthProvider(state: .fetched(.isLoggedOut))
     }
 }
@@ -87,6 +145,7 @@ struct MyUser {
     }
 }
 
+// TODO: cleanup
 enum MyUserError: Error {
     case noCurrentUserToken
 }

@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct AuthProviderKey: EnvironmentKey {
-    static let defaultValue: AuthProvider = AuthDataModel()
-}
-
 struct HandleWorkoutProviderKey: EnvironmentKey {
     static let defaultValue: HandleWorkoutProvider = HandleWorkoutDataModel()
+}
+
+struct AuthProviderKey: EnvironmentKey {
+    static let defaultValue: AuthProvider = FirebaseAuthDataModel()
 }
 
 struct OnDeviceWorkoutDataManagerKey: EnvironmentKey {
@@ -39,7 +39,9 @@ struct TrackDiscoverProviderKey: EnvironmentKey {
 }
 
 struct UserEventsProviderKey: EnvironmentKey {
-    static let defaultValue: UserEventsProvider = UserEventsDataModel()
+    static let defaultValue: UserEventsProvider = UserEventsDataModel(
+        authProvider: AuthProviderKey.defaultValue
+    )
 }
 
 struct UserOnboardingProviderKey: EnvironmentKey {
@@ -52,6 +54,11 @@ struct WeeklyChartProviderKey: EnvironmentKey {
 
 extension EnvironmentValues {
         
+    var authProvider: AuthProvider {
+        get { self[AuthProviderKey.self] }
+        set { self[AuthProviderKey.self] = newValue }
+    }
+    
     var handleWorkoutProvider: HandleWorkoutProvider {
         get { self[HandleWorkoutProviderKey.self] }
         set { self[HandleWorkoutProviderKey.self] = newValue }

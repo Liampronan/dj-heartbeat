@@ -85,6 +85,7 @@
 		4FCB853A2C124AA300FFF0AD /* UserEventsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB85392C124AA300FFF0AD /* UserEventsProvider.swift */; };
 		4FCB853E2C17A4D000FFF0AD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB853D2C17A4D000FFF0AD /* ImageCache.swift */; };
 		4FCB85402C17A4F000FFF0AD /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB853F2C17A4F000FFF0AD /* AsyncImageView.swift */; };
+		4FCB85422C24B96500FFF0AD /* ProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB85412C24B96500FFF0AD /* ProfileProvider.swift */; };
 		4FD658272B5083370030DA46 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD658252B5083370030DA46 /* Workout.swift */; };
 		4FD658282B5083370030DA46 /* OnDeviceWorkoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD658262B5083370030DA46 /* OnDeviceWorkoutDataManager.swift */; };
 		4FD6582C2B5086BF0030DA46 /* IntroScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6582B2B5086BF0030DA46 /* IntroScreen.swift */; };
@@ -194,6 +195,7 @@
 		4FCB85392C124AA300FFF0AD /* UserEventsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEventsProvider.swift; sourceTree = "<group>"; };
 		4FCB853D2C17A4D000FFF0AD /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		4FCB853F2C17A4F000FFF0AD /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		4FCB85412C24B96500FFF0AD /* ProfileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProvider.swift; sourceTree = "<group>"; };
 		4FD658252B5083370030DA46 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		4FD658262B5083370030DA46 /* OnDeviceWorkoutDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnDeviceWorkoutDataManager.swift; sourceTree = "<group>"; };
 		4FD6582B2B5086BF0030DA46 /* IntroScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreen.swift; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */,
+				4FCB85412C24B96500FFF0AD /* ProfileProvider.swift */,
 				4FEDBEAF2BB8A110001BA2EF /* RecentWorkoutsProvider.swift */,
 				4FA068212BBF2F160091C7DD /* SendFeedbackProvider.swift */,
 				4F5B32AB2BE173B800490A95 /* SocialFeedProvider.swift */,
@@ -736,6 +739,7 @@
 				4F5F6B4E2B5CE12200946BD5 /* OffsetObservingScrollView.swift in Sources */,
 				4F5B32A82BE02C6B00490A95 /* SocialFeedItemUsernameView.swift in Sources */,
 				4F3D2EF52B86747B0045C506 /* SpotifyTokenAPI.swift in Sources */,
+				4FCB85422C24B96500FFF0AD /* ProfileProvider.swift in Sources */,
 				4FCB85292BE978BC00FFF0AD /* Config.swift in Sources */,
 				4F5F2B352B748022008A00A3 /* ShakeGesture.swift in Sources */,
 				4F9377C32BAE4F88001225AC /* Int+Extensions.swift in Sources */,

@@ -332,7 +332,9 @@ app.post("/feedback", async (req, res) => {
 });
 
 app.post("/app-opened", async (req, res) => {
+  console.log("handling app opened ???");
   const { uid } = await fetchUserFromReq(req);
+  console.log("handling app opened with auth!!!");
   await handleAppOpened(uid);
 
   res.send({});

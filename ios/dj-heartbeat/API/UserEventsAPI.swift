@@ -5,13 +5,13 @@ class UserEventsAPI {
         string: "\(Config.apiBaseURL)/app-opened"
     )!
 
-    static func postAppOpened() async throws {
-        guard let firebaseIdToken = try await MyUser.shared.getToken() else { throw MyUserError.noCurrentUserToken }
+    static func postAppOpened(userAuthToken: String?) async throws {
+        guard let userAuthToken else { throw MyUserError.noCurrentUserToken }
         try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: appOpenedEndpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
-            request.setValue("Bearer \(firebaseIdToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer \(userAuthToken)", forHTTPHeaderField: "Authorization")
             request.httpMethod = "POST"
         
             let t = URLSession.shared.dataTask(with: request) { data, res, err in

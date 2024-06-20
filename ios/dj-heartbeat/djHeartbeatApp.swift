@@ -7,6 +7,7 @@ struct dj_heartbeatApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @State private var hasInitialLaunchedOccurred = false
     @State private var isShowingDevMenu = false
+    @Environment(\.authProvider) private var authProvider
     @Environment(\.playlistProvider) private var playlistProvider
     @Environment(\.recentWorkoutsProvider) private var recentWorkoutsProvider
     @Environment(\.spotifyAuthProvider) private var spotifyAuthProvider
@@ -41,7 +42,7 @@ struct dj_heartbeatApp: App {
                 }
             }
             .task {
-                await MyUser.shared.configure()
+                await authProvider.fetchState()
                 await userOnboardingProvider.fetchStateForUser()
                 await fetchLoggedInUserData()
             }
