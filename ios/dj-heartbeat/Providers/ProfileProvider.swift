@@ -8,7 +8,8 @@ protocol ProfileInfo {
 }
 
 protocol ProfileProvider {
-//    var state: HandleWorkoutFetchableState { get }
+
+    //    var state: HandleWorkoutFetchableState { get }
     var uid: String { get }
     var presentableUserName: String { get }
     var isLoggedIn: Bool { get }
