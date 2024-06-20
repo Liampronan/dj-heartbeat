@@ -43,6 +43,7 @@ extension UserOnboardingProvider {
     }
     
     func fetchStateForUser() async {
+        await authProvider.fetchState()
         do {
             guard try await authProvider.isLoggedIn() else {
                 state = .fetched(.hasNotGrantedSpotifyAccess)
@@ -53,6 +54,7 @@ extension UserOnboardingProvider {
         } catch {
             state = .error
         }
+       
     }
     
     func setStateToNotEnabledForSpotifyAccess() {
