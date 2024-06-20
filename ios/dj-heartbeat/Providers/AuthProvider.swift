@@ -144,7 +144,7 @@ protocol UserInfo {
 
 /// Wraps protocol in contrete Equatable implementation so we can listen to changes via`onChange`
 /// This seems a little funky but solves the issue, which only happens in one place.
-struct AnyUserInfo: Equatable {
+@Observable class AnyUserInfo: Equatable {
     private let _base: UserInfo
     private let _equals: (UserInfo) -> Bool
 

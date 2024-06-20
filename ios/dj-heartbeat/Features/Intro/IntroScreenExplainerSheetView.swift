@@ -81,7 +81,7 @@ struct IntroScreenExplainerSheetView: View {
             }
             .shadow(radius: 4)
         }
-        .onChange(of: FirebaseCurrentUser.shared.user) { oldValue, newValue in
+        .onChange(of: authProvider.user) { oldValue, newValue in
             if newValue != nil && oldValue == nil {
                 introPermissionGrantState = .needsHealthKit
             }
