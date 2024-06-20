@@ -25,12 +25,6 @@ struct RecentWorkoutDetailView: View {
     private func postHRInfo() {
         guard let heartRateInfo = workout.heartRateInfo else { return }
         Task {
-            let handleWorkoutRequest: HandleWorkoutRequest = HandleWorkoutRequest(
-                userAuthToken: authProvider.userAuthToken,
-                heartRateInfo: heartRateInfo,
-                workoutType: workout.workout.workoutType
-            )
-            
             await handleWorkoutProvider.postWorkoutInfo(hrInfo: heartRateInfo, workoutType: workout.workout.workoutType)
             // re-fetch chart data to account for updated rankings
             await weeklyChartDataProvider.fetchThisWeeksChartData()

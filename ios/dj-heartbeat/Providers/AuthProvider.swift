@@ -23,20 +23,16 @@ enum AuthProviderState {
 
 protocol AuthProvider {
     var state: FetchableDataState<AuthProviderState> { get }
-    
+    var user: AnyUserInfo? { get }
     func isLoggedIn() async throws -> Bool
     func fetchState() async
-    
+    func signOut() throws
     var userAuthToken: String? { get }
 }
 
 @Observable class FirebaseAuthDataModel: AuthProvider {
     var state: FetchableDataState<AuthProviderState> = .loading
-    // TODO:
-    // -> 0. fetch initial state
-    // 1. remove isLoggedIn() from protocol -- should just be done on state
-    // 1a. remove isLoggedIn() from
-    // 2. migrate away from PreviewAuthProvider [or use this?]
+    var user: AnyUserInfo? = nil
     
     var userAuthToken: String? {
         return switch state {
@@ -56,6 +52,21 @@ protocol AuthProvider {
         }
     }
     
+    func config() async {
+        // attach listener so we can store user if they are already logged in (or when they login) for example. 
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user {
+                self.user = AnyUserInfo(user)
+            } else {
+                self.user = nil
+            }
+        }
+    }
+    
+    func signOut() throws {
+        try Auth.auth().signOut()
+    }
+    
     func fetchState() async {
         state = .loading
         do {
@@ -65,7 +76,7 @@ protocol AuthProvider {
             }
             state = .fetched(.isLoggedIn(token: token))
         } catch {
-            state = .error // TODO: can we pass in error here (AuthError.noCurrentUserToken). may need generic error on FetchableDataState protocol
+            state = .error
         }
     }
     
@@ -78,6 +89,7 @@ protocol AuthProvider {
 
 @Observable class PreviewAuthProvider: AuthProvider {
     var state: AuthProviderFetchableState
+    var user: AnyUserInfo?
     
     init(state: AuthProviderFetchableState) {
         self.state = state
@@ -102,7 +114,11 @@ protocol AuthProvider {
     }
     
     func fetchState() async {
-        
+        print("mock fetchState no-op")
+    }
+    
+    func signOut() throws {
+        print("mock signOut no-op")
     }
 }
 
@@ -120,28 +136,28 @@ extension AuthProvider where Self == PreviewAuthProvider {
     }
 }
 
-struct MyUser {
-    static var shared = MyUser()
-    
-    func configure() async {
-        do {
-            try await getToken()
-        } catch {
-            print("error configuring...")
+
+protocol UserInfo {
+    var uid: String { get }
+    var presentableUserName: String { get }
+}
+
+/// Wraps protocol in contrete Equatable implementation so we can listen to changes via`onChange`
+/// This seems a little funky but solves the issue, which only happens in one place.
+struct AnyUserInfo: Equatable {
+    private let _base: UserInfo
+    private let _equals: (UserInfo) -> Bool
+
+    init<T: UserInfo & Equatable>(_ base: T) {
+        self._base = base
+        self._equals = { other in
+            guard let otherBase = other as? T else { return false }
+            return base == otherBase
         }
     }
-    
-    func isLoggedIn() async throws -> Bool {
-        guard let _ = try await getToken() else {
-            return false
-        }
-        return true
-    }
-    
-    @discardableResult func getToken() async throws -> String?  {
-        let currentUser = Auth.auth().currentUser
-        guard let currentUser else { return nil }
-        return try await currentUser.getIDToken()
+
+    static func == (lhs: AnyUserInfo, rhs: AnyUserInfo) -> Bool {
+        return lhs._equals(rhs._base)
     }
 }
 

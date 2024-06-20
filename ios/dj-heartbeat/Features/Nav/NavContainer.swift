@@ -44,7 +44,7 @@ struct NavContainer<Content: View>: View {
         }
         .padding(.horizontal, MVP_DESIGN_SYSTEM_GUTTER / 2)
         .sheet(isPresented: $isShowingProfile, content: {
-            ProfileView(profile: FirebaseCurrentUser.shared)
+            ProfileView()
                 .presentationDetents([.fraction(0.4)])
         })
         .sheet(isPresented: $isShowingAppExplainerView) {
