@@ -15,8 +15,6 @@ protocol ProfileProvider {
     func signOut() throws -> Void
 }
 
-
-
 //@Observable class ProfileDataModel: ProfileProvider {
 //   
 //}
