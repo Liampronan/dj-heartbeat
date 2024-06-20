@@ -12,7 +12,7 @@ struct SendFeedbackAPI {
     )!
     
     static func postData(req: SendFeedbackRequest) async throws {
-        guard let userAuthToken = req.userAuthToken else { throw AuthError.noCurrentUserToken } // TODO: renmae error
+        guard let userAuthToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: endpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")

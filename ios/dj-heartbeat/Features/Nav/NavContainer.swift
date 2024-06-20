@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct NavContainer<Content: View>: View {
-    // TODO: fixme. bless `isShowingProfile` with provider.
     @State private var isShowingProfile = false
     @State private var isShowingAppExplainerView = false
     

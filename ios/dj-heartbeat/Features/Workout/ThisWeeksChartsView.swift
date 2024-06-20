@@ -1,4 +1,3 @@
-import Pow
 import SwiftUI
 
 struct ThisWeeksChartsHomeRowView: View {
@@ -39,7 +38,7 @@ struct ThisWeeksChartsHomeRowView: View {
             }.padding(.top, 110)            
         case .error:
             Text("error")
-        case .dataFetched(_):
+        case .fetched(_):
             if weeklyChartProvider.selectedWeekChartData.isEmpty {
                 VStack {
     //             no idea why Spacers / vertical alignment isn't working here. but this works for now

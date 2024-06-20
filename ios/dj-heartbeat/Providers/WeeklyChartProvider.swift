@@ -1,14 +1,11 @@
 import SwiftUI
 
-// TODO: move me to use `FetchableDataState` . with conditional conformance for vars
-enum WeeklyChartDataState {
-    case loading
-    case dataFetched(TopTracksResponse)
-    case error
-    
+typealias WeeklyChartDataState = FetchableDataState<TopTracksResponse>
+
+extension WeeklyChartDataState {
     var thisWeeksChartData: [WeeklyTopTrack] {
         switch self {
-        case .dataFetched(let topChartsResponse):
+        case .fetched(let topChartsResponse):
             return topChartsResponse.thisWeek.topTracks
         default:
             return []
@@ -17,7 +14,7 @@ enum WeeklyChartDataState {
     
     var lastWeeksChartData: [WeeklyTopTrack] {
         switch self {
-        case .dataFetched(let topChartsResponse):
+        case .fetched(let topChartsResponse):
             return topChartsResponse.lastWeek.topTracks
         default:
             return []
@@ -26,7 +23,7 @@ enum WeeklyChartDataState {
     
     var thisWeeksSumOfHeartbeats: Int {
         switch self {
-        case .dataFetched(let topCharsResponse):
+        case .fetched(let topCharsResponse):
             return Int(topCharsResponse.thisWeek.sumOfAllCountedHearbeats)
         default:
             return 0
@@ -34,7 +31,7 @@ enum WeeklyChartDataState {
     }
     var lastWeeksSumOfHeartbeats: Int {
         switch self {
-        case .dataFetched(let topCharsResponse):
+        case .fetched(let topCharsResponse):
             return Int(topCharsResponse.lastWeek.sumOfAllCountedHearbeats)
         default:
             return 0
@@ -82,7 +79,7 @@ extension WeeklyChartProvider {
     func fetchThisWeeksChartData() async {
         do {
             let result = try await TopTracksAPI.getTopCharts()
-            state = .dataFetched(result)
+            state = .fetched(result)
         } catch {
             print("error", error)
         }
@@ -111,7 +108,7 @@ extension WeeklyChartProvider where Self == PreviewWeeklyChartProvider {
     
     static var fetched: Self {
         PreviewWeeklyChartProvider(
-            state: .dataFetched(.mock()),
+            state: .fetched(.mock()),
             selectedWeek: .thisWeek
         )
     }
