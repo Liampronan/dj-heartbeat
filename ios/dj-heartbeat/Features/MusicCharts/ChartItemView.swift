@@ -107,16 +107,8 @@ struct ChartItemView: View {
             }
         }
     }
-    
-    // not using this atm but keeping around for ref
-//    var testingIncrementWithAnimation: some View {
-//        Text("\(Int(track.heartbeats + Int(testHeartbeatCount)))")
-//            .changeEffect(
-//                .rise(origin: UnitPoint(x: 0.75, y: 0.25)) {
-//                    Text("+1")
-//                }, value: testHeartbeatCount)
-//    }
 }
+
 //#Preview {
 //    ChartItemView()
 //}
