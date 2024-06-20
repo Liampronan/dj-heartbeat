@@ -115,7 +115,7 @@ protocol AuthProvider {
     }
     
     func config() {
-        
+        print("mock config no-op")
     }
     
     func fetchState() async {
