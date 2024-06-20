@@ -146,55 +146,6 @@ app.get("/tracks/discover", async (req, res) => {
   });
 });
 
-// todo: chnage name after march 29 release ... just so we don't have v2 extraneous endpoints. drop v2 and delete the current "/tracks/discover" logic.
-app.get("/tracks/discover-v2", async (req, res) => {
-  const { uid } = await fetchUserFromReq(req);
-
-  const [
-    recentlyPlayed,
-    leastRecentlyPlayed,
-    suggestedForYou,
-    random,
-    unheardOf,
-  ] = await Promise.all([
-    UserListen.findRecentlyPlayed(uid),
-    UserListen.findLeastRecentlyPlayed(uid),
-    suggestTracksForUser(uid),
-    UserListen.findRandomWorkoutTracks(),
-    unheardOfTracksForUser(uid),
-  ]);
-
-  return res.send({
-    recentlyPlayed: {
-      tracks: recentlyPlayed.map((userListen) => userListen.track),
-      titleText: "Just Played",
-      descriptionText:
-        "The tracks you've listened to while working out recently.",
-    },
-    leastRecentlyPlayed: {
-      tracks: leastRecentlyPlayed.map((userListen) => userListen.track),
-      titleText: "Play me maybe",
-      descriptionText:
-        "The tracks you have listened to in the past... but not recently.",
-    },
-    suggestedForYou: {
-      tracks: suggestedForYou,
-      titleText: "Suggested for you",
-      descriptionText: "Some recs based on some workout tracks you like.",
-    },
-    random: {
-      tracks: random,
-      titleText: "Random",
-      descriptionText: "Tracks that others have worked out to.",
-    },
-    unheardOf: {
-      tracks: unheardOf,
-      titleText: "Unheard of",
-      descriptionText: "Workout hits that you haven't listened to",
-    },
-  });
-});
-
 app.post("/refreshApiToken", async (req, res) => {
   console.log("incoming refreshApiToken ~~~");
 
