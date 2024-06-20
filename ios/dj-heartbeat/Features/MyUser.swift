@@ -145,7 +145,6 @@ struct MyUser {
     }
 }
 
-// TODO: cleanup
-enum MyUserError: Error {
+enum AuthError: Error {
     case noCurrentUserToken
 }

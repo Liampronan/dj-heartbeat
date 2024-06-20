@@ -27,7 +27,7 @@ struct HeartRateAPI {
     )!
     
     @discardableResult static func postData(req: HandleWorkoutRequest) async throws -> HandleWorkoutResponse {
-        guard let userAuthToken = req.userAuthToken else { throw MyUserError.noCurrentUserToken }
+        guard let userAuthToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: endpoint)

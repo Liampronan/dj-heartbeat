@@ -6,7 +6,7 @@ class UserEventsAPI {
     )!
 
     static func postAppOpened(userAuthToken: String?) async throws {
-        guard let userAuthToken else { throw MyUserError.noCurrentUserToken }
+        guard let userAuthToken else { throw AuthError.noCurrentUserToken }
         try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: appOpenedEndpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")

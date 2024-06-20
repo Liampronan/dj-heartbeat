@@ -46,7 +46,7 @@ class PlaylistAPI {
     )!
 
     static func addToPlaylist(req: AddToPlaylistRequest) async throws -> FetchDefaultPlaylistResponse {
-        guard let userAuthToken = req.userAuthToken else { throw MyUserError.noCurrentUserToken }
+        guard let userAuthToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: baseEndpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
@@ -85,7 +85,7 @@ class PlaylistAPI {
     }
     
     static func fetchDefaultPlaylist(req: FetchDefaultPlaylistRequest) async throws -> FetchDefaultPlaylistResponse {
-        guard let userAuthToken = req.userAuthToken else { throw MyUserError.noCurrentUserToken }
+        guard let userAuthToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: baseEndpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
@@ -115,7 +115,7 @@ class PlaylistAPI {
     }
     
     static func clearDefaultPlaylist(req: ClearDefaultPlaylistRequest) async throws -> FetchDefaultPlaylistResponse {
-        guard let userAuthToken = req.userAuthToken else { throw MyUserError.noCurrentUserToken }
+        guard let userAuthToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: baseEndpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")

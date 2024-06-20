@@ -30,7 +30,7 @@ struct TrackDiscoverAPI {
         }
         #endif
         
-        guard let firebaseIdToken = req.userAuthToken else { throw MyUserError.noCurrentUserToken }
+        guard let firebaseIdToken = req.userAuthToken else { throw AuthError.noCurrentUserToken }
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: endpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
