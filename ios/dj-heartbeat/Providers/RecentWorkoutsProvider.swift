@@ -81,7 +81,8 @@ extension RecentWorkoutsProvider {
     // we may end up need to init this and pass in mocks if we want to fully mock out things as they are in prod.
     private static var MockPreviewOnDeviceWorkoutDM: PreviewOnDeviceWorkoutDataManager {
         PreviewOnDeviceWorkoutDataManager(
-            runWorkoutQueryResult: .empty
+            runWorkoutQueryResult: .empty,
+            handleWorkoutProvider: PreviewHandleWorkoutProviderDataModel.fetched
         )
     }
 }

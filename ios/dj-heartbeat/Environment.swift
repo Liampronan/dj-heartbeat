@@ -1,7 +1,12 @@
 import SwiftUI
 
+// Here, we register default env values for dependency injection.
+// this is based off of Preview-based-architecture: https://blog.thomasdurand.fr/story/2024-03-15-preview-based-architecture/
+
 struct HandleWorkoutProviderKey: EnvironmentKey {
-    static let defaultValue: HandleWorkoutProvider = HandleWorkoutDataModel()
+    static let defaultValue: HandleWorkoutProvider = HandleWorkoutDataModel(
+        authProvider: AuthProviderKey.defaultValue
+    )
 }
 
 struct AuthProviderKey: EnvironmentKey {
@@ -9,21 +14,27 @@ struct AuthProviderKey: EnvironmentKey {
 }
 
 struct OnDeviceWorkoutDataManagerKey: EnvironmentKey {
-    static let defaultValue: OnDeviceWorkoutDataManager = HealthKitWorkoutDataFetcher()
+    static let defaultValue: OnDeviceWorkoutDataManager = HealthKitWorkoutDataFetcher(
+        handleWorkoutProvider: HandleWorkoutProviderKey.defaultValue
+    )
 }
 
 struct PlaylistProviderKey: EnvironmentKey {
-    static let defaultValue: PlaylistProvider = PlaylistDataModel()
+    static let defaultValue: PlaylistProvider = PlaylistDataModel(
+        authProvider: AuthProviderKey.defaultValue
+    )
 }
 
 struct RecentWorkoutsProviderKey: EnvironmentKey {
     static let defaultValue: RecentWorkoutsProvider = RecentWorkoutsDataModel(
-        recentWorkoutsLocalDataManager: HealthKitWorkoutDataFetcher()
+        recentWorkoutsLocalDataManager: OnDeviceWorkoutDataManagerKey.defaultValue
     )
 }
 
 struct SendFeedbackProviderKey: EnvironmentKey {
-    static let defaultValue: SendFeedbackProvider = SendFeedbackDataModel()
+    static let defaultValue: SendFeedbackProvider = SendFeedbackDataModel(
+        authProvider: AuthProviderKey.defaultValue
+    )
 }
 
 struct SocialFeedProviderKey: EnvironmentKey {
@@ -35,7 +46,9 @@ struct SpotifyAuthProviderKey: EnvironmentKey {
 }
 
 struct TrackDiscoverProviderKey: EnvironmentKey {
-    static let defaultValue: TrackDiscoverProvider = TrackDiscoverDataModel()
+    static let defaultValue: TrackDiscoverProvider = TrackDiscoverDataModel(
+        authProvider: AuthProviderKey.defaultValue
+    )
 }
 
 struct UserEventsProviderKey: EnvironmentKey {
@@ -45,7 +58,9 @@ struct UserEventsProviderKey: EnvironmentKey {
 }
 
 struct UserOnboardingProviderKey: EnvironmentKey {
-    static let defaultValue: UserOnboardingProvider = UserOnboardingDataModel()
+    static let defaultValue: UserOnboardingProvider = UserOnboardingDataModel(
+        authProvider: AuthProviderKey.defaultValue
+    )
 }
 
 struct WeeklyChartProviderKey: EnvironmentKey {

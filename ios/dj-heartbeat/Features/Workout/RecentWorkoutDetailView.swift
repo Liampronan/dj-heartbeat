@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RecentWorkoutDetailView: View {
-    
+    @Environment(\.authProvider) private var authProvider
     @Environment(\.handleWorkoutProvider) private var handleWorkoutProvider
     @Environment(\.weeklyChartProvider) private var weeklyChartDataProvider
     let workout: WorkoutWithHeartRate
@@ -25,7 +25,11 @@ struct RecentWorkoutDetailView: View {
     private func postHRInfo() {
         guard let heartRateInfo = workout.heartRateInfo else { return }
         Task {
-            let handleWorkoutRequest: HandleWorkoutRequest = HandleWorkoutRequest.init(heartRateInfo: heartRateInfo, workoutType: workout.workout.workoutType)
+            let handleWorkoutRequest: HandleWorkoutRequest = HandleWorkoutRequest(
+                userAuthToken: authProvider.userAuthToken,
+                heartRateInfo: heartRateInfo,
+                workoutType: workout.workout.workoutType
+            )
             
             await handleWorkoutProvider.postWorkoutInfo(hrInfo: heartRateInfo, workoutType: workout.workout.workoutType)
             // re-fetch chart data to account for updated rankings

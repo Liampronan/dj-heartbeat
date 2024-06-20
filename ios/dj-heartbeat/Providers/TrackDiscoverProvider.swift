@@ -4,15 +4,22 @@ typealias TrackDiscoverDataState = FetchableDataState<[TrackDiscoverCategory]>
 
 protocol TrackDiscoverProvider {
     var state: TrackDiscoverDataState { get }
+    var authProvider: AuthProvider { get }
     func fetchTrackDiscover() async
 }
 
 @Observable class TrackDiscoverDataModel: TrackDiscoverProvider {
     var state = TrackDiscoverDataState.loading
+    var authProvider: AuthProvider
+    
+    init(authProvider: AuthProvider) {
+        self.authProvider = authProvider
+    }
     
     func fetchTrackDiscover() async {
         do {
-            let trackDiscoverApiResponse = try await TrackDiscoverAPI.getTracksDiscover()
+            let request = FetchTrackDiscoverRequest(userAuthToken: authProvider.userAuthToken)
+            let trackDiscoverApiResponse = try await TrackDiscoverAPI.fetchTracksDiscover(req: request)
             self.state = .fetched(
                 TrackDiscoverCategory.initCategories(from: trackDiscoverApiResponse)
             )
@@ -24,12 +31,16 @@ protocol TrackDiscoverProvider {
 
 @Observable class PreviewTrackDiscoverProvider: TrackDiscoverProvider {
     var state: TrackDiscoverDataState
+    var authProvider: AuthProvider
     
-    init(state: TrackDiscoverDataState) {
+    init(state: TrackDiscoverDataState, authProvider: AuthProvider = PreviewAuthProvider.isLoggedIn) {
         self.state = state
+        self.authProvider = authProvider
     }
     
-    func fetchTrackDiscover() async {}
+    func fetchTrackDiscover() async {
+        // mocks are injected via `state` in init so we don't need implementation here
+    }
 }
 
 extension TrackDiscoverProvider where Self == PreviewTrackDiscoverProvider {

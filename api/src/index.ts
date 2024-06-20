@@ -193,7 +193,6 @@ app.get("/workouts", async (req, res) => {
 });
 
 app.post("/waitlist", async (req, res) => {
-  console.log("Hellooo");
   const email = req.body.email || null;
 
   if (!email) {
@@ -206,7 +205,6 @@ app.post("/waitlist", async (req, res) => {
 });
 
 app.get("/social-feed", async (req, res) => {
-  console.log("Hellooo");
   const response = await fetchTodayYesterdaySocialFeed();
 
   res.send(response);

@@ -1,6 +1,7 @@
 import Foundation
 
 struct AddToPlaylistRequest: Codable {
+    let userAuthToken: String?
     let trackId: String
 }
 
@@ -9,11 +10,19 @@ struct AddToPlaylistResponse: Codable {
     let playlistDurationMS: Int
 }
 
-struct FetchPlaylistResponse: Codable {
+struct FetchDefaultPlaylistRequest: Codable {
+    let userAuthToken: String?
+}
+
+struct FetchDefaultPlaylistResponse: Codable {
     let playlist: Playlist
 }
 
-extension FetchPlaylistResponse {
+struct ClearDefaultPlaylistRequest: Codable {
+    let userAuthToken: String?
+}
+
+extension FetchDefaultPlaylistResponse {
     static func mockManyResults() -> Self {
         .init(
             playlist: .mock()
@@ -36,13 +45,13 @@ class PlaylistAPI {
         string: "\(Config.apiBaseURL)/default-playlist"
     )!
 
-    static func addToPlaylist(req: AddToPlaylistRequest) async throws -> FetchPlaylistResponse {
-        guard let firebaseIdToken = try await MyUser.shared.getToken() else { throw MyUserError.noCurrentUserToken }
+    static func addToPlaylist(req: AddToPlaylistRequest) async throws -> FetchDefaultPlaylistResponse {
+        guard let userAuthToken = req.userAuthToken else { throw MyUserError.noCurrentUserToken }
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: baseEndpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
-            request.setValue("Bearer \(firebaseIdToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer \(userAuthToken)", forHTTPHeaderField: "Authorization")
             request.httpMethod = "POST"
             
             do {
@@ -58,7 +67,7 @@ class PlaylistAPI {
                 if let data {
                     do {
                         let decoder = JSONDecoder.withJSDateDecoding()
-                        let apiResponse = try decoder.decodeJSON(FetchPlaylistResponse.self, from: data)
+                        let apiResponse = try decoder.decodeJSON(FetchDefaultPlaylistResponse.self, from: data)
                         continuation.resume(with: .success(apiResponse))
                     } catch {
                         print("Error decoding: \(error.localizedDescription)")
@@ -75,20 +84,20 @@ class PlaylistAPI {
         return res
     }
     
-    static func fetchDefaultPlaylist() async throws -> FetchPlaylistResponse {
-        guard let firebaseIdToken = try await MyUser.shared.getToken() else { throw MyUserError.noCurrentUserToken }
+    static func fetchDefaultPlaylist(req: FetchDefaultPlaylistRequest) async throws -> FetchDefaultPlaylistResponse {
+        guard let userAuthToken = req.userAuthToken else { throw MyUserError.noCurrentUserToken }
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: baseEndpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
-            request.setValue("Bearer \(firebaseIdToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer \(userAuthToken)", forHTTPHeaderField: "Authorization")
             request.httpMethod = "GET"
             
             let t = URLSession.shared.dataTask(with: request) { data, res, err in
                 if let data {
                     do {
                         let decoder = JSONDecoder.withJSDateDecoding()
-                        let apiResponse = try decoder.decodeJSON(FetchPlaylistResponse.self, from: data)
+                        let apiResponse = try decoder.decodeJSON(FetchDefaultPlaylistResponse.self, from: data)
                         continuation.resume(with: .success(apiResponse))
                     } catch {
                         print("Error decoding: \(error.localizedDescription)")
@@ -105,20 +114,20 @@ class PlaylistAPI {
         return res
     }
     
-    static func clearDefaultPlaylist() async throws -> FetchPlaylistResponse {
-        guard let firebaseIdToken = try await MyUser.shared.getToken() else { throw MyUserError.noCurrentUserToken }
+    static func clearDefaultPlaylist(req: ClearDefaultPlaylistRequest) async throws -> FetchDefaultPlaylistResponse {
+        guard let userAuthToken = req.userAuthToken else { throw MyUserError.noCurrentUserToken }
         let res = try await withCheckedThrowingContinuation { continuation in
             var request = URLRequest(url: baseEndpoint)
             request.addValue("application/json", forHTTPHeaderField:"Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
-            request.setValue("Bearer \(firebaseIdToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer \(userAuthToken)", forHTTPHeaderField: "Authorization")
             request.httpMethod = "DELETE"
             
             let t = URLSession.shared.dataTask(with: request) { data, res, err in
                 if let data {
                     do {
                         let decoder = JSONDecoder.withJSDateDecoding()
-                        let apiResponse = try decoder.decodeJSON(FetchPlaylistResponse.self, from: data)
+                        let apiResponse = try decoder.decodeJSON(FetchDefaultPlaylistResponse.self, from: data)
                         continuation.resume(with: .success(apiResponse))
                     } catch {
                         print("Error decoding: \(error.localizedDescription)")

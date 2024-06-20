@@ -13,6 +13,8 @@ protocol OnDeviceWorkoutDataManager {
     func requestPermissions() async
     func getUserWorkoutDataPermissionsState() throws -> WorkoutDataPermissionsState
     func startObserving() 
+    
+    var handleWorkoutProvider: HandleWorkoutProvider { get }
 }
 
 enum WorkoutQueryResult {
@@ -34,6 +36,11 @@ enum HealthKitPermissionsError: Error {
 @Observable class HealthKitWorkoutDataFetcher: OnDeviceWorkoutDataManager {
     // future improvement: abstract out HK from here. wrap with protocol
     private var store = HKHealthStore()
+    var handleWorkoutProvider: HandleWorkoutProvider
+    
+    init(handleWorkoutProvider: HandleWorkoutProvider) {
+        self.handleWorkoutProvider = handleWorkoutProvider
+    }
     
     func getUserWorkoutDataPermissionsState() throws -> WorkoutDataPermissionsState {
         return switch store.authorizationStatus(for: HKQuantityType.quantityType(forIdentifier: .heartRate)!) {
@@ -73,13 +80,8 @@ enum HealthKitPermissionsError: Error {
         HKQuantityType.quantityType(forIdentifier: .heartRate)!,
         HKObjectType.workoutType()
     ]
+    
     func requestPermissions() async {
-//        let speedType = HKQuantityType.quantityType(forIdentifier: .runningSpeed)!
-//        let runningDistance = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-//        let heartRate = HKQuantityType.quantityType(forIdentifier: .heartRate)!
-//        let woType = HKObjectType.workoutType()
-//        let routeType = HKSeriesType.workoutRoute()
-//        let readTypes: Set<HKObjectType> = [speedType, runningDistance, woType, heartRate, routeType]
         do {
             let _ = try await store.requestAuthorization(toShare: [], read: healthkitReadTypes)
         }
@@ -252,8 +254,8 @@ enum HealthKitPermissionsError: Error {
                 
                 
                 let latestWorkoutType = latestWorkoutResult.workout.workoutType
-                let handleWorkoutRequest = HandleWorkoutRequest(heartRateInfo: latestWorkoutHeartRateInfo, workoutType: latestWorkoutType)
-                try await HeartRateAPI.postData(req: handleWorkoutRequest)
+
+                await handleWorkoutProvider.postWorkoutInfo(hrInfo: latestWorkoutHeartRateInfo, workoutType: latestWorkoutType)
             }
         }
     }
@@ -263,10 +265,12 @@ enum HealthKitPermissionsError: Error {
 @Observable class PreviewOnDeviceWorkoutDataManager: OnDeviceWorkoutDataManager {
     var userWorkoutDataPermissionsState: WorkoutDataPermissionsState
     var runWorkoutQueryResult: WorkoutQueryResult
+    var handleWorkoutProvider: HandleWorkoutProvider
     
-    init(userWorkoutDataPermissionsState: WorkoutDataPermissionsState = .hasGrantedOrDeniedPermissions, runWorkoutQueryResult: WorkoutQueryResult) {
+    init(userWorkoutDataPermissionsState: WorkoutDataPermissionsState = .hasGrantedOrDeniedPermissions, runWorkoutQueryResult: WorkoutQueryResult, handleWorkoutProvider: HandleWorkoutProvider) {
         self.userWorkoutDataPermissionsState = userWorkoutDataPermissionsState
         self.runWorkoutQueryResult = runWorkoutQueryResult
+        self.handleWorkoutProvider = handleWorkoutProvider
     }
     
     func fetchWorkoutData(for types: [WorkoutType]) async -> WorkoutQueryResult {
@@ -288,17 +292,23 @@ extension OnDeviceWorkoutDataManager where Self == PreviewOnDeviceWorkoutDataMan
     static var hasNotDecidedPermissions: Self {
         PreviewOnDeviceWorkoutDataManager(
             userWorkoutDataPermissionsState: .hasNotDecidedPermissions,
-            runWorkoutQueryResult: WorkoutQueryResult.empty
+            runWorkoutQueryResult: WorkoutQueryResult.empty,
+            handleWorkoutProvider: PreviewHandleWorkoutProviderDataModel.fetched
         )
     }
     
     static var fetchedHasWorkouts: Self {
         let mockFetchedData = MockWorkoutGenerator.simpleExample
-        return PreviewOnDeviceWorkoutDataManager(runWorkoutQueryResult: .success(MockWorkoutGenerator.simpleExample))
+        return PreviewOnDeviceWorkoutDataManager(
+            runWorkoutQueryResult: .success(mockFetchedData),
+            handleWorkoutProvider: PreviewHandleWorkoutProviderDataModel.fetched
+        )
     }
     
     static var fetchedNoWorkouts: Self {
-        let mockFetchedData = MockWorkoutGenerator.simpleExample
-        return PreviewOnDeviceWorkoutDataManager(runWorkoutQueryResult: .success([]))
+        return PreviewOnDeviceWorkoutDataManager(
+            runWorkoutQueryResult: .success([]),
+            handleWorkoutProvider: PreviewHandleWorkoutProviderDataModel.fetched
+        )
     }
 }
