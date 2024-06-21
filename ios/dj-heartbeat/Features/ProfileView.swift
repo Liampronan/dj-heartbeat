@@ -2,16 +2,25 @@ import FirebaseAuth
 import SwiftUI
 
 struct ProfileView: View {
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.authProvider) private var authProvider
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.userOnboardingProvider) private var userOnboardingProvider
     @State private var isShowingSendFeedbackForm = false
     @State private var isShowingUnlinkedSpotifyExplainerView = false
     
+    private struct ViewStrings {
+        static let yourAccountTitle = "Your Account"
+        static let signout = "Sign out"
+        static let sendFeedback = "Send Us Feedback"
+        static let accountLinked = "linked"
+        static let accountUnlinked = "unlinked"
+    }
+    
     var body: some View {
         if userOnboardingProvider.isUserFullyLoggedIn {
             VStack {
-                Text("YOUR ACCOUNT")
+                Text(ViewStrings.yourAccountTitle)
+                    .textCase(.uppercase)
                     .font(.title3)
                     .fontDesign(.rounded)
                     .fontWeight(.bold)
@@ -29,7 +38,8 @@ struct ProfileView: View {
                     Task { await userOnboardingProvider.fetchStateForUser() }
                     dismiss()
                 } label: {
-                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                    
+                    Image(systemName: .rectanglePortraitAndArrowRight)
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(AppColor.gray2)
@@ -55,8 +65,8 @@ struct ProfileView: View {
                 dismiss()
             } label: {
                 HStack {
-                    Image(systemName: "rectangle.portrait.and.arrow.right")
-                    Text("Sign out")
+                    Image(systemName: .rectanglePortraitAndArrowRight)
+                    Text(ViewStrings.signout)
                 }
                 .tint(.white)
                 .font(.title3)
@@ -95,7 +105,7 @@ struct ProfileView: View {
     var sendFeedbackRow: some View {
         HStack {
             HStack(spacing: 0) {
-                Image(systemName: "paperplane.circle.fill")
+                Image(systemName: .paperplaneCircleFill)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 36)
@@ -113,7 +123,8 @@ struct ProfileView: View {
                     .foregroundStyle(.deepGreen)
                     .padding(.bottom, 6)
                     .opacity(0.0)  // TODO: standardize row layout. this is hack.
-                Text("SEND US FEEDBACK".uppercased())
+                Text(ViewStrings.sendFeedback)
+                    .textCase(.uppercase)
                     .font(.callout)
                     .fontDesign(.rounded)
                     .fontWeight(.medium)
@@ -135,14 +146,14 @@ struct ProfileView: View {
         case .loading:
             ProgressView()
         case .error:
-            Text("error")
+            ErrorView()
         case .fetched(let userOnboardingState):
             HStack {
                 Text("•")
                     .font(.system(size: 50))
                     .foregroundStyle(userOnboardingState.hasGrantedSpotifyAccess ? .deepGreen : .deepOrange)
                     .padding(.bottom, 6)
-                Text(userOnboardingState.hasGrantedSpotifyAccess ? "LINKED" : "UNLINKED")
+                Text(userOnboardingState.hasGrantedSpotifyAccess ? ViewStrings.accountLinked : ViewStrings.accountUnlinked)
                     .font(.callout)
                     .fontDesign(.rounded)
                     .fontWeight(.medium)

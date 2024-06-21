@@ -10,7 +10,7 @@ struct SocialFeedItemHeartbeatCountView: View {
                 .font(.body)
             Text(heartbeatCount.formattedWithAbbreviations)
                 .padding(.trailing, 8)
-            Image(systemName: "heart.fill")
+            Image(systemName: .heartFill)
             
         }
         .font(.title3)

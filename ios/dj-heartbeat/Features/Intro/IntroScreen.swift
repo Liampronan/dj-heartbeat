@@ -60,6 +60,7 @@ struct IntroScreen: View {
             Text("❤️")
                 .font(.caption)
                 .background(AppColor.white.frame(width: 10, height: 18))
+                // i don't love this offset-based approach. but works for now for heart placement.
                 .offset(x: -68.75, y: -40)
         }
         .padding()

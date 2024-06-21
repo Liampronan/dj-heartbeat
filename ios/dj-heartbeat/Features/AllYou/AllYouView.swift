@@ -1,3 +1,4 @@
+import SFSymbolEnum
 import SwiftUI
 // START:
 // 1. add initial test
@@ -6,6 +7,13 @@ struct AllYouView: View {
     @Environment(\.playlistProvider) private var playlistProvider
     @Environment(\.recentWorkoutsProvider) private var recentWorkoutsProvider
     @Environment(\.userOnboardingProvider) private var userOnboardingProvider
+    private struct ViewStrings {
+        static let recentWorkoutsTitle = "Your recent workouts"
+        static let loggedoutText = "You're logged out"
+        static let loggedoutSubText = "Your workouts and monthly playlist will show here once you've setup your account."
+        static let playlistTitleText = "Your slaylist"
+        static let editText = "Edit"
+    }
     
     var body: some View {
         if userOnboardingProvider.isUserFullyLoggedIn {
@@ -25,7 +33,7 @@ struct AllYouView: View {
             Spacer()
             
             VStack(spacing: 0) {
-                rowHeader("Your recent workouts")
+                rowHeader(ViewStrings.recentWorkoutsTitle)
                 RecentWorkoutsListView()
                     .frame(maxHeight: 150)
             }
@@ -39,17 +47,18 @@ struct AllYouView: View {
     private var loggedOutBody: some View {
         VStack(alignment: .center, spacing: 12) {
             HStack {
-                Image(systemName: "person.crop.circle.badge.clock.fill")
-                Text("You're logged out")
-                    
+                Image(systemName: .personCropCircleBadgeClockFill)
+                Text(ViewStrings.loggedoutText)
+                
                     .fontDesign(.rounded)
-                    
+                
                     .foregroundStyle(.blackText)
-            }.font(.title)
-                .fontWeight(.semibold)
+            }
+            .font(.title)
+            .fontWeight(.semibold)
             
             
-            Text("Your workouts and monthly playlist will show here once you've setup your account.")
+            Text(ViewStrings.loggedoutSubText)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.gray2)
         }
@@ -59,10 +68,10 @@ struct AllYouView: View {
     private var titleWithEditButton: some View {
         Group {
             HStack {
-                rowHeader("Your slaylist")
+                rowHeader(ViewStrings.playlistTitleText)
                 if let playlistUri {
                     Link(destination: playlistUri) {
-                        Text("Edit")
+                        Text(ViewStrings.editText)
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundStyle(.white)

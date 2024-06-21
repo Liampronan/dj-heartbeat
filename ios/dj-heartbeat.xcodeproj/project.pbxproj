@@ -11,6 +11,8 @@
 		4F0255E92B562D7E0007A861 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4F0255E82B562D7E0007A861 /* FirebaseAuth */; };
 		4F02EA1E2B8D2D2B00D1E189 /* TrackDiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F02EA1D2B8D2D2B00D1E189 /* TrackDiscoverView.swift */; };
 		4F07E85F2C24DBA000505BCB /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07E85E2C24DBA000505BCB /* FirebaseUser+Extensions.swift */; };
+		4F07E8612C25D8AD00505BCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07E8602C25D8AD00505BCB /* Constants.swift */; };
+		4F07E8632C25F17E00505BCB /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07E8622C25F17E00505BCB /* ErrorView.swift */; };
 		4F2F81AC2BB73D2B002E6EF9 /* AllYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F81AB2BB73D2B002E6EF9 /* AllYouView.swift */; };
 		4F2F81AE2BB7CA20002E6EF9 /* UserOnboardingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F81AD2BB7CA20002E6EF9 /* UserOnboardingProvider.swift */; };
 		4F3D2EEF2B866FE10045C506 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D2EEE2B866FE10045C506 /* JSONDecoder.swift */; };
@@ -34,6 +36,9 @@
 		4F5F6B4E2B5CE12200946BD5 /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */; };
 		4F5F6B502B60720B00946BD5 /* ThisWeeksChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */; };
 		4F5F6B532B60861800946BD5 /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4F5F6B522B60861800946BD5 /* Pow */; };
+		4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */; };
+		4F7EC7792C260018002F91D5 /* RecentWorkoutsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */; };
+		4F7EC77C2C260560002F91D5 /* SFSymbolEnum in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7EC77B2C260560002F91D5 /* SFSymbolEnum */; };
 		4F819DE22BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */; };
 		4F9377BD2BA33D6F001225AC /* SocialFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */; };
 		4F9377BF2BA340D6001225AC /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BE2BA340D6001225AC /* Playlist.swift */; };
@@ -58,9 +63,9 @@
 		4FAD33262B4C7B9100DB28F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33252B4C7B9100DB28F6 /* HomeView.swift */; };
 		4FAD33282B4C7B9300DB28F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD33272B4C7B9300DB28F6 /* Assets.xcassets */; };
 		4FAD332B2B4C7B9300DB28F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD332A2B4C7B9300DB28F6 /* Preview Assets.xcassets */; };
-		4FAD33352B4C7B9300DB28F6 /* workout_playlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33342B4C7B9300DB28F6 /* workout_playlistTests.swift */; };
-		4FAD333F2B4C7B9300DB28F6 /* workout_playlistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD333E2B4C7B9300DB28F6 /* workout_playlistUITests.swift */; };
-		4FAD33412B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33402B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift */; };
+		4FAD33352B4C7B9300DB28F6 /* dj_heartbeatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33342B4C7B9300DB28F6 /* dj_heartbeatTests.swift */; };
+		4FAD333F2B4C7B9300DB28F6 /* dj_heartbeatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD333E2B4C7B9300DB28F6 /* dj_heartbeatUITests.swift */; };
+		4FAD33412B4C7B9300DB28F6 /* dj_heartbeatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD33402B4C7B9300DB28F6 /* dj_heartbeatUITestsLaunchTests.swift */; };
 		4FAD334F2B4C7C0B00DB28F6 /* SpotifyiOS in Frameworks */ = {isa = PBXBuildFile; productRef = 4FAD334E2B4C7C0B00DB28F6 /* SpotifyiOS */; };
 		4FAD33592B50A5EB00DB28F6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAD33582B50A5EB00DB28F6 /* Launch Screen.storyboard */; };
 		4FB304AE2B69F3D100B6473D /* ScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB304AD2B69F3D100B6473D /* ScrollView+Extensions.swift */; };
@@ -117,6 +122,8 @@
 		4F0255E42B51D28A0007A861 /* HeartRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateAPI.swift; sourceTree = "<group>"; };
 		4F02EA1D2B8D2D2B00D1E189 /* TrackDiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDiscoverView.swift; sourceTree = "<group>"; };
 		4F07E85E2C24DBA000505BCB /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
+		4F07E8602C25D8AD00505BCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4F07E8622C25F17E00505BCB /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4F2F81AB2BB73D2B002E6EF9 /* AllYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllYouView.swift; sourceTree = "<group>"; };
 		4F2F81AD2BB7CA20002E6EF9 /* UserOnboardingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOnboardingProvider.swift; sourceTree = "<group>"; };
 		4F3D2EEE2B866FE10045C506 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
@@ -139,6 +146,8 @@
 		4F5F6B4B2B5CA60600946BD5 /* PrototypePostworkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypePostworkoutView.swift; sourceTree = "<group>"; };
 		4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetObservingScrollView.swift; sourceTree = "<group>"; };
 		4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeeksChartsView.swift; sourceTree = "<group>"; };
+		4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitWorkoutFetchErrorView.swift; sourceTree = "<group>"; };
+		4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutsListItemView.swift; sourceTree = "<group>"; };
 		4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewUnlinkedSpotifyExplainerView.swift; sourceTree = "<group>"; };
 		4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedView.swift; sourceTree = "<group>"; };
 		4F9377BE2BA340D6001225AC /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
@@ -166,10 +175,10 @@
 		4FAD33272B4C7B9300DB28F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FAD332A2B4C7B9300DB28F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4FAD33302B4C7B9300DB28F6 /* dj-heartbeatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dj-heartbeatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FAD33342B4C7B9300DB28F6 /* workout_playlistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workout_playlistTests.swift; sourceTree = "<group>"; };
+		4FAD33342B4C7B9300DB28F6 /* dj_heartbeatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dj_heartbeatTests.swift; sourceTree = "<group>"; };
 		4FAD333A2B4C7B9300DB28F6 /* dj-heartbeatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dj-heartbeatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FAD333E2B4C7B9300DB28F6 /* workout_playlistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workout_playlistUITests.swift; sourceTree = "<group>"; };
-		4FAD33402B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workout_playlistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4FAD333E2B4C7B9300DB28F6 /* dj_heartbeatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dj_heartbeatUITests.swift; sourceTree = "<group>"; };
+		4FAD33402B4C7B9300DB28F6 /* dj_heartbeatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dj_heartbeatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4FAD33522B4C82DC00DB28F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4FAD33582B50A5EB00DB28F6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4FB304AD2B69F3D100B6473D /* ScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Extensions.swift"; sourceTree = "<group>"; };
@@ -210,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7EC77C2C260560002F91D5 /* SFSymbolEnum in Frameworks */,
 				4F5F6B532B60861800946BD5 /* Pow in Frameworks */,
 				4FAD334F2B4C7C0B00DB28F6 /* SpotifyiOS in Frameworks */,
 				4F0255E92B562D7E0007A861 /* FirebaseAuth in Frameworks */,
@@ -250,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				4FC16E432B925B750014A5B9 /* AddToPlaylistButton.swift */,
-				4F5B32A92BE1717900490A95 /* PlaylistProvider.swift */,
 			);
 			path = Playlist;
 			sourceTree = "<group>";
@@ -364,8 +373,8 @@
 			children = (
 				4FCB852A2BE9877100FFF0AD /* ci_pre_xcodebuild.sh */,
 				4FAD33222B4C7B9100DB28F6 /* dj-heartbeat */,
-				4FAD33332B4C7B9300DB28F6 /* heart-chartTests */,
-				4FAD333D2B4C7B9300DB28F6 /* heartChartUITests */,
+				4FAD33332B4C7B9300DB28F6 /* dj_heartbeatTests */,
+				4FAD333D2B4C7B9300DB28F6 /* dj_heartbeatUITests */,
 				4FAD33212B4C7B9100DB28F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -412,21 +421,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		4FAD33332B4C7B9300DB28F6 /* heart-chartTests */ = {
+		4FAD33332B4C7B9300DB28F6 /* dj_heartbeatTests */ = {
 			isa = PBXGroup;
 			children = (
-				4FAD33342B4C7B9300DB28F6 /* workout_playlistTests.swift */,
+				4FAD33342B4C7B9300DB28F6 /* dj_heartbeatTests.swift */,
 			);
-			path = "heart-chartTests";
+			path = dj_heartbeatTests;
 			sourceTree = "<group>";
 		};
-		4FAD333D2B4C7B9300DB28F6 /* heartChartUITests */ = {
+		4FAD333D2B4C7B9300DB28F6 /* dj_heartbeatUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4FAD333E2B4C7B9300DB28F6 /* workout_playlistUITests.swift */,
-				4FAD33402B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift */,
+				4FAD333E2B4C7B9300DB28F6 /* dj_heartbeatUITests.swift */,
+				4FAD33402B4C7B9300DB28F6 /* dj_heartbeatUITestsLaunchTests.swift */,
 			);
-			path = heartChartUITests;
+			path = dj_heartbeatUITests;
 			sourceTree = "<group>";
 		};
 		4FB304AF2B6B570F00B6473D /* MusicCharts */ = {
@@ -456,6 +465,7 @@
 				4FC16E3F2B9115220014A5B9 /* Track.swift */,
 				4FC16E372B9113740014A5B9 /* UserListen.swift */,
 				4FC16E392B9113A20014A5B9 /* WeeklyTopTrack.swift */,
+				4FD658252B5083370030DA46 /* Workout.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,6 +484,7 @@
 			children = (
 				4FC16E3D2B9114CA0014A5B9 /* AuthProvider.swift */,
 				4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */,
+				4F5B32A92BE1717900490A95 /* PlaylistProvider.swift */,
 				4FEDBEAF2BB8A110001BA2EF /* RecentWorkoutsProvider.swift */,
 				4FA068212BBF2F160091C7DD /* SendFeedbackProvider.swift */,
 				4F5B32AB2BE173B800490A95 /* SocialFeedProvider.swift */,
@@ -488,8 +499,10 @@
 		4FCB853C2C17A4B700FFF0AD /* Common UI */ = {
 			isa = PBXGroup;
 			children = (
-				4FCB853D2C17A4D000FFF0AD /* ImageCache.swift */,
 				4FCB853F2C17A4F000FFF0AD /* AsyncImageView.swift */,
+				4F07E8602C25D8AD00505BCB /* Constants.swift */,
+				4F07E8622C25F17E00505BCB /* ErrorView.swift */,
+				4FCB853D2C17A4D000FFF0AD /* ImageCache.swift */,
 			);
 			path = "Common UI";
 			sourceTree = "<group>";
@@ -523,7 +536,8 @@
 				4FDE81A72B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift */,
 				4FEFA98E2B6C389C00616C57 /* RecentWorkoutsListView.swift */,
 				4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */,
-				4FD658252B5083370030DA46 /* Workout.swift */,
+				4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */,
+				4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -548,6 +562,7 @@
 				4FAD334E2B4C7C0B00DB28F6 /* SpotifyiOS */,
 				4F0255E82B562D7E0007A861 /* FirebaseAuth */,
 				4F5F6B522B60861800946BD5 /* Pow */,
+				4F7EC77B2C260560002F91D5 /* SFSymbolEnum */,
 			);
 			productName = "workout-playlist";
 			productReference = 4FAD33202B4C7B9100DB28F6 /* dj-heartbeat.app */;
@@ -625,6 +640,7 @@
 				4FAD334D2B4C7C0A00DB28F6 /* XCRemoteSwiftPackageReference "ios-sdk" */,
 				4F0255E72B562D4D0007A861 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */,
+				4F7EC77A2C260560002F91D5 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */,
 			);
 			productRefGroup = 4FAD33212B4C7B9100DB28F6 /* Products */;
 			projectDirPath = "";
@@ -704,13 +720,16 @@
 				4FA068192BBB232A0091C7DD /* HandleWorkoutProvider.swift in Sources */,
 				4FD658272B5083370030DA46 /* Workout.swift in Sources */,
 				4F414A892BD455C200F10947 /* IntroScreenUseAppWithoutAccountView.swift in Sources */,
+				4F07E8632C25F17E00505BCB /* ErrorView.swift in Sources */,
 				4FBEAFA62B979E1300932E44 /* AppTabView.swift in Sources */,
 				4FC16E3C2B9113F00014A5B9 /* TopTracksAPI.swift in Sources */,
 				4F3D2EEF2B866FE10045C506 /* JSONDecoder.swift in Sources */,
+				4F7EC7792C260018002F91D5 /* RecentWorkoutsListItemView.swift in Sources */,
 				4F5F2B372B748120008A00A3 /* DevMenu.swift in Sources */,
 				4F9377BF2BA340D6001225AC /* Playlist.swift in Sources */,
 				4FDE81A82B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift in Sources */,
 				4FEFA9912B6C3E0500616C57 /* Date+Extensions.swift in Sources */,
+				4F07E8612C25D8AD00505BCB /* Constants.swift in Sources */,
 				4F5F6B502B60720B00946BD5 /* ThisWeeksChartsView.swift in Sources */,
 				4FA6B4172BB550660016FEDB /* SocialAPI.swift in Sources */,
 				4FC16E382B9113740014A5B9 /* UserListen.swift in Sources */,
@@ -719,6 +738,7 @@
 				4FA6B41E2BB63A9A0016FEDB /* Environment.swift in Sources */,
 				4F819DE22BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift in Sources */,
 				4F2F81AE2BB7CA20002E6EF9 /* UserOnboardingProvider.swift in Sources */,
+				4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */,
 				4F2F81AC2BB73D2B002E6EF9 /* AllYouView.swift in Sources */,
 				4FD658282B5083370030DA46 /* OnDeviceWorkoutDataManager.swift in Sources */,
 				4FA0681E2BBF27E60091C7DD /* SendFeedbackView.swift in Sources */,
@@ -754,7 +774,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FAD33352B4C7B9300DB28F6 /* workout_playlistTests.swift in Sources */,
+				4FAD33352B4C7B9300DB28F6 /* dj_heartbeatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,8 +782,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FAD33412B4C7B9300DB28F6 /* workout_playlistUITestsLaunchTests.swift in Sources */,
-				4FAD333F2B4C7B9300DB28F6 /* workout_playlistUITests.swift in Sources */,
+				4FAD33412B4C7B9300DB28F6 /* dj_heartbeatUITestsLaunchTests.swift in Sources */,
+				4FAD333F2B4C7B9300DB28F6 /* dj_heartbeatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,6 +1138,14 @@
 				minimumVersion = 1.0.3;
 			};
 		};
+		4F7EC77A2C260560002F91D5 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jollyjinx/SFSymbolEnum";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		4FAD334D2B4C7C0A00DB28F6 /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/spotify/ios-sdk";
@@ -1138,6 +1166,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */;
 			productName = Pow;
+		};
+		4F7EC77B2C260560002F91D5 /* SFSymbolEnum */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F7EC77A2C260560002F91D5 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */;
+			productName = SFSymbolEnum;
 		};
 		4FAD334E2B4C7C0B00DB28F6 /* SpotifyiOS */ = {
 			isa = XCSwiftPackageProductDependency;

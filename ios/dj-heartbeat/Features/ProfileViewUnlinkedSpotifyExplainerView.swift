@@ -2,11 +2,19 @@ import SwiftUI
 
 struct ProfileViewUnlinkedSpotifyExplainerView: View {
     @Environment(\.dismiss) private var dismiss
+    
+    private struct ViewStrings {
+        static let spotifyUnlinked = "Spotify Unlinked"
+        static let spotifyUnlinkedDescPt1 = "Features are limited for your account until Spotify enables us to onboard more users."
+        static let spotifyUnlinkedDescPt2 = "We'll notify you when you can connect your Spotify account."
+        static let cta = "Got it"
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
-                Image(systemName: "person.crop.circle.badge.clock.fill")
-                Text("Spotify Unlinked")
+                Image(systemName: .personCropCircleBadgeClockFill)
+                Text(ViewStrings.spotifyUnlinked)
             }
             .font(.title)
             .fontDesign(.rounded)
@@ -15,13 +23,13 @@ struct ProfileViewUnlinkedSpotifyExplainerView: View {
             .padding([.top])
             Spacer()
             
-            Text("• Features are limited for your account until Spotify enables us to onboard more users.")
-            Text("• We'll notify you when you can connect your Spotify account.")
+            Text("• \(ViewStrings.spotifyUnlinkedDescPt1)")
+            Text("• \(ViewStrings.spotifyUnlinkedDescPt2)")
             Spacer()
             VStack {
                 Button(action: onTapCTA, label: {
                     VStack {
-                        Text("Got it")
+                        Text(ViewStrings.cta)
                             .fontDesign(.rounded)
                             .font(.title3)
                             .fontWeight(.semibold)
@@ -51,5 +59,4 @@ struct ProfileViewUnlinkedSpotifyExplainerView: View {
             .presentationDetents([.fraction(0.35)])
     }
     .preferredColorScheme(.dark)
-    
 }

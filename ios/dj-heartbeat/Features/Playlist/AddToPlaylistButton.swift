@@ -1,3 +1,4 @@
+import SFSymbolEnum
 import SwiftUI
 
 struct AddToPlaylistButtonView: View {
@@ -10,6 +11,11 @@ struct AddToPlaylistButtonView: View {
     let style: Style
     
     @Environment(\.playlistProvider) private var playlistProvider
+    
+    private struct ViewStrings {
+        static let playlistTitle = "slaylist"
+        static let isAddedToPlaylist = "added"
+    }
     
     var body: some View {
         Button(action: onTap, label: {
@@ -62,14 +68,14 @@ struct AddToPlaylistButtonView: View {
         case .error, .notAddedToPlaylist:
             HStack {
                 image(for: playlistTrackState)
-                Text("slaylist")
+                Text(ViewStrings.playlistTitle)
                     .fontDesign(.rounded)
                     .fontWeight(.bold)
             }
             
         case .addedToPlaylist:
             HStack {
-                Text("added")
+                Text(ViewStrings.isAddedToPlaylist)
                     .fontDesign(.rounded)
                     .fontWeight(.bold)
             }
@@ -88,11 +94,11 @@ struct AddToPlaylistButtonView: View {
         return Image(systemName: "none").font(.title3)
     }
     
-    private func systemImageName(for playlistTrackState: PlaylistTrackState) -> String? {
+    private func systemImageName(for playlistTrackState: PlaylistTrackState) -> SFSymbol? {
         return switch playlistTrackState {
-        case .addedToPlaylist: "checkmark"
-        case .error: "x.circle.fill"
-        case .notAddedToPlaylist: "plus.circle.fill"
+        case .addedToPlaylist: .checkmark
+        case .error: .xCircleFill
+        case .notAddedToPlaylist: .plusCircleFill
         case .loading: nil
         }
     }

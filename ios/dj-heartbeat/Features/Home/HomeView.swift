@@ -8,15 +8,14 @@ struct HomeView: View {
             ThisWeeksChartsHomeRowView()
             
             Spacer()
-            
             Spacer(minLength: MVP_DESIGN_SYSTEM_GUTTER)
         }
         
-        .preferredColorScheme(.light)
     }
 }
 
 #Preview {
     HomeView()
         .environment(\.weeklyChartProvider, .fetched)
+        .preferredColorScheme(.light)
 }

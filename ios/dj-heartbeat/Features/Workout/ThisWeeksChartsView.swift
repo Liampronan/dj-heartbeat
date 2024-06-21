@@ -3,6 +3,11 @@ import SwiftUI
 struct ThisWeeksChartsHomeRowView: View {
     @Environment(\.weeklyChartProvider) private var weeklyChartProvider
     
+    private struct ViewStrings {
+        static let emptyStateDescription = "No tracks for this week yet.\nStart a workout to add tracks."
+        static let spotifyAttribution = "Metadata powered by"
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             ThisWeeksChartsTitleView()
@@ -37,12 +42,12 @@ struct ThisWeeksChartsHomeRowView: View {
                 ProgressView()
             }.padding(.top, 110)            
         case .error:
-            Text("error")
+            ErrorView()
         case .fetched(_):
             if weeklyChartProvider.selectedWeekChartData.isEmpty {
                 VStack {
     //             no idea why Spacers / vertical alignment isn't working here. but this works for now
-                    Text("No tracks for this week yet.\nStart a workout to add tracks.\n\n\n\n")
+                    Text("\(ViewStrings.emptyStateDescription)\n\n\n\n")
                         .foregroundStyle(AppColor.gray2)
                         .multilineTextAlignment(.center)
                         .frame(height: 350)
@@ -69,7 +74,7 @@ struct ThisWeeksChartsHomeRowView: View {
             // only show spotify attribution when metadata is actually there.
             // this mainly helps simplify layout for empty-state case.
             if weeklyChartProvider.selectedWeekChartData.count > 0 {
-                Text("Metadata powered by")
+                Text(ViewStrings.spotifyAttribution)
                     .foregroundStyle(.gray1)
                     .font(.caption)
                     .fontWeight(.semibold)

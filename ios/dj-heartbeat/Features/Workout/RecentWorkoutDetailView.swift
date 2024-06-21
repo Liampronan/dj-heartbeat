@@ -12,7 +12,7 @@ struct RecentWorkoutDetailView: View {
             case .loading:
                 ProgressView()
             case .error:
-                Text("error")
+                ErrorView()
             case .fetched(let handleWorkoutResponse):
                 PostWorkoutView(handleWorkoutResponse: handleWorkoutResponse)
             }

@@ -14,7 +14,6 @@ struct IntroScreenExplainerSheetView: View {
     @Environment(\.userOnboardingProvider) private var userOnboardingProvder
     
     @State var introPermissionGrantState: IntroPermissionGrantState = .needsSpotify
-
     
     private struct ViewStrings {
         static let title = "Permissions, please"
@@ -26,7 +25,7 @@ struct IntroScreenExplainerSheetView: View {
     var body: some View {
         VStack(alignment: .center) {
             HStack {
-                Image(systemName: "figure.run.square.stack.fill")
+                Image(systemName: systemImageFigureRunSquareStackFill)
                 Text(ViewStrings.title)
             }
             .font(.title)
@@ -70,7 +69,6 @@ struct IntroScreenExplainerSheetView: View {
             }
         }
     }
-    
     
     func onTapCTA() {
         Task(priority: .userInitiated) {

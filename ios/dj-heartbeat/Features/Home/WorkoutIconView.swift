@@ -1,3 +1,4 @@
+import SFSymbolEnum
 import SwiftUI
 
 struct WorkoutIconView: View {
@@ -7,18 +8,18 @@ struct WorkoutIconView: View {
         Image(systemName: workoutIconName)
     }
     
-    private var workoutIconName: String {
+    private var workoutIconName: SFSymbol {
         return switch workoutType {
         case .lifting:
-            "figure.strengthtraining.traditional"
+                .figureStrengthtrainingFunctional
         case .running:
-            "figure.run"
+                .figureRun
         case .walking:
-            "figure.walk"
+                .figureWalk
         case .cycling:
-            "figure.outdoor.cycle"
+                .figureOutdoorCycle
         case .other:
-            "move.3d"
+                .move3d
         }
     }
 }

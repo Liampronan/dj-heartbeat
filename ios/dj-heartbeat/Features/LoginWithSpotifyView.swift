@@ -2,10 +2,13 @@ import SwiftUI
 
 struct LoginWithSpotifyView: View {
     let onTapLogin: () -> Void
+    private struct ViewStrings {
+        static let loginWithSpotifyText = "Login with Spotify"
+    }
     
     var body: some View {
         VStack {
-            Button("Login with Spotify") {
+            Button(ViewStrings.loginWithSpotifyText) {
                 onTapLogin()
             }
             .font(.title3)

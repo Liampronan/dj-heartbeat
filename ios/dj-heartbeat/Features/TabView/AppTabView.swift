@@ -2,6 +2,12 @@ import SwiftUI
 
 struct AppTabView: View {
     @Environment(\.recentWorkoutsProvider) private var recentWorkoutsProvider
+    
+    private struct ViewStrings {
+        static let heartCharts = "Heart charts"
+        static let allYou = "All You"
+        static let social = "Social"
+    }
     var body: some View {
         VStack {
             TabView {
@@ -9,19 +15,19 @@ struct AppTabView: View {
                     HomeView()
                 }
                 .tabItem {
-                    Label("Heart Charts", systemImage: "heart")
+                    Label(ViewStrings.heartCharts, systemImage: "heart")
                 }
                 
                 NavContainer {
                     AllYouView()
                 }.tabItem {
-                    Label("All You", systemImage: "sparkles")
+                    Label(ViewStrings.allYou, systemImage: "sparkles")
                 }
                 
                 NavContainer {
                     SocialFeedView()
                 }.tabItem {
-                    Label("Social", systemImage: "music.note.house")
+                    Label(ViewStrings.social, systemImage: "music.note.house")
                 }                
             }
         }.task {

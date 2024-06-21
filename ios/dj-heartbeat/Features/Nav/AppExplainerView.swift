@@ -12,7 +12,7 @@ struct AppExplainerView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "questionmark.square.dashed")
+                Image(systemName: .questionmarkSquareDashed)
                 Text(ViewStrings.title)
             }
             .font(.title2)
