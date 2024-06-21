@@ -1,7 +1,5 @@
 import SFSymbolEnum
 import SwiftUI
-// START:
-// 1. add initial test
 
 struct AllYouView: View {
     @Environment(\.playlistProvider) private var playlistProvider
