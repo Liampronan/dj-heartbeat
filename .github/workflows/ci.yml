@@ -10,6 +10,11 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pull-requests: write  # Required to post comments on pull requests
+      checks: write  # Required to create check runs
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
