@@ -25,10 +25,16 @@ struct SignupCodeModalView: View {
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focusField: FocusField?
     
+    private struct ViewStrings {
+        static let explainerText = "Enter signup code"
+        static let invalidCodeBtn = "Invalid code"
+        static let validCodeBtn = "Submit"
+    }
+    
     var body: some View {
             
         VStack(spacing: 10) {
-            TextField("Enter signup code", text: $signupCode)
+            TextField(ViewStrings.explainerText, text: $signupCode)
                 .multilineTextAlignment(.center)
             
             Button(action: {
@@ -42,7 +48,7 @@ struct SignupCodeModalView: View {
                             if signupCodeRequestState.isSubmitting  {
                                 ProgressView()
                             } else {
-                                Text(signupCodeRequestState.isFailed ? "Invalid code" : "Submit")
+                                Text(signupCodeRequestState.isFailed ? ViewStrings.invalidCodeBtn : ViewStrings.validCodeBtn)
                                     .fontDesign(.rounded)
                                     .font(.title3)
                                     .fontWeight(.semibold)
@@ -88,7 +94,6 @@ struct SignupCodeModalView: View {
             } catch {
                 handleError()
             }
-            
         }
     }
     

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SendFeedbackView: View {
-    enum FocusField: Hashable {
+    private enum FocusField: Hashable {
         case feedbackField
     }
     
@@ -10,6 +10,15 @@ struct SendFeedbackView: View {
     @State private var contactInfo: String = ""
     @Environment(\.sendFeedbackProvider) private var sendFeedbackProvider
     @FocusState private var focusField: FocusField?
+    
+    struct ViewStrings {
+        static let header = "Your feedback"
+        static let footer = "Bugs, feature requests, ideas. You name it."
+        static let contactHeader = "Your email"
+        static let contactFooter = "Optional. So we can respond."
+        static let cta = "Send Feedback"
+        static let toolbarTitle = "Get in touch"
+    }
     
     var body: some View {
         NavigationStack {
@@ -21,17 +30,17 @@ struct SendFeedbackView: View {
                         TextEditor(text: $message)
                             .focused($focusField, equals: .feedbackField)
                     } header: {
-                        Text("Your feedback")
+                        Text(ViewStrings.header)
                     } footer: {
-                        Text("Bugs, feature requests, ideas. You name it.")
+                        Text(ViewStrings.footer)
                     }
 
                     Section {
                         TextEditor(text: $contactInfo)
                     } header: {
-                        Text("Your email")
+                        Text(ViewStrings.contactHeader)
                     } footer: {
-                        Text("Optional. So we can respond.")
+                        Text(ViewStrings.contactFooter)
                     }
                     Button(action: {
                         sendFeedback()
@@ -42,12 +51,11 @@ struct SendFeedbackView: View {
                         case .submitting:
                             ProgressView()
                         case .unsubmitted:
-                            Text("Send Feedback")
+                            Text(ViewStrings.cta)
                         }
                     })
                 }
                 .onChange(of: sendFeedbackProvider.sendFeedbackSubmissionState) { oldValue, newValue in
-                    print("newValue is", newValue)
                     guard newValue == .submitted else { return }
                     showSuccessStateAndDismiss()
                 }
@@ -60,7 +68,7 @@ struct SendFeedbackView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     VStack {
                         Spacer(minLength: 30)
-                        Text("Get in touch")
+                        Text(ViewStrings.toolbarTitle)
                             .font(.largeTitle)
                             .fontDesign(.rounded)
                             .fontWeight(.semibold)

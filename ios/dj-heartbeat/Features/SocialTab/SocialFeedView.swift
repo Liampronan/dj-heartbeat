@@ -4,6 +4,11 @@ struct SocialFeedView: View {
     @Environment(\.socialFeedProvider) private var socialFeedViewProvider
     @State private var selectedSocialFeedItem: SocialFeedItem?
     
+    private struct ViewStrings {
+        static let title = "Recent workouts"
+        static let dayEmptyFallback = "Get moving and\nmotivate others."
+    }
+    
     var body: some View {
         VStack() {
             titleAndSubtitle
@@ -34,7 +39,7 @@ struct SocialFeedView: View {
     var titleAndSubtitle: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Recent workouts")
+                Text(ViewStrings.title)
             }
             .font(.system(size: 28))
             .fontDesign(.rounded)
@@ -56,7 +61,7 @@ struct SocialFeedView: View {
                     
                 }.scrollIndicators(.hidden)
             } else {
-                Text("Get moving and\nmotivate others.")
+                Text(ViewStrings.dayEmptyFallback)
                     .multilineTextAlignment(.center)
                     .font(.title3)
                     .fontWeight(.semibold)

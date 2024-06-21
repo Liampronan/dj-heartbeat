@@ -3,6 +3,10 @@ import SwiftUI
 struct CommunityHeartbeatsTickerView: View {
     @Environment(\.weeklyChartProvider) private var weeklyChartDataProvider
     
+    private struct ViewStrings {
+        static let heartbeatsSuffix = "community heartbeats"
+    }
+    
     var body: some View {
         VStack(spacing: 2) {
             Text("\(sumMusicalHeartsForCurrentWeek)")
@@ -19,7 +23,7 @@ struct CommunityHeartbeatsTickerView: View {
            
             HStack {
                 Spacer()
-                Text("community heartbeats")
+                Text(ViewStrings.heartbeatsSuffix)
                     .textCase(.uppercase)
                     .fontDesign(.rounded)
                     .fontWeight(.medium)

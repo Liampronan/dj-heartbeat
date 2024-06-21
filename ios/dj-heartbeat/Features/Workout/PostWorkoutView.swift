@@ -2,7 +2,10 @@ import SwiftUI
 
 struct PostWorkoutView: View {
     let handleWorkoutResponse: HandleWorkoutResponse
-    
+    private struct ViewStrings {
+        static let title = "Post workout stats"
+        static let hearbeatsSuffix = "musical heartbeats"
+    }
     var body: some View {
         VStack {
             ScrollView {
@@ -28,7 +31,7 @@ struct PostWorkoutView: View {
     private var titleAndSubtitle: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Post workout stats")
+                Text(ViewStrings.title)
             }
             .font(.system(size: 28))
             .fontDesign(.rounded)
@@ -36,7 +39,7 @@ struct PostWorkoutView: View {
             .foregroundStyle(.blackText)
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text("\(displayableMusicalHeartbeats) musical heartbeats.")
+            Text("\(displayableMusicalHeartbeats) \(ViewStrings.hearbeatsSuffix).")
                 .font(.body)
                 .fontDesign(.rounded)
                 .fontWeight(.regular)

@@ -3,14 +3,21 @@ import SwiftUI
 struct ThisWeeksChartsTitleView: View {
     @Environment(\.weeklyChartProvider) private var weeklyChartDataProvider
     
+    private struct ViewStrings {
+        static let title = "Top tracks"
+        static let weekSuffix = "week"
+        static let thisWeekPrefix = "this"
+        static let lastWeekPrefix = "last"
+    }
+    
     var body: some View {
         VStack {
             HStack {
-                Text("Top tracks")
+                Text(ViewStrings.title)
                 
                 HStack(spacing: 0) {
                     animatedCurrentWeekText
-                    Text(" week")
+                    Text(" \(ViewStrings.weekSuffix)")
                 }.background { underline }
                 
                 Image(systemName: "chevron.down")
@@ -28,7 +35,7 @@ struct ThisWeeksChartsTitleView: View {
     }
     
     private var currentWeekText: String {
-        let firstWord = weeklyChartDataProvider.selectedWeek.isThisWeekSelected ? "this" : "last"
+        let firstWord = weeklyChartDataProvider.selectedWeek.isThisWeekSelected ? ViewStrings.thisWeekPrefix : ViewStrings.lastWeekPrefix
         return "\(firstWord)"
     }
     

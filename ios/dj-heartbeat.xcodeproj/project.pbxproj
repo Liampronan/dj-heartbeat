@@ -36,6 +36,8 @@
 		4F5F6B4E2B5CE12200946BD5 /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */; };
 		4F5F6B502B60720B00946BD5 /* ThisWeeksChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */; };
 		4F5F6B532B60861800946BD5 /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4F5F6B522B60861800946BD5 /* Pow */; };
+		4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */; };
+		4F7EC7792C260018002F91D5 /* RecentWorkoutsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */; };
 		4F819DE22BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */; };
 		4F9377BD2BA33D6F001225AC /* SocialFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */; };
 		4F9377BF2BA340D6001225AC /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BE2BA340D6001225AC /* Playlist.swift */; };
@@ -143,6 +145,8 @@
 		4F5F6B4B2B5CA60600946BD5 /* PrototypePostworkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypePostworkoutView.swift; sourceTree = "<group>"; };
 		4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetObservingScrollView.swift; sourceTree = "<group>"; };
 		4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeeksChartsView.swift; sourceTree = "<group>"; };
+		4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitWorkoutFetchErrorView.swift; sourceTree = "<group>"; };
+		4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutsListItemView.swift; sourceTree = "<group>"; };
 		4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewUnlinkedSpotifyExplainerView.swift; sourceTree = "<group>"; };
 		4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedView.swift; sourceTree = "<group>"; };
 		4F9377BE2BA340D6001225AC /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
@@ -254,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				4FC16E432B925B750014A5B9 /* AddToPlaylistButton.swift */,
-				4F5B32A92BE1717900490A95 /* PlaylistProvider.swift */,
 			);
 			path = Playlist;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				4FC16E3F2B9115220014A5B9 /* Track.swift */,
 				4FC16E372B9113740014A5B9 /* UserListen.swift */,
 				4FC16E392B9113A20014A5B9 /* WeeklyTopTrack.swift */,
+				4FD658252B5083370030DA46 /* Workout.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -478,6 +482,7 @@
 			children = (
 				4FC16E3D2B9114CA0014A5B9 /* AuthProvider.swift */,
 				4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */,
+				4F5B32A92BE1717900490A95 /* PlaylistProvider.swift */,
 				4FEDBEAF2BB8A110001BA2EF /* RecentWorkoutsProvider.swift */,
 				4FA068212BBF2F160091C7DD /* SendFeedbackProvider.swift */,
 				4F5B32AB2BE173B800490A95 /* SocialFeedProvider.swift */,
@@ -529,7 +534,8 @@
 				4FDE81A72B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift */,
 				4FEFA98E2B6C389C00616C57 /* RecentWorkoutsListView.swift */,
 				4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */,
-				4FD658252B5083370030DA46 /* Workout.swift */,
+				4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */,
+				4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -714,6 +720,7 @@
 				4FBEAFA62B979E1300932E44 /* AppTabView.swift in Sources */,
 				4FC16E3C2B9113F00014A5B9 /* TopTracksAPI.swift in Sources */,
 				4F3D2EEF2B866FE10045C506 /* JSONDecoder.swift in Sources */,
+				4F7EC7792C260018002F91D5 /* RecentWorkoutsListItemView.swift in Sources */,
 				4F5F2B372B748120008A00A3 /* DevMenu.swift in Sources */,
 				4F9377BF2BA340D6001225AC /* Playlist.swift in Sources */,
 				4FDE81A82B6E0D4C0028C2F8 /* RecentWorkoutDetailView.swift in Sources */,
@@ -727,6 +734,7 @@
 				4FA6B41E2BB63A9A0016FEDB /* Environment.swift in Sources */,
 				4F819DE22BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift in Sources */,
 				4F2F81AE2BB7CA20002E6EF9 /* UserOnboardingProvider.swift in Sources */,
+				4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */,
 				4F2F81AC2BB73D2B002E6EF9 /* AllYouView.swift in Sources */,
 				4FD658282B5083370030DA46 /* OnDeviceWorkoutDataManager.swift in Sources */,
 				4FA0681E2BBF27E60091C7DD /* SendFeedbackView.swift in Sources */,

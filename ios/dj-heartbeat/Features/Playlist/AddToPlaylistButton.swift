@@ -11,6 +11,11 @@ struct AddToPlaylistButtonView: View {
     
     @Environment(\.playlistProvider) private var playlistProvider
     
+    private struct ViewStrings {
+        static let playlistTitle = "slaylist"
+        static let isAddedToPlaylist = "added"
+    }
+    
     var body: some View {
         Button(action: onTap, label: {
             switch style {
@@ -62,14 +67,14 @@ struct AddToPlaylistButtonView: View {
         case .error, .notAddedToPlaylist:
             HStack {
                 image(for: playlistTrackState)
-                Text("slaylist")
+                Text(ViewStrings.playlistTitle)
                     .fontDesign(.rounded)
                     .fontWeight(.bold)
             }
             
         case .addedToPlaylist:
             HStack {
-                Text("added")
+                Text(ViewStrings.isAddedToPlaylist)
                     .fontDesign(.rounded)
                     .fontWeight(.bold)
             }
