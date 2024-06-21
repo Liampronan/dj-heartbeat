@@ -1,13 +1,6 @@
-//
-//  workout_playlistUITestsLaunchTests.swift
-//  workout-playlistUITests
-//
-//  Created by Liam Ronan on 1/8/24.
-//
-
 import XCTest
 
-final class workout_playlistUITestsLaunchTests: XCTestCase {
+final class dj_heartbeatUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

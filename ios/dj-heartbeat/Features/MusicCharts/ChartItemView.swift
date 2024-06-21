@@ -109,6 +109,23 @@ struct ChartItemView: View {
     }
 }
 
-//#Preview {
-//    ChartItemView()
-//}
+#Preview("Postworkout track") {
+    ChartItemView(
+        track: UserListen.mocks.first!,
+        chartType: .postWorkout(maxHeartbeatThisWorkout: UserListen.mocks.first!.heartbeats)
+    ).frame(width: 375, height: 90)
+}
+
+#Preview("TopTracksWeekly track") {
+    ChartItemView(
+        track: UserListen.mocks.first!,
+        chartType: .topTracksWeekly(maxHeartbeatThisWeek: UserListen.mocks[0].heartbeats)
+    ).frame(width: 375, height: 75)
+}
+
+#Preview("No Chart track") {
+    ChartItemView(
+        track: UserListen.mocks.first!,
+        chartType: .none
+    ).frame(width: 375, height: 75)
+}

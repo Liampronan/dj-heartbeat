@@ -1,13 +1,6 @@
-//
-//  workout_playlistUITests.swift
-//  workout-playlistUITests
-//
-//  Created by Liam Ronan on 1/8/24.
-//
-
 import XCTest
 
-final class workout_playlistUITests: XCTestCase {
+final class dj_heartbeatUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

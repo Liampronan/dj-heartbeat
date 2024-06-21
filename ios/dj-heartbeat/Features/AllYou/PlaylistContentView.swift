@@ -15,7 +15,6 @@ struct PlaylistContentView: View {
         }
     }
     
-    
     private let playlistItemRows = [
         GridItem(.flexible(maximum: 100)),
         GridItem(.flexible(maximum: 100)),
@@ -35,6 +34,7 @@ struct PlaylistContentView: View {
         .scrollIndicators(.never)
     }
 }
+
 #Preview {
     PlaylistContentView()
         .environment(\.playlistProvider, .fetchedManyResults)

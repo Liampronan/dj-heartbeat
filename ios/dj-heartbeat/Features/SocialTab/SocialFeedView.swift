@@ -1,7 +1,5 @@
 import SwiftUI
 
-let MVP_DESIGN_SYSTEM_GUTTER = 40.0
-
 struct SocialFeedView: View {
     @Environment(\.socialFeedProvider) private var socialFeedViewProvider
     @State private var selectedSocialFeedItem: SocialFeedItem?

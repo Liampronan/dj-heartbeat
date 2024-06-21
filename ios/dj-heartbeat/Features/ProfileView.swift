@@ -2,16 +2,25 @@ import FirebaseAuth
 import SwiftUI
 
 struct ProfileView: View {
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.authProvider) private var authProvider
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.userOnboardingProvider) private var userOnboardingProvider
     @State private var isShowingSendFeedbackForm = false
     @State private var isShowingUnlinkedSpotifyExplainerView = false
     
+    struct ViewStrings {
+        static let yourAccountTitle = "Your Account"
+        static let signout = "Sign out"
+        static let sendFeedback = "Send Us Feedback"
+        static let accountLinked = "linked"
+        static let accountUnlinked = "unlinked"
+    }
+    
     var body: some View {
         if userOnboardingProvider.isUserFullyLoggedIn {
             VStack {
-                Text("YOUR ACCOUNT")
+                Text(ViewStrings.yourAccountTitle)
+                    .textCase(.uppercase)
                     .font(.title3)
                     .fontDesign(.rounded)
                     .fontWeight(.bold)
@@ -56,7 +65,7 @@ struct ProfileView: View {
             } label: {
                 HStack {
                     Image(systemName: "rectangle.portrait.and.arrow.right")
-                    Text("Sign out")
+                    Text(ViewStrings.signout)
                 }
                 .tint(.white)
                 .font(.title3)
@@ -113,7 +122,8 @@ struct ProfileView: View {
                     .foregroundStyle(.deepGreen)
                     .padding(.bottom, 6)
                     .opacity(0.0)  // TODO: standardize row layout. this is hack.
-                Text("SEND US FEEDBACK".uppercased())
+                Text(ViewStrings.sendFeedback)
+                    .textCase(.uppercase)
                     .font(.callout)
                     .fontDesign(.rounded)
                     .fontWeight(.medium)
@@ -135,6 +145,7 @@ struct ProfileView: View {
         case .loading:
             ProgressView()
         case .error:
+            // START: move to MVP_ERROR_VIEW
             Text("error")
         case .fetched(let userOnboardingState):
             HStack {
@@ -142,7 +153,7 @@ struct ProfileView: View {
                     .font(.system(size: 50))
                     .foregroundStyle(userOnboardingState.hasGrantedSpotifyAccess ? .deepGreen : .deepOrange)
                     .padding(.bottom, 6)
-                Text(userOnboardingState.hasGrantedSpotifyAccess ? "LINKED" : "UNLINKED")
+                Text(userOnboardingState.hasGrantedSpotifyAccess ? ViewStrings.accountLinked : ViewStrings.accountUnlinked)
                     .font(.callout)
                     .fontDesign(.rounded)
                     .fontWeight(.medium)
