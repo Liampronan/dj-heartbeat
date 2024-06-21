@@ -29,15 +29,14 @@ jobs:
           cd api
           npm run test-ci
 
-      - name: Upload test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: api/reports/jest-junit.xml
+      - name: Debug - List reports directory
+        run: |
+          cd api/reports
+          ls -la
     
       - name: Test Report
-        uses: dorny/test-reporter@v1
         if: github.event_name == 'pull_request'
+        uses: dorny/test-reporter@v1
         with:
           name: JEST Tests
           path: api/reports/jest-junit.xml
