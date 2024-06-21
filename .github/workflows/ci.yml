@@ -34,10 +34,8 @@ jobs:
           cd api
           npm run test-ci
 
-      - name: Debug - List reports directory
-        run: |
-          cd api/reports
-          ls -la
+      - name: Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@main
     
       - name: Test Report
         if: github.event_name == 'pull_request'
@@ -47,5 +45,4 @@ jobs:
           path: api/reports/jest-junit.xml
           reporter: jest-junit
       
-      - name: Jest Coverage Comment
-        uses: MishaKav/jest-coverage-comment@main
+      
