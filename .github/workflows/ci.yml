@@ -46,3 +46,6 @@ jobs:
           name: JEST Tests
           path: api/reports/jest-junit.xml
           reporter: jest-junit
+      
+      - name: Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@main
