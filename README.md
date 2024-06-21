@@ -22,3 +22,17 @@ dj heartbeat helps you find those songs.
 <img width="500" alt="dj heartbeat app store screenshot 5-6" src="https://github.com/Liampronan/dj-heartbeat/assets/4316904/92ff1d06-b813-4aa9-882c-9dc242b95fe6">
 
 via [dj heartbeat in the App Store](https://apps.apple.com/us/app/dj-heartbeat/id6477322465)
+
+# Tech Overview
+## API Overview
+...link to more details in api readme
+
+## iOS Overview
+...link to more details in iOS readme
+
+# Retros
+- An iOS Engineer muses on SwiftUI, React Native
+- Firebase is a pretty good all-in-one hosting platform; I probably won't use it for my next project
+- [Spotify's Third-Party App Review: A Broken Process & How To Fix](https://liampronan.notion.site/Spotify-s-Third-Party-App-Review-A-Broken-Process-How-To-Fix-531bd9c64a094086bba4284d824ca51e?pvs=4)
+- Making the most of a project that falls short of expectations
+- Solo app dev vs. team-based building: lessons & challenges
