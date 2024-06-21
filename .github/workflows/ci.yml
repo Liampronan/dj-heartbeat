@@ -27,7 +27,7 @@ jobs:
       - name: Run tests
         run: |
           cd api
-          npm test-ci
+          npm run test-ci
 
       - name: Test Report
         uses: dorny/test-reporter@v1
