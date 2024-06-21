@@ -35,8 +35,7 @@ struct dj_heartbeatApp: App {
                         case .loading:
                             EmptyView()
                         case .error:
-                            // TODO: handle error
-                            Text("error")
+                            ErrorView()
                         }
                     }
                 }

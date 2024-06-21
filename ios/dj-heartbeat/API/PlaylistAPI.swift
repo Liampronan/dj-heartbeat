@@ -70,7 +70,6 @@ class PlaylistAPI {
                         let apiResponse = try decoder.decodeJSON(FetchDefaultPlaylistResponse.self, from: data)
                         continuation.resume(with: .success(apiResponse))
                     } catch {
-                        print("Error decoding: \(error.localizedDescription)")
                         continuation.resume(with: .failure(error))
                     }
                 }
@@ -100,7 +99,6 @@ class PlaylistAPI {
                         let apiResponse = try decoder.decodeJSON(FetchDefaultPlaylistResponse.self, from: data)
                         continuation.resume(with: .success(apiResponse))
                     } catch {
-                        print("Error decoding: \(error.localizedDescription)")
                         continuation.resume(with: .failure(error))
                     }
                 }
@@ -130,7 +128,6 @@ class PlaylistAPI {
                         let apiResponse = try decoder.decodeJSON(FetchDefaultPlaylistResponse.self, from: data)
                         continuation.resume(with: .success(apiResponse))
                     } catch {
-                        print("Error decoding: \(error.localizedDescription)")
                         continuation.resume(with: .failure(error))
                     }
                 }

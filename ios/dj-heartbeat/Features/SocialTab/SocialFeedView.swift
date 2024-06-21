@@ -14,7 +14,7 @@ struct SocialFeedView: View {
                 case .loading:
                     ProgressView()
                 case .error:
-                    Text("error")
+                    ErrorView()
                 case .fetched(let data):
                     renderFetched(with: data)
                 }

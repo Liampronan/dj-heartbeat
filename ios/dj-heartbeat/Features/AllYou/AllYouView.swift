@@ -48,12 +48,13 @@ struct AllYouView: View {
             HStack {
                 Image(systemName: "person.crop.circle.badge.clock.fill")
                 Text(ViewStrings.loggedoutText)
-                    
+                
                     .fontDesign(.rounded)
-                    
+                
                     .foregroundStyle(.blackText)
-            }.font(.title)
-                .fontWeight(.semibold)
+            }
+            .font(.title)
+            .fontWeight(.semibold)
             
             
             Text(ViewStrings.loggedoutSubText)

@@ -37,7 +37,7 @@ struct ThisWeeksChartsHomeRowView: View {
                 ProgressView()
             }.padding(.top, 110)            
         case .error:
-            Text("error")
+            ErrorView()
         case .fetched(_):
             if weeklyChartProvider.selectedWeekChartData.isEmpty {
                 VStack {

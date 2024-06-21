@@ -17,7 +17,7 @@ struct TrackDiscoverView: View {
             case .loading:
                 ProgressView()
             case .error:
-                Text("error!!!")
+                ErrorView()
             case .fetched(let trackDiscoverCategories):
                 TrackDiscoverViewInternal(
                     trackDiscoverCategories: trackDiscoverCategories

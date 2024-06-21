@@ -145,8 +145,7 @@ struct ProfileView: View {
         case .loading:
             ProgressView()
         case .error:
-            // START: move to MVP_ERROR_VIEW
-            Text("error")
+            ErrorView()
         case .fetched(let userOnboardingState):
             HStack {
                 Text("•")

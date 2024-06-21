@@ -10,7 +10,7 @@ struct PlaylistContentView: View {
         case .fetched(let playlist):
             fetchedState(with: playlist.playlist)
         case .error:
-            Text("Error")
+            ErrorView()
                 .padding(.leading, MVP_DESIGN_SYSTEM_GUTTER)
         }
     }
