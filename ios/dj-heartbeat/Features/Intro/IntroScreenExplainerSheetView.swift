@@ -25,7 +25,7 @@ struct IntroScreenExplainerSheetView: View {
     var body: some View {
         VStack(alignment: .center) {
             HStack {
-                Image(systemName: "figure.run.square.stack.fill")
+                Image(systemName: systemImageFigureRunSquareStackFill)
                 Text(ViewStrings.title)
             }
             .font(.title)

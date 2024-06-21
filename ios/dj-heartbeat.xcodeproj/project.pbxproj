@@ -38,6 +38,7 @@
 		4F5F6B532B60861800946BD5 /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4F5F6B522B60861800946BD5 /* Pow */; };
 		4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */; };
 		4F7EC7792C260018002F91D5 /* RecentWorkoutsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */; };
+		4F7EC77C2C260560002F91D5 /* SFSymbolEnum in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7EC77B2C260560002F91D5 /* SFSymbolEnum */; };
 		4F819DE22BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */; };
 		4F9377BD2BA33D6F001225AC /* SocialFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */; };
 		4F9377BF2BA340D6001225AC /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BE2BA340D6001225AC /* Playlist.swift */; };
@@ -218,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7EC77C2C260560002F91D5 /* SFSymbolEnum in Frameworks */,
 				4F5F6B532B60861800946BD5 /* Pow in Frameworks */,
 				4FAD334F2B4C7C0B00DB28F6 /* SpotifyiOS in Frameworks */,
 				4F0255E92B562D7E0007A861 /* FirebaseAuth in Frameworks */,
@@ -560,6 +562,7 @@
 				4FAD334E2B4C7C0B00DB28F6 /* SpotifyiOS */,
 				4F0255E82B562D7E0007A861 /* FirebaseAuth */,
 				4F5F6B522B60861800946BD5 /* Pow */,
+				4F7EC77B2C260560002F91D5 /* SFSymbolEnum */,
 			);
 			productName = "workout-playlist";
 			productReference = 4FAD33202B4C7B9100DB28F6 /* dj-heartbeat.app */;
@@ -637,6 +640,7 @@
 				4FAD334D2B4C7C0A00DB28F6 /* XCRemoteSwiftPackageReference "ios-sdk" */,
 				4F0255E72B562D4D0007A861 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */,
+				4F7EC77A2C260560002F91D5 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */,
 			);
 			productRefGroup = 4FAD33212B4C7B9100DB28F6 /* Products */;
 			projectDirPath = "";
@@ -1134,6 +1138,14 @@
 				minimumVersion = 1.0.3;
 			};
 		};
+		4F7EC77A2C260560002F91D5 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jollyjinx/SFSymbolEnum";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		4FAD334D2B4C7C0A00DB28F6 /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/spotify/ios-sdk";
@@ -1154,6 +1166,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */;
 			productName = Pow;
+		};
+		4F7EC77B2C260560002F91D5 /* SFSymbolEnum */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F7EC77A2C260560002F91D5 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */;
+			productName = SFSymbolEnum;
 		};
 		4FAD334E2B4C7C0B00DB28F6 /* SpotifyiOS */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -8,7 +8,7 @@ struct ProfileView: View {
     @State private var isShowingSendFeedbackForm = false
     @State private var isShowingUnlinkedSpotifyExplainerView = false
     
-    struct ViewStrings {
+    private struct ViewStrings {
         static let yourAccountTitle = "Your Account"
         static let signout = "Sign out"
         static let sendFeedback = "Send Us Feedback"
@@ -38,7 +38,8 @@ struct ProfileView: View {
                     Task { await userOnboardingProvider.fetchStateForUser() }
                     dismiss()
                 } label: {
-                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                    
+                    Image(systemName: .rectanglePortraitAndArrowRight)
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(AppColor.gray2)
@@ -64,7 +65,7 @@ struct ProfileView: View {
                 dismiss()
             } label: {
                 HStack {
-                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                    Image(systemName: .rectanglePortraitAndArrowRight)
                     Text(ViewStrings.signout)
                 }
                 .tint(.white)
@@ -104,7 +105,7 @@ struct ProfileView: View {
     var sendFeedbackRow: some View {
         HStack {
             HStack(spacing: 0) {
-                Image(systemName: "paperplane.circle.fill")
+                Image(systemName: .paperplaneCircleFill)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 36)

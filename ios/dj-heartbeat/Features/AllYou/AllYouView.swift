@@ -1,3 +1,4 @@
+import SFSymbolEnum
 import SwiftUI
 // START:
 // 1. add initial test
@@ -6,7 +7,7 @@ struct AllYouView: View {
     @Environment(\.playlistProvider) private var playlistProvider
     @Environment(\.recentWorkoutsProvider) private var recentWorkoutsProvider
     @Environment(\.userOnboardingProvider) private var userOnboardingProvider
-    struct ViewStrings {
+    private struct ViewStrings {
         static let recentWorkoutsTitle = "Your recent workouts"
         static let loggedoutText = "You're logged out"
         static let loggedoutSubText = "Your workouts and monthly playlist will show here once you've setup your account."
@@ -46,7 +47,7 @@ struct AllYouView: View {
     private var loggedOutBody: some View {
         VStack(alignment: .center, spacing: 12) {
             HStack {
-                Image(systemName: "person.crop.circle.badge.clock.fill")
+                Image(systemName: .personCropCircleBadgeClockFill)
                 Text(ViewStrings.loggedoutText)
                 
                     .fontDesign(.rounded)

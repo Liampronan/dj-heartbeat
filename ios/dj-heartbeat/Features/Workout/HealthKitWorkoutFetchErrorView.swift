@@ -25,7 +25,7 @@ struct HealthKitWorkoutFetchErrorView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "figure.run.square.stack.fill")
+            Image(systemName: systemImageFigureRunSquareStackFill)
             Text(ViewStrings.title)
         }
         .font(.title)
@@ -57,7 +57,7 @@ struct HealthKitWorkoutFetchErrorView: View {
                 })
             } else if connectAttemptState == .showErrorRequestingPermissions {
                 HStack {
-                    Image(systemName: "xmark.app")
+                    Image(systemName: .xmarkApp)
                         .foregroundStyle(AppColor.lightRed)
                     Text(ViewStrings.unableToRequestPermissions)
                         .fontWeight(.semibold)

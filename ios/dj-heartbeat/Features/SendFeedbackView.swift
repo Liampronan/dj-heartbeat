@@ -11,7 +11,7 @@ struct SendFeedbackView: View {
     @Environment(\.sendFeedbackProvider) private var sendFeedbackProvider
     @FocusState private var focusField: FocusField?
     
-    struct ViewStrings {
+    private struct ViewStrings {
         static let header = "Your feedback"
         static let footer = "Bugs, feature requests, ideas. You name it."
         static let contactHeader = "Your email"
@@ -47,7 +47,7 @@ struct SendFeedbackView: View {
                     }, label: {
                         switch sendFeedbackProvider.sendFeedbackSubmissionState {
                         case .submitted:
-                            Image(systemName: "checkmark.circle.fill")
+                            Image(systemName: .checkmarkCircleFill)
                         case .submitting:
                             ProgressView()
                         case .unsubmitted:

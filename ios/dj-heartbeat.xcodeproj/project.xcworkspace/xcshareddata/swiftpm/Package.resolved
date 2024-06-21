@@ -1,5 +1,5 @@
 {
-  "originHash" : "06bea0a27367a4f4a9c7b18b385c1250b4183cde34a5bca08deb977b910d31dc",
+  "originHash" : "46d7535dfc9838d82ce20e156c0e9f8cc9416da57dbc93c98299d111f32f71a5",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -125,6 +125,15 @@
       "state" : {
         "revision" : "e70e889c0196c76d22759eb50d6a0270ca9f1d9e",
         "version" : "2.3.1"
+      }
+    },
+    {
+      "identity" : "sfsymbolenum",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jollyjinx/SFSymbolEnum",
+      "state" : {
+        "revision" : "6a8cb4993b6b3a0e9941ba2049ba868397142794",
+        "version" : "2.3.0"
       }
     },
     {

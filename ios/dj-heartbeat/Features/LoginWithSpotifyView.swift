@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LoginWithSpotifyView: View {
     let onTapLogin: () -> Void
-    struct ViewStrings {
+    private struct ViewStrings {
         static let loginWithSpotifyText = "Login with Spotify"
     }
     

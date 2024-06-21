@@ -20,7 +20,7 @@ struct ThisWeeksChartsTitleView: View {
                     Text(" \(ViewStrings.weekSuffix)")
                 }.background { underline }
                 
-                Image(systemName: "chevron.down")
+                Image(systemName: .chevronDown)
                     .font(.system(size: 14))
                     .foregroundStyle(.gray2.opacity(0.6))
             }

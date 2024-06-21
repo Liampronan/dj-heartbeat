@@ -13,7 +13,7 @@ struct ProfileViewUnlinkedSpotifyExplainerView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
-                Image(systemName: "person.crop.circle.badge.clock.fill")
+                Image(systemName: .personCropCircleBadgeClockFill)
                 Text(ViewStrings.spotifyUnlinked)
             }
             .font(.title)

@@ -56,8 +56,8 @@ struct AppLoadingIconVM: Identifiable, Equatable {
         
         var image: Image {
             return switch self {
-            case .musicNote: .init(systemName: "music.note")
-            case .heart: .init(systemName: "heart.fill")
+            case .musicNote: .init(systemName: .musicNote)
+            case .heart: .init(systemName: .heartFill)
             }
         }
     }
@@ -98,7 +98,6 @@ struct LikesHeartModified: View {
                 }
             }
             .onChange(of: likes) { oldValue, newValue in
-                print(newValue)
                 if newValue.count > 5 {
                     likes.removeFirst()
                 }

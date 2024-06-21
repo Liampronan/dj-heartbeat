@@ -12,7 +12,7 @@ struct IntroScreenUseAppWithoutAccountView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "person.crop.circle.badge.clock.fill")
+                Image(systemName: .personCropCircleBadgeClockFill)
                 Text(ViewStrings.title)
             }
             .font(.title)

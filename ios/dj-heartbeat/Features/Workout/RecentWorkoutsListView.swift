@@ -60,7 +60,7 @@ struct RecentWorkoutsListView: View {
     var errorView: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: "exclamationmark.circle.fill")
+                Image(systemName: .exclamationmarkCircleFill)
                     
                 Text(ViewStrings.noWorkoutsTitle)
                     .textCase(.uppercase)

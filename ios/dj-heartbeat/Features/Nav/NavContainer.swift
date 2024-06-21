@@ -26,7 +26,7 @@ struct NavContainer<Content: View>: View {
             Button(action: {
                 isShowingProfile.toggle()
             }) {
-                Image(systemName: "gearshape")
+                Image(systemName: .gearshape)
             }
             .tint(AppColor.blackText)
             
@@ -37,7 +37,7 @@ struct NavContainer<Content: View>: View {
             Button(action: {
                 isShowingAppExplainerView.toggle()
             }) {
-                Image(systemName: "questionmark.circle")
+                Image(systemName: .questionmarkCircle)
             }
             .tint(AppColor.blackText)
         }
