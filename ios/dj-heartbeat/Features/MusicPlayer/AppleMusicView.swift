@@ -5,13 +5,37 @@ import SwiftUI
 
 struct AppleMusicView: View {
     @State var authMgr = MusicAuthorizationManager()
+    @State var musicQueueManager = MusicQueueManager()
     
+    // START:
+    // - clean up play / pause btn -- wrap `applicationMusicPlayer.playbackState` in obersvable
+    // ____set this up for an actual run____
+    // - create queue items: can be simple via playlist
+    // - start queue
+
     var body: some View {
         VStack {
             switch authMgr.authState {
             case .authorized:
                 Text("is logged in")
                     .padding()
+                Button(MPMusicPlayerController.applicationMusicPlayer.playbackState == .playing ? "pause" : "play") {
+                    if MPMusicPlayerController.applicationMusicPlayer.playbackState == .playing {
+                        MPMusicPlayerController.applicationMusicPlayer.pause()
+                    } else {
+                        MPMusicPlayerController.applicationMusicPlayer.play()
+                    }
+                }
+                Button("next") {
+                    MPMusicPlayerController.applicationMusicPlayer.skipToNextItem()
+                }
+                ScrollView {
+                    VStack {
+                        ForEach(musicQueueManager.playedItems, id: \.self) { item in
+                            Text(item)
+                        }
+                    }
+                }
             case .notDetermined:
                 Button("Authorize Apple Music") {
                     handleRequestAuthorizeAppleMusicTap()
@@ -31,7 +55,13 @@ struct AppleMusicView: View {
         .onChange(of: authMgr.authState) { oldValue, newValue in
             print(oldValue, newValue)
             if newValue == .authorized {
-                Task { await fetchRecentlyPlayedSongs() }
+                Task {
+                    await fetchRecentlyPlayedSongs()
+                    MPMusicPlayerController.applicationMusicPlayer.setQueue(with: .songs())
+//                    try await MPMusicPlayerController.applicationMusicPlayer.prepareToPlay()
+//                    print("prepareToPlay √")
+                    musicQueueManager.startMonitoringMusicPlayer()
+                }
             }
         }
     }
@@ -58,6 +88,7 @@ struct AppleMusicView: View {
         case unknown
         
         init(from musickitStatus: MusicAuthorization.Status) {
+            print("musickitStatus is: ", musickitStatus.rawValue)
             switch musickitStatus {
             case .authorized:
                 self = .authorized

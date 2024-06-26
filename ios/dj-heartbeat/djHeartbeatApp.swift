@@ -21,6 +21,13 @@ struct dj_heartbeatApp: App {
     
     var body: some Scene {
         WindowGroup {
+            AppleMusicView()
+        }
+        
+    }
+    
+    var bodyold: some Scene {
+        WindowGroup {
             Group {
                 ZStack {
                     VStack {

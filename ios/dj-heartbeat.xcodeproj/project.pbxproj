@@ -38,6 +38,7 @@
 		4F5F6B532B60861800946BD5 /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4F5F6B522B60861800946BD5 /* Pow */; };
 		4F72B9B02C2C6E9E00E41E09 /* AppleMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */; };
 		4F72B9B32C2C96A200E41E09 /* MusadoraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4F72B9B22C2C96A200E41E09 /* MusadoraKit */; };
+		4F72B9B62C2CC8D000E41E09 /* MusicQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72B9B52C2CC8D000E41E09 /* MusicQueueManager.swift */; };
 		4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */; };
 		4F7EC7792C260018002F91D5 /* RecentWorkoutsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */; };
 		4F7EC77C2C260560002F91D5 /* SFSymbolEnum in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7EC77B2C260560002F91D5 /* SFSymbolEnum */; };
@@ -149,6 +150,7 @@
 		4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetObservingScrollView.swift; sourceTree = "<group>"; };
 		4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeeksChartsView.swift; sourceTree = "<group>"; };
 		4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicView.swift; sourceTree = "<group>"; };
+		4F72B9B52C2CC8D000E41E09 /* MusicQueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicQueueManager.swift; sourceTree = "<group>"; };
 		4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitWorkoutFetchErrorView.swift; sourceTree = "<group>"; };
 		4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutsListItemView.swift; sourceTree = "<group>"; };
 		4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewUnlinkedSpotifyExplainerView.swift; sourceTree = "<group>"; };
@@ -323,6 +325,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		4F72B9B42C2CC89E00E41E09 /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */,
+				4F72B9B52C2CC8D000E41E09 /* MusicQueueManager.swift */,
+			);
+			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
 		4F9377BB2BA33D3E001225AC /* SocialTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +424,6 @@
 				4FC16E362B91132E0014A5B9 /* Models */,
 				4FAD33292B4C7B9300DB28F6 /* Preview Content */,
 				4FCB853B2C17A36600FFF0AD /* Providers */,
-				4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */,
 			);
 			path = "dj-heartbeat";
 			sourceTree = "<group>";
@@ -515,12 +525,13 @@
 		4FD658232B5082F00030DA46 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				4FCB85332BF3058D00FFF0AD /* AppLaunch */,
 				4F2F81AA2BB73C82002E6EF9 /* AllYou */,
+				4FCB85332BF3058D00FFF0AD /* AppLaunch */,
 				4F463AA42B5B7A58002D03E5 /* Auth */,
 				4F5F2B332B74800E008A00A3 /* DevMenu */,
 				4FA6B4182BB554780016FEDB /* Home */,
 				4FA6B4312BB6E31D0016FEDB /* Intro */,
+				4F72B9B42C2CC89E00E41E09 /* MusicPlayer */,
 				4FB304AF2B6B570F00B6473D /* MusicCharts */,
 				4FA6B4212BB63B370016FEDB /* Nav */,
 				4F02EA1C2B8D2D0000D1E189 /* Playlist */,
@@ -767,6 +778,7 @@
 				4F5F2B352B748022008A00A3 /* ShakeGesture.swift in Sources */,
 				4F9377C32BAE4F88001225AC /* Int+Extensions.swift in Sources */,
 				4F07E85F2C24DBA000505BCB /* FirebaseUser+Extensions.swift in Sources */,
+				4F72B9B62C2CC8D000E41E09 /* MusicQueueManager.swift in Sources */,
 				4F5F6B4C2B5CA60600946BD5 /* PrototypePostworkoutView.swift in Sources */,
 				4FCB85402C17A4F000FFF0AD /* AsyncImageView.swift in Sources */,
 				4FD6582E2B5087180030DA46 /* AppColor.swift in Sources */,
