@@ -30,7 +30,8 @@ struct dj_heartbeatApp: App {
                             case .hasNotGrantedSpotifyAccess:
                                 IntroScreen()
                             case .hasGrantedSpotifyAccess, .notEnabledForSpotifyAccess:
-                                loggedInView
+//                                loggedInView
+                                AppleMusicView()
                             }
                         case .loading:
                             EmptyView()
@@ -39,6 +40,8 @@ struct dj_heartbeatApp: App {
                         }
                     }
                 }
+                // force light scheme for app for now; it's a workout app so the bright light helps make you up :>
+//                .preferredColorScheme(.light)
             }
             .task {
                 await authProvider.config()

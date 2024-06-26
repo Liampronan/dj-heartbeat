@@ -36,6 +36,8 @@
 		4F5F6B4E2B5CE12200946BD5 /* OffsetObservingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */; };
 		4F5F6B502B60720B00946BD5 /* ThisWeeksChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */; };
 		4F5F6B532B60861800946BD5 /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = 4F5F6B522B60861800946BD5 /* Pow */; };
+		4F72B9B02C2C6E9E00E41E09 /* AppleMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */; };
+		4F72B9B32C2C96A200E41E09 /* MusadoraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4F72B9B22C2C96A200E41E09 /* MusadoraKit */; };
 		4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */; };
 		4F7EC7792C260018002F91D5 /* RecentWorkoutsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */; };
 		4F7EC77C2C260560002F91D5 /* SFSymbolEnum in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7EC77B2C260560002F91D5 /* SFSymbolEnum */; };
@@ -146,6 +148,7 @@
 		4F5F6B4B2B5CA60600946BD5 /* PrototypePostworkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypePostworkoutView.swift; sourceTree = "<group>"; };
 		4F5F6B4D2B5CE12200946BD5 /* OffsetObservingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetObservingScrollView.swift; sourceTree = "<group>"; };
 		4F5F6B4F2B60720A00946BD5 /* ThisWeeksChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeeksChartsView.swift; sourceTree = "<group>"; };
+		4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicView.swift; sourceTree = "<group>"; };
 		4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitWorkoutFetchErrorView.swift; sourceTree = "<group>"; };
 		4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutsListItemView.swift; sourceTree = "<group>"; };
 		4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewUnlinkedSpotifyExplainerView.swift; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F72B9B32C2C96A200E41E09 /* MusadoraKit in Frameworks */,
 				4F7EC77C2C260560002F91D5 /* SFSymbolEnum in Frameworks */,
 				4F5F6B532B60861800946BD5 /* Pow in Frameworks */,
 				4FAD334F2B4C7C0B00DB28F6 /* SpotifyiOS in Frameworks */,
@@ -409,6 +413,7 @@
 				4FC16E362B91132E0014A5B9 /* Models */,
 				4FAD33292B4C7B9300DB28F6 /* Preview Content */,
 				4FCB853B2C17A36600FFF0AD /* Providers */,
+				4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */,
 			);
 			path = "dj-heartbeat";
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				4F0255E82B562D7E0007A861 /* FirebaseAuth */,
 				4F5F6B522B60861800946BD5 /* Pow */,
 				4F7EC77B2C260560002F91D5 /* SFSymbolEnum */,
+				4F72B9B22C2C96A200E41E09 /* MusadoraKit */,
 			);
 			productName = "workout-playlist";
 			productReference = 4FAD33202B4C7B9100DB28F6 /* dj-heartbeat.app */;
@@ -641,6 +647,7 @@
 				4F0255E72B562D4D0007A861 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */,
 				4F7EC77A2C260560002F91D5 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */,
+				4F72B9B12C2C96A200E41E09 /* XCRemoteSwiftPackageReference "MusadoraKit" */,
 			);
 			productRefGroup = 4FAD33212B4C7B9100DB28F6 /* Products */;
 			projectDirPath = "";
@@ -701,6 +708,7 @@
 				4FCB853E2C17A4D000FFF0AD /* ImageCache.swift in Sources */,
 				4FA6B42E2BB6A0840016FEDB /* ThisWeeksChartsTitleView.swift in Sources */,
 				4FAD33242B4C7B9100DB28F6 /* djHeartbeatApp.swift in Sources */,
+				4F72B9B02C2C6E9E00E41E09 /* AppleMusicView.swift in Sources */,
 				4F9377BD2BA33D6F001225AC /* SocialFeedView.swift in Sources */,
 				4FC16E402B9115220014A5B9 /* Track.swift in Sources */,
 				4FA6B4332BB6E70A0016FEDB /* CommunityHeartbeatsTickerView.swift in Sources */,
@@ -937,6 +945,7 @@
 				INFOPLIST_FILE = "dj-heartbeat/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "dj heartbeat";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Allow us access to your music history so we can track your workout music.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Allow this app to access your workout data to cast votes for your workouts tracks";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Allow this app to access your workout data to cast votes for your workouts tracks.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -978,6 +987,7 @@
 				INFOPLIST_FILE = "dj-heartbeat/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "dj heartbeat";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Allow us access to your music history so we can track your workout music.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Allow this app to access your workout data to cast votes for your workouts tracks";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Allow this app to access your workout data to cast votes for your workouts tracks.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1138,6 +1148,14 @@
 				minimumVersion = 1.0.3;
 			};
 		};
+		4F72B9B12C2C96A200E41E09 /* XCRemoteSwiftPackageReference "MusadoraKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rryam/MusadoraKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		4F7EC77A2C260560002F91D5 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jollyjinx/SFSymbolEnum";
@@ -1166,6 +1184,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F5F6B512B60861800946BD5 /* XCRemoteSwiftPackageReference "Pow" */;
 			productName = Pow;
+		};
+		4F72B9B22C2C96A200E41E09 /* MusadoraKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F72B9B12C2C96A200E41E09 /* XCRemoteSwiftPackageReference "MusadoraKit" */;
+			productName = MusadoraKit;
 		};
 		4F7EC77B2C260560002F91D5 /* SFSymbolEnum */ = {
 			isa = XCSwiftPackageProductDependency;
