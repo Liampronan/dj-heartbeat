@@ -1,3 +1,7 @@
+# Current status: 🚧 migrating from Spotify to Apple Music 🚧
+
+> The Spotify-based app is complete but blocked by spotify review. The code is a available on a [previous branch here](https://github.com/Liampronan/dj-heartbeat/tree/spotify-based-app/BYE-SPOTIFY).
+
 # Product Overview
 
 ## Quick pitch
@@ -40,6 +44,5 @@ via [dj heartbeat in the App Store](https://apps.apple.com/us/app/dj-heartbeat/i
 - Firebase is a pretty good all-in-one hosting platform; I probably won't use it for my next project
 - [Spotify's Third-Party App Review: A Broken Process & How To Fix](https://liampronan.notion.site/Spotify-s-Third-Party-App-Review-A-Broken-Process-How-To-Fix-531bd9c64a094086bba4284d824ca51e?pvs=4)
   - The dj heartbeat app is currently blocked from general audience release due to Spotify App Review. It took 3+ months to get a review, and I still have yet to hear back what specifics I can need to change in the app. The app has been reviewed 6+ times by Apple with a ~24 hour review turnaround time.
-  - I wrote this Problem/Proposed Solution doc and sent it to the Spotify team. It documents the struggles many in the developer community face while trying to ship apps using the Spotify API.
-- [Making the most of a project that falls short of expectations](https://liampronan.notion.site/Making-the-most-of-a-project-that-falls-short-of-expectations-b8d1c577993640f28d4314e010d4e04c?pvs=4)
+  - I wrote this Problem/Proposed Solution doc and sent it to the Spotify team. It documents the struggles many in the developer community face while trying to ship apps using the Spotify API.)
 - Solo app dev vs. team-based building: lessons & challenges
