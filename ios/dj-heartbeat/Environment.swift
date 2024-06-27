@@ -13,6 +13,10 @@ struct AuthProviderKey: EnvironmentKey {
     static let defaultValue: AuthProvider = FirebaseAuthDataModel()
 }
 
+struct MusicAuthProviderKey: EnvironmentKey {
+    static let defaultValue: MusicAuthProvider = AppleMusicAuthProvider()
+}
+
 struct MusicPlayerProviderKey: EnvironmentKey {
     static let defaultValue: MusicPlayerProvider = AppleMusicPlayer()
 }
@@ -81,6 +85,11 @@ extension EnvironmentValues {
     var handleWorkoutProvider: HandleWorkoutProvider {
         get { self[HandleWorkoutProviderKey.self] }
         set { self[HandleWorkoutProviderKey.self] = newValue }
+    }
+    
+    var musicAuthProvider: MusicAuthProvider {
+        get { self[MusicAuthProviderKey].self }
+        set { self[MusicAuthProviderKey] = newValue }
     }
     
     var musicPlayerProvider: MusicPlayerProvider {

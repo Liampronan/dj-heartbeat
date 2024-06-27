@@ -40,6 +40,7 @@
 		4F72B9B32C2C96A200E41E09 /* MusadoraKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4F72B9B22C2C96A200E41E09 /* MusadoraKit */; };
 		4F72B9B62C2CC8D000E41E09 /* MusicPlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72B9B52C2CC8D000E41E09 /* MusicPlayerProvider.swift */; };
 		4F72B9BF2C2DF3F400E41E09 /* MusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72B9BE2C2DF3F400E41E09 /* MusicPlayerView.swift */; };
+		4F72B9C12C2E040100E41E09 /* MusicAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F72B9C02C2E040100E41E09 /* MusicAuthProvider.swift */; };
 		4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */; };
 		4F7EC7792C260018002F91D5 /* RecentWorkoutsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */; };
 		4F7EC77C2C260560002F91D5 /* SFSymbolEnum in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7EC77B2C260560002F91D5 /* SFSymbolEnum */; };
@@ -153,6 +154,7 @@
 		4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicView.swift; sourceTree = "<group>"; };
 		4F72B9B52C2CC8D000E41E09 /* MusicPlayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerProvider.swift; sourceTree = "<group>"; };
 		4F72B9BE2C2DF3F400E41E09 /* MusicPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerView.swift; sourceTree = "<group>"; };
+		4F72B9C02C2E040100E41E09 /* MusicAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAuthProvider.swift; sourceTree = "<group>"; };
 		4F7EC7762C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitWorkoutFetchErrorView.swift; sourceTree = "<group>"; };
 		4F7EC7782C260018002F91D5 /* RecentWorkoutsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentWorkoutsListItemView.swift; sourceTree = "<group>"; };
 		4F819DE12BD4751A0085CD8C /* ProfileViewUnlinkedSpotifyExplainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewUnlinkedSpotifyExplainerView.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				4F72B9AF2C2C6E9E00E41E09 /* AppleMusicView.swift */,
 				4F72B9B52C2CC8D000E41E09 /* MusicPlayerProvider.swift */,
 				4F72B9BE2C2DF3F400E41E09 /* MusicPlayerView.swift */,
+				4F72B9C02C2E040100E41E09 /* MusicAuthProvider.swift */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				4F5F2B352B748022008A00A3 /* ShakeGesture.swift in Sources */,
 				4F9377C32BAE4F88001225AC /* Int+Extensions.swift in Sources */,
 				4F07E85F2C24DBA000505BCB /* FirebaseUser+Extensions.swift in Sources */,
+				4F72B9C12C2E040100E41E09 /* MusicAuthProvider.swift in Sources */,
 				4F72B9B62C2CC8D000E41E09 /* MusicPlayerProvider.swift in Sources */,
 				4F5F6B4C2B5CA60600946BD5 /* PrototypePostworkoutView.swift in Sources */,
 				4FCB85402C17A4F000FFF0AD /* AsyncImageView.swift in Sources */,
