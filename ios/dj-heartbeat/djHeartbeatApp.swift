@@ -7,8 +7,6 @@ struct dj_heartbeatApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @State private var hasInitialLaunchedOccurred = false
     @State private var isShowingDevMenu = false
-    @Environment(\.authProvider) private var authProvider
-    @Environment(\.playlistProvider) private var playlistProvider
     @Environment(\.recentWorkoutsProvider) private var recentWorkoutsProvider
     @Environment(\.spotifyAuthProvider) private var spotifyAuthProvider
     @Environment(\.socialFeedProvider) private var socialFeedProvider
@@ -22,11 +20,14 @@ struct dj_heartbeatApp: App {
     var body: some Scene {
         WindowGroup {
             AppleMusicView()
+            // force light scheme for app for now; it's a workout app so the bright light helps make you up :>
+            .preferredColorScheme(.light)
         }
         
     }
     
-    var bodyold: some Scene {
+    // TODO: cleanup as we are migrating away from this.
+    var body_old: some Scene {
         WindowGroup {
             Group {
                 ZStack {
@@ -37,7 +38,6 @@ struct dj_heartbeatApp: App {
                             case .hasNotGrantedSpotifyAccess:
                                 IntroScreen()
                             case .hasGrantedSpotifyAccess, .notEnabledForSpotifyAccess:
-//                                loggedInView
                                 AppleMusicView()
                             }
                         case .loading:
@@ -48,17 +48,8 @@ struct dj_heartbeatApp: App {
                     }
                 }
                 // force light scheme for app for now; it's a workout app so the bright light helps make you up :>
-//                .preferredColorScheme(.light)
+                .preferredColorScheme(.light)
             }
-            .task {
-                await authProvider.config()
-                await authProvider.fetchState()
-                await userOnboardingProvider.fetchStateForUser()
-                await fetchLoggedInUserData()
-            }
-            .onOpenURL(perform: { url in
-                spotifyAuthProvider.sessionManager.application(UIApplication.shared, open: url)
-            })
             .onChange(of: scenePhase) { (oldPhase, newPhase) in
                 guard newPhase == .active else { return }
                 
@@ -91,7 +82,6 @@ struct dj_heartbeatApp: App {
             return
         }
         await userEventsProvider.postAppOpened()
-        await playlistProvider.fetchDefaultPlaylist()
         await socialFeedProvider.fetchSocialFeed()
     }
     
