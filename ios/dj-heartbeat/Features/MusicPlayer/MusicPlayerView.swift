@@ -26,6 +26,9 @@ struct MusicPlayerView: View {
             }
             .font(.system(size: ViewMetrics.prevNextButtonSize))
         }
+        .task {
+            try? await musicPlayerProvider.queueItemsFromTestPlaylist()
+        }
     }
     
     private var playOrPauseImage: some View {

@@ -6,7 +6,7 @@ struct AddToPlaylistRequest: Codable {
 }
 
 struct AddToPlaylistResponse: Codable {
-    let track: Track
+    let track: Track_DEPRECATED
     let playlistDurationMS: Int
 }
 
@@ -15,7 +15,7 @@ struct FetchDefaultPlaylistRequest: Codable {
 }
 
 struct FetchDefaultPlaylistResponse: Codable {
-    let playlist: Playlist
+    let playlist: Playlist_DEPRECATED
 }
 
 struct ClearDefaultPlaylistRequest: Codable {
@@ -35,7 +35,7 @@ extension FetchDefaultPlaylistResponse {
         )
     }
     
-    static func mockAddToPlaylist(newTrack: Track) -> Self {
+    static func mockAddToPlaylist(newTrack: Track_DEPRECATED) -> Self {
         .init(playlist: .mockAddToPlaylist(newTrack: newTrack))
     }
 }
