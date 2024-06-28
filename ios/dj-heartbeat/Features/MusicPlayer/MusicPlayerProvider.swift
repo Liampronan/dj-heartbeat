@@ -1,9 +1,10 @@
+import Combine
 import MediaPlayer
 import MusicKit
 
 protocol MusicPlayerProvider {
     var playedItems: [String] { get }
-    var playbackState: MPMusicPlaybackState { get }
+    var playbackStatus: MusicKit.MusicPlayer.PlaybackStatus { get }
     var currentSongTitle: String { get }
     
     func play()
@@ -13,47 +14,33 @@ protocol MusicPlayerProvider {
     func queueItemsFromTestPlaylist() async throws
 }
 
+@Observable
+class ObservableState<Item> {
+    var item: Item
+
+    init(item: Item) {
+        self.item = item
+    }
+}
+
 @Observable class AppleMusicPlayer: NSObject, MusicPlayerProvider {
     var playedItems = [String]()
-    var playbackState: MPMusicPlaybackState = MPMusicPlayerController.applicationMusicPlayer.playbackState
+    var playbackStatus: MusicKit.MusicPlayer.PlaybackStatus = ApplicationMusicPlayer.shared.state.playbackStatus
+    
+    private var subscriptions = Set<AnyCancellable>()
+    
+    override init() {
+        super.init()
+        appMusicPlayer.state.objectWillChange.sink { [weak self] in
+            guard let self else { return }
+            self.playbackStatus = self.appMusicPlayer.state.playbackStatus
+        }
+        .store(in: &subscriptions)
+    }
     
     var currentSongTitle: String = ""
     
     private var appMusicPlayer: ApplicationMusicPlayer = ApplicationMusicPlayer.shared
-    
-    func startMonitoringMusicPlayer() {
-//        appMusicPlayer.beginGeneratingPlaybackNotifications()
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(handleNowPlayingItemChanged),
-//                                               name: .MPMusicPlayerControllerNowPlayingItemDidChange,
-//                                               object: MPMusicPlayerController.applicationMusicPlayer)
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(handlePlaybackStateChanged),
-//                                               name: .MPMusicPlayerControllerPlaybackStateDidChange,
-//                                               object: MPMusicPlayerController.applicationMusicPlayer)
-    }
-
-    @objc func handleNowPlayingItemChanged(notification: Notification) {
-        let player = MPMusicPlayerController.applicationMusicPlayer
-        let nowPlayingItem = player.nowPlayingItem
-        let title = nowPlayingItem?.title ?? "Unknown"
-        playedItems.append(title)
-    }
-    
-    @objc func handlePlaybackStateChanged(notification: Notification) {
-        playbackState = MPMusicPlayerController.applicationMusicPlayer.playbackState
-        
-    }
-
-    func stopMonitoringMusicPlayer() {
-        NotificationCenter.default.removeObserver(self, 
-                                                  name: .MPMusicPlayerControllerNowPlayingItemDidChange,
-                                                  object: MPMusicPlayerController.applicationMusicPlayer)
-        NotificationCenter.default.removeObserver(self,
-                                               name: .MPMusicPlayerControllerPlaybackStateDidChange,
-                                               object: MPMusicPlayerController.applicationMusicPlayer)
-        MPMusicPlayerController.applicationMusicPlayer.endGeneratingPlaybackNotifications()
-    }
     
     func play() {
         Task { try? await ApplicationMusicPlayer.shared.play() }
@@ -72,9 +59,15 @@ protocol MusicPlayerProvider {
     }
     
     func queueItemsFromTestPlaylist() async throws {
-        let tracks = try await testingFindPlaylistTracks()
-        print(tracks)
-        print("tracks^^^")
+        let album = try await testFindAlbum()
+        print(album)
+        print("album^^^")
+        appMusicPlayer.queue = [album]
+        
+        
+        
+        /*
+         let tracks = try await testingFindPlaylistTracks()
 //        appMusicPlayer.queue = tracks
         
         let collection = MusicItemCollection(tracks)
@@ -86,42 +79,26 @@ protocol MusicPlayerProvider {
         print(appMusicPlayer.queue)
         print("queue", appMusicPlayer.queue.entries.count)
         try await ApplicationMusicPlayer.shared.prepareToPlay()
+         */
+    }
+    
+    func testFindAlbum() async throws -> Album {
+        let request = MusicCatalogResourceRequest<Album>(matching: \.id, equalTo: "1603171516")
+        let response = try await request.response()
+
+        guard let album = response.items.first else {
+            throw NSError(domain: "me", code: 404)
+        }
+          
+        let player = ApplicationMusicPlayer.shared
+
+        return album
     }
     
     //https://music.apple.com/us/playlist/dj-heartbeat/pl.u-XkD0Y6pT438xpo
+    let playlistId = "pl.u-XkD0Y6pT438xpo"
     func testingFindPlaylistTracks() async throws -> [Song] {
-//        let playlistId = "pl.u-XkD0Y6pT438xpo"
-//        // Create a request for the playlist
-//        var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(playlistId))
-//        playlistRequest.properties = [.tracks]
-//        // Perform the request
-//        let response = try await playlistRequest.response()
-//
-//        // Get the first playlist from the response
-//        guard let playlist = response.items.first else {
-//            throw NSError(domain: "Playlist not found", code: 404, userInfo: nil)
-//        }
-//
-//        guard let songs = playlist.tracks?.compactMap({ $0 }) else {
-//            throw NSError(domain: "Playlist tracks not found", code: 404, userInfo: nil)
-//        }
-//
-//        return songs
         
-//        let request = MusicCatalogResourceRequest<Album>(matching: \.id, equalTo: "1603171516")
-//        let response = try await request.response()
-//
-//        guard let album = response.items.first else { return [] }
-//
-//        let player = ApplicationMusicPlayer.shared
-////***********************
-        //****** TODO START -- why does this queue=[album] work but your songs don't. they seem to work after adding 
-//        player.queue = [album] /// <- directly add the whole album to the queue
-//
-//        try await player.prepareToPlay()
-//        try await player.play()
-        
-        let playlistId = "pl.u-XkD0Y6pT438xpo"
         // Create a request for the playlist
         var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(playlistId))
         playlistRequest.properties = [.tracks]
@@ -160,23 +137,23 @@ protocol MusicPlayerProvider {
 }
 
 @Observable class Previews_MusicPlayer: MusicPlayerProvider {
+
     var currentSongTitle: String
     var playedItems: [String]
-    var playbackState: MPMusicPlaybackState
+    var playbackStatus: MusicKit.MusicPlayer.PlaybackStatus
     
-    
-    init(playbackState: MPMusicPlaybackState, playedItems: [String], currentSongTitle: String) {
+    init(playbackStatus: MusicKit.MusicPlayer.PlaybackStatus, playedItems: [String], currentSongTitle: String) {
         self.playedItems = playedItems
-        self.playbackState = playbackState
+        self.playbackStatus = playbackStatus
         self.currentSongTitle = currentSongTitle
     }
     
     func play() { 
-        playbackState = .playing
+        playbackStatus = .playing
     }
     
     func pause() { 
-        playbackState = .paused
+        playbackStatus = .paused
     }
     
     func skipToPrevItem() { }
@@ -189,6 +166,38 @@ protocol MusicPlayerProvider {
 extension MusicPlayerProvider where Self == Previews_MusicPlayer {
     static var playing: Self {
         let items = ["Highway to the Dangerzone", "We Can't Stop", "Levels"]
-        return Previews_MusicPlayer(playbackState: .playing, playedItems: items, currentSongTitle: "Dance The Night")
+        return Previews_MusicPlayer(playbackStatus: .playing, playedItems: items, currentSongTitle: "Dance The Night")
     }
 }
+
+
+//        let playlistId = "pl.u-XkD0Y6pT438xpo"
+//        // Create a request for the playlist
+//        var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(playlistId))
+//        playlistRequest.properties = [.tracks]
+//        // Perform the request
+//        let response = try await playlistRequest.response()
+//
+//        // Get the first playlist from the response
+//        guard let playlist = response.items.first else {
+//            throw NSError(domain: "Playlist not found", code: 404, userInfo: nil)
+//        }
+//
+//        guard let songs = playlist.tracks?.compactMap({ $0 }) else {
+//            throw NSError(domain: "Playlist tracks not found", code: 404, userInfo: nil)
+//        }
+//
+//        return songs
+        
+//        let request = MusicCatalogResourceRequest<Album>(matching: \.id, equalTo: "1603171516")
+//        let response = try await request.response()
+//
+//        guard let album = response.items.first else { return [] }
+//
+//        let player = ApplicationMusicPlayer.shared
+////***********************
+        //****** TODO START -- why does this queue=[album] work but your songs don't. they seem to work after adding
+//        player.queue = [album] /// <- directly add the whole album to the queue
+//
+//        try await player.prepareToPlay()
+//        try await player.play()

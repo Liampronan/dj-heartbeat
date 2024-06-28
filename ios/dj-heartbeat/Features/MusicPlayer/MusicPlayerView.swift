@@ -32,12 +32,12 @@ struct MusicPlayerView: View {
     }
     
     private var playOrPauseImage: some View {
-        let symbol: SFSymbol = musicPlayerProvider.playbackState == .playing ? .pauseCircleFill : .playCircleFill
+        let symbol: SFSymbol = musicPlayerProvider.playbackStatus == .playing ? .pauseCircleFill : .playCircleFill
         return Image(symbol: symbol).font(.system(size: ViewMetrics.playButtonSize))
     }
     
     private func handlePlayOrPauseTap() {
-        if musicPlayerProvider.playbackState == .playing {
+        if musicPlayerProvider.playbackStatus == .playing {
             musicPlayerProvider.pause()
         } else {
             musicPlayerProvider.play()
