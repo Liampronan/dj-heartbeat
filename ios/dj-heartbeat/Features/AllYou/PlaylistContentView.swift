@@ -21,7 +21,7 @@ struct PlaylistContentView: View {
         GridItem(.flexible(maximum: 100))
     ]
     
-    func fetchedState(with playlist: Playlist) -> some View {
+    func fetchedState(with playlist: Playlist_DEPRECATED) -> some View {
         ScrollView(.horizontal) {
             LazyHGrid(rows: playlistItemRows, alignment: .center) {
                 ForEach(playlist.tracks) { track in

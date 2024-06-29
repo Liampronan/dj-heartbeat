@@ -2,7 +2,7 @@ import Foundation
 
 struct UserListen: Codable, Identifiable {
     let id: String
-    let track: Track
+    let track: Track_DEPRECATED
     let listenedAt: Date
     let totalHeartbeats: Double
     

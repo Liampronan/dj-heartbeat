@@ -77,7 +77,7 @@ enum TrackDiscoverCategory: Identifiable, Equatable, Hashable {
         hasher.combine(id)
     }
     
-    var tracks: [Track] {
+    var tracks: [Track_DEPRECATED] {
         switch self {
         case .suggestedForYou(let category),
                 .unheardOf(let category),
@@ -148,7 +148,7 @@ private struct TrackDiscoverViewInternal: View {
         }
     }
     
-    private var selectedListensData: [Track] {
+    private var selectedListensData: [Track_DEPRECATED] {
         trackDiscoverCategories[trackDiscoverCategoriesSelectedIndex].tracks
     }
     

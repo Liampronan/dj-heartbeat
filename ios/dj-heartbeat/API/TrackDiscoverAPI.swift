@@ -1,7 +1,7 @@
 import Foundation
 
 struct TrackDiscoverCategoryResponse: Codable, Equatable {
-    let tracks: [Track]
+    let tracks: [Track_DEPRECATED]
     let titleText: String
     let descriptionText: String
 }

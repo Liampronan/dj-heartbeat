@@ -7,7 +7,7 @@ struct AddToPlaylistButtonView: View {
         case expanded
     }
    
-    let track: Track
+    let track: Track_DEPRECATED
     let style: Style
     
     @Environment(\.playlistProvider) private var playlistProvider
