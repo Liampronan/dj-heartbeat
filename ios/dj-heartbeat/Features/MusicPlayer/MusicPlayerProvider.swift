@@ -3,9 +3,11 @@ import MediaPlayer
 import MusicKit
 
 protocol MusicPlayerProvider {
-    var playedItems: [String] { get }
+    var playedItems: [TrackInfo] { get }
     var playbackStatus: MusicKit.MusicPlayer.PlaybackStatus { get }
     var currentSongTitle: String { get }
+    var history: MusicPlayerHistory { get }
+    var queue: MusicPlayerQueue { get }
     
     func play()
     func pause()
@@ -14,13 +16,32 @@ protocol MusicPlayerProvider {
     func queueItemsFromTestPlaylist() async throws
 }
 
+@Observable class MusicPlayerHistory {
+    private(set) var songs: [TrackInfo]
+
+    init(songs: [TrackInfo] = []) {
+        self.songs = songs
+    }
+}
+
+@Observable class MusicPlayerQueue {
+    private(set) var songs: [TrackInfo] //fixme: we'll need to have these compatible with Apple Music Playable items.
+
+    init(songs: [TrackInfo] = []) {
+        self.songs = songs
+    }
+}
+
 @Observable class AppleMusicPlayer: NSObject, MusicPlayerProvider {
-    var playedItems = [String]()
     var playbackStatus: MusicKit.MusicPlayer.PlaybackStatus = ApplicationMusicPlayer.shared.state.playbackStatus
+    var playedItems: [TrackInfo] { return history.songs }
+        
+    private(set) var history = MusicPlayerHistory()
+    private(set) var queue = MusicPlayerQueue()
     private var appMusicPlayer: ApplicationMusicPlayer = ApplicationMusicPlayer.shared
     
     private var subscriptions = Set<AnyCancellable>()
-    
+
     override init() {
         super.init()
         appMusicPlayer.state.objectWillChange.sink { [weak self] in
@@ -66,7 +87,6 @@ protocol MusicPlayerProvider {
     //https://music.apple.com/us/playlist/dj-heartbeat/pl.u-XkD0Y6pT438xpo
     let playlistId = "pl.u-XkD0Y6pT438xpo"
     func testingFindPlaylistTracks() async throws -> [Track] {
-        
         // Create a request for the playlist
         var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(playlistId))
         playlistRequest.properties = [.tracks]
@@ -97,13 +117,19 @@ protocol MusicPlayerProvider {
 @Observable class Previews_MusicPlayer: MusicPlayerProvider {
 
     var currentSongTitle: String
-    var playedItems: [String]
+    var history: MusicPlayerHistory
+    var queue: MusicPlayerQueue
     var playbackStatus: MusicKit.MusicPlayer.PlaybackStatus
     
-    init(playbackStatus: MusicKit.MusicPlayer.PlaybackStatus, playedItems: [String], currentSongTitle: String) {
-        self.playedItems = playedItems
+    var playedItems: [TrackInfo] {
+        return history.songs
+    }
+    
+    init(playbackStatus: MusicKit.MusicPlayer.PlaybackStatus, currentSongTitle: String, history: MusicPlayerHistory, queue: MusicPlayerQueue) {
         self.playbackStatus = playbackStatus
         self.currentSongTitle = currentSongTitle
+        self.history = history
+        self.queue = queue
     }
     
     func play() { 
@@ -123,7 +149,6 @@ protocol MusicPlayerProvider {
 
 extension MusicPlayerProvider where Self == Previews_MusicPlayer {
     static var playing: Self {
-        let items = ["Highway to the Dangerzone", "We Can't Stop", "Levels"]
-        return Previews_MusicPlayer(playbackStatus: .playing, playedItems: items, currentSongTitle: "Dance The Night")
+        return Previews_MusicPlayer(playbackStatus: .playing, currentSongTitle: "Dance The Night", history: .init(songs: Track_DEPRECATED.mockTracks), queue: .init(songs: Track_DEPRECATED.mockTracks))
     }
 }

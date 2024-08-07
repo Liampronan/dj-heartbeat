@@ -1,20 +1,32 @@
 import SwiftUI
 
-
 struct MusicPlayerHistoryView: View {
+    @Environment(\.musicPlayerProvider) private var musicPlayerProvider
+    
     var body: some View {
-        VStack {
-            Text("history item a")
-            Text("history item b")
+        ScrollView {
+            VStack {
+                // fixme: this is should be unique
+                // 
+                ForEach(musicPlayerProvider.playedItems, id: \.name) { item in
+                    Text(item.name)
+                }
+            }
         }
     }
 }
 
 struct MusicPlayerUpNextView: View {
+    
+    @Environment(\.musicPlayerProvider) private var musicPlayerProvider
     var body: some View {
-        VStack {
-            Text("upnext item a")
-            Text("upnext item b")
+        ScrollView {
+            VStack {
+                // fixme: this is should be unique
+                ForEach(musicPlayerProvider.playedItems, id: \.name) { item in
+                    Text(item.name)
+                }
+            }
         }
     }
 }

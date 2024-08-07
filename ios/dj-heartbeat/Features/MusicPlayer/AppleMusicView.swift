@@ -15,14 +15,7 @@ struct AppleMusicView: View {
             switch musicAuthProvider.authState {
             case .authorized:
                 VStack {
-                    ScrollView {
-                        VStack {
-                            ForEach(musicPlayerProvider.playedItems, id: \.self) { item in
-                                Text(item)
-                            }
-                        }
-                    }
-                    MusicPlayerView()
+                    NowPlayingView()
                 }
             case .notDetermined:
                 Button("Authorize Apple Music") {
