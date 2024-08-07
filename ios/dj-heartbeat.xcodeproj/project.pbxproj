@@ -48,6 +48,7 @@
 		4F9377BD2BA33D6F001225AC /* SocialFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */; };
 		4F9377BF2BA340D6001225AC /* Playlist_DEPRECATED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377BE2BA340D6001225AC /* Playlist_DEPRECATED.swift */; };
 		4F9377C32BAE4F88001225AC /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9377C22BAE4F88001225AC /* Int+Extensions.swift */; };
+		4F95635F2C64032000BADF43 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95635E2C64032000BADF43 /* NowPlayingView.swift */; };
 		4FA068192BBB232A0091C7DD /* HandleWorkoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */; };
 		4FA0681C2BBCE37C0091C7DD /* PrototypeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0681B2BBCE37C0091C7DD /* PrototypeLoadingView.swift */; };
 		4FA0681E2BBF27E60091C7DD /* SendFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0681D2BBF27E60091C7DD /* SendFeedbackView.swift */; };
@@ -161,6 +162,7 @@
 		4F9377BC2BA33D6F001225AC /* SocialFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedView.swift; sourceTree = "<group>"; };
 		4F9377BE2BA340D6001225AC /* Playlist_DEPRECATED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist_DEPRECATED.swift; sourceTree = "<group>"; };
 		4F9377C22BAE4F88001225AC /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		4F95635E2C64032000BADF43 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingView.swift; path = "dj-heartbeat/Features/MusicPlayer/NowPlayingView.swift"; sourceTree = "<group>"; };
 		4FA068182BBB232A0091C7DD /* HandleWorkoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleWorkoutProvider.swift; sourceTree = "<group>"; };
 		4FA0681B2BBCE37C0091C7DD /* PrototypeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeLoadingView.swift; sourceTree = "<group>"; };
 		4FA0681D2BBF27E60091C7DD /* SendFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackView.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 		4FAD33172B4C7B9100DB28F6 = {
 			isa = PBXGroup;
 			children = (
+				4F95635E2C64032000BADF43 /* NowPlayingView.swift */,
 				4FCB852A2BE9877100FFF0AD /* ci_pre_xcodebuild.sh */,
 				4FAD33222B4C7B9100DB28F6 /* dj-heartbeat */,
 				4FAD33332B4C7B9300DB28F6 /* dj_heartbeatTests */,
@@ -766,6 +769,7 @@
 				4F2F81AE2BB7CA20002E6EF9 /* UserOnboardingProvider.swift in Sources */,
 				4F7EC7772C25FFC4002F91D5 /* HealthKitWorkoutFetchErrorView.swift in Sources */,
 				4F2F81AC2BB73D2B002E6EF9 /* AllYouView.swift in Sources */,
+				4F95635F2C64032000BADF43 /* NowPlayingView.swift in Sources */,
 				4FD658282B5083370030DA46 /* OnDeviceWorkoutDataManager.swift in Sources */,
 				4FA0681E2BBF27E60091C7DD /* SendFeedbackView.swift in Sources */,
 				4FA6B4232BB63B460016FEDB /* AppExplainerView.swift in Sources */,

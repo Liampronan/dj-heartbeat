@@ -70,12 +70,10 @@ protocol MusicPlayerProvider {
         // Create a request for the playlist
         var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(playlistId))
         playlistRequest.properties = [.tracks]
-        
-        // Perform the request
-        let response2 = try await playlistRequest.response()
+        let response = try await playlistRequest.response()
         
         // Get the first playlist from the response
-        guard let playlist = response2.items.first else {
+        guard let playlist = response.items.first else {
             throw NSError(domain: "Playlist not found", code: 404, userInfo: nil)
         }
         
@@ -129,35 +127,3 @@ extension MusicPlayerProvider where Self == Previews_MusicPlayer {
         return Previews_MusicPlayer(playbackStatus: .playing, playedItems: items, currentSongTitle: "Dance The Night")
     }
 }
-
-
-//        let playlistId = "pl.u-XkD0Y6pT438xpo"
-//        // Create a request for the playlist
-//        var playlistRequest = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: MusicItemID(playlistId))
-//        playlistRequest.properties = [.tracks]
-//        // Perform the request
-//        let response = try await playlistRequest.response()
-//
-//        // Get the first playlist from the response
-//        guard let playlist = response.items.first else {
-//            throw NSError(domain: "Playlist not found", code: 404, userInfo: nil)
-//        }
-//
-//        guard let songs = playlist.tracks?.compactMap({ $0 }) else {
-//            throw NSError(domain: "Playlist tracks not found", code: 404, userInfo: nil)
-//        }
-//
-//        return songs
-        
-//        let request = MusicCatalogResourceRequest<Album>(matching: \.id, equalTo: "1603171516")
-//        let response = try await request.response()
-//
-//        guard let album = response.items.first else { return [] }
-//
-//        let player = ApplicationMusicPlayer.shared
-////***********************
-        //****** TODO START -- why does this queue=[album] work but your songs don't. they seem to work after adding
-//        player.queue = [album] /// <- directly add the whole album to the queue
-//
-//        try await player.prepareToPlay()
-//        try await player.play()
