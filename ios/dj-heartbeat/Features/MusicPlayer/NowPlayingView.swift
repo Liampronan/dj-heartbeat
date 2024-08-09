@@ -7,9 +7,14 @@ struct MusicPlayerHistoryView: View {
         ScrollView {
             VStack {
                 // fixme: this is should be unique
-                // 
-                ForEach(musicPlayerProvider.playedItems, id: \.name) { item in
-                    Text(item.name)
+                ForEach(musicPlayerProvider.playedItems, id: \.title) { item in
+                    VStack {
+                        Text(item.title)
+                        HStack {
+                            Text(item.startedAt?.description ?? "No startedAt")
+                            Text(item.endedAt?.description ?? "No endedAt")
+                        }
+                    }
                 }
             }
         }
@@ -23,8 +28,8 @@ struct MusicPlayerUpNextView: View {
         ScrollView {
             VStack {
                 // fixme: this is should be unique
-                ForEach(musicPlayerProvider.playedItems, id: \.name) { item in
-                    Text(item.name)
+                ForEach(musicPlayerProvider.playedItems, id: \.title) { item in
+                    Text(item.title)
                 }
             }
         }
