@@ -3,10 +3,10 @@ import Foundation
 typealias PlaylistDataState = FetchableDataState<FetchDefaultPlaylistResponse>
 /// keeps state for updating individual tracks to playlist, like adding to playlist.
 /// helps differentiate when a single track is being adding vs. entire playlist is fetching
-typealias TrackPlaylistUpdatesInProgress = [Track: PlaylistTrackState]
+typealias TrackPlaylistUpdatesInProgress = [Track_DEPRECATED: PlaylistTrackState]
 
 extension PlaylistDataState {
-    func playlistTrackState(for track: Track, with updatesInProgress: TrackPlaylistUpdatesInProgress) -> PlaylistTrackState {
+    func playlistTrackState(for track: Track_DEPRECATED, with updatesInProgress: TrackPlaylistUpdatesInProgress) -> PlaylistTrackState {
         // example: we're adding a track to playlist, we want UI to be able to reflect that single track is being adding (vs. entire playlist is updating)
         if let trackUpdateInProgress = updatesInProgress[track] {
             return trackUpdateInProgress
@@ -29,8 +29,8 @@ protocol PlaylistProvider {
     var authProvider: AuthProvider { get }
     func fetchDefaultPlaylist() async
     
-    func playlistTrackState(for track: Track) -> PlaylistTrackState
-    func addToDefaultPlaylist(track: Track) async throws
+    func playlistTrackState(for track: Track_DEPRECATED) -> PlaylistTrackState
+    func addToDefaultPlaylist(track: Track_DEPRECATED) async throws
 }
 
 enum PlaylistTrackState {
@@ -43,13 +43,13 @@ enum PlaylistTrackState {
 @Observable class PlaylistDataModel: PlaylistProvider {
     var state = PlaylistDataState.loading
     var authProvider: AuthProvider
-    var trackUpdatingStates = [Track: PlaylistTrackState]()
+    var trackUpdatingStates = [Track_DEPRECATED: PlaylistTrackState]()
     
     init(authProvider: AuthProvider) {
         self.authProvider = authProvider
     }
     
-    func playlistTrackState(for track: Track) -> PlaylistTrackState {
+    func playlistTrackState(for track: Track_DEPRECATED) -> PlaylistTrackState {
         state.playlistTrackState(for: track, with: trackUpdatingStates)
     }
     
@@ -65,7 +65,7 @@ enum PlaylistTrackState {
         }
     }
     
-    func addToDefaultPlaylist(track: Track) async throws {
+    func addToDefaultPlaylist(track: Track_DEPRECATED) async throws {
         trackUpdatingStates[track] = .loading
         
         let req = AddToPlaylistRequest(
@@ -84,7 +84,7 @@ enum PlaylistTrackState {
 @Observable class PreviewPlaylistProvider: PlaylistProvider {
     var state: PlaylistDataState
     var authProvider: AuthProvider
-    var trackUpdatingStates = [Track: PlaylistTrackState]()
+    var trackUpdatingStates = [Track_DEPRECATED: PlaylistTrackState]()
     
     init(state: PlaylistDataState, authProvider: AuthProvider = PreviewAuthProvider.isLoggedIn) {
         self.state = state
@@ -93,11 +93,11 @@ enum PlaylistTrackState {
     
     func fetchDefaultPlaylist() async {}
     
-    func playlistTrackState(for track: Track) -> PlaylistTrackState {
+    func playlistTrackState(for track: Track_DEPRECATED) -> PlaylistTrackState {
         state.playlistTrackState(for: track, with: trackUpdatingStates)
     }
     
-    func addToDefaultPlaylist(track: Track) async throws {
+    func addToDefaultPlaylist(track: Track_DEPRECATED) async throws {
         trackUpdatingStates[track] = .loading
         let updatedPlayist = FetchDefaultPlaylistResponse.mockAddToPlaylist(newTrack: track)
         state = .fetched(updatedPlayist)

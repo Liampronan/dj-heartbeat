@@ -1,5 +1,5 @@
 {
-  "originHash" : "46d7535dfc9838d82ce20e156c0e9f8cc9416da57dbc93c98299d111f32f71a5",
+  "originHash" : "f4b0ee8c7ed2ed4330577e47a5185ae8cb2c9699032cc62608d5f281b97501dd",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -98,6 +98,15 @@
       "state" : {
         "revision" : "9d108e9112aa1d65ce508facf804674546116d9c",
         "version" : "1.22.3"
+      }
+    },
+    {
+      "identity" : "musadorakit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rryam/MusadoraKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "80f8d7986820edb45d5425f81f27613095f4412b"
       }
     },
     {

@@ -2,12 +2,12 @@ struct PlaylistThirdPartyInfo: Codable {
     let uri: String // example: spotify:playlist:7wNJXj3yxJwc4qjfOOZcwM
 }
 
-struct Playlist: Codable {
+struct Playlist_DEPRECATED: Codable {
     let name: String
-    let tracks: [Track]
+    let tracks: [Track_DEPRECATED]
     let thirdPartyInfo: PlaylistThirdPartyInfo
     
-    func contains(track: Track) -> Bool {
+    func contains(track: Track_DEPRECATED) -> Bool {
         tracks.contains { $0 == track }
     }
     
@@ -22,19 +22,19 @@ struct Playlist: Codable {
     }
 }
 
-extension Playlist {
+extension Playlist_DEPRECATED {
     private static var mockTitle = "slaylist | april24"
     
-    static func mock() -> Playlist {
-        return .init(name: mockTitle, tracks: Track.mockTracks, thirdPartyInfo: .init(uri: "https://example.com"))
+    static func mock() -> Playlist_DEPRECATED {
+        return .init(name: mockTitle, tracks: Track_DEPRECATED.mockTracks, thirdPartyInfo: .init(uri: "https://example.com"))
     }
     
-    static func mockAddToPlaylist(newTrack: Track) -> Playlist {
-        let updatedPlaylist = Track.mockTracks + [newTrack]
+    static func mockAddToPlaylist(newTrack: Track_DEPRECATED) -> Playlist_DEPRECATED {
+        let updatedPlaylist = Track_DEPRECATED.mockTracks + [newTrack]
         return .init(name: mockTitle, tracks: updatedPlaylist, thirdPartyInfo: .init(uri: "https://example.com"))
     }
     
-    static func mockEmptyPlaylist() -> Playlist {
+    static func mockEmptyPlaylist() -> Playlist_DEPRECATED {
         return .init(name: mockTitle, tracks: [], thirdPartyInfo: .init(uri: ""))
     }
 }
